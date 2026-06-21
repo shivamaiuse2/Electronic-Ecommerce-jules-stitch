@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "outline": "#879488",
+                "on-tertiary-container": "#592c00",
+                "on-secondary-fixed-variant": "#513f64",
+                "tertiary": "#ffb77f",
+                "surface-dim": "#111415",
+                "on-tertiary": "#4e2600",
+                "tertiary-container": "#f58400",
+                "on-surface-variant": "#bccabd",
+                "secondary-container": "#513f64",
+                "surface-container-high": "#282a2b",
+                "secondary": "#d4beea",
+                "secondary-fixed": "#efdbff",
+                "on-surface": "#e1e3e4",
+                "on-secondary-container": "#c2add8",
+                "background": "#111415",
+                "primary": "#5cde94",
+                "on-tertiary-fixed-variant": "#6f3900",
+                "on-error-container": "#ffdad6",
+                "on-primary-fixed": "#00210f",
+                "on-background": "#e1e3e4",
+                "inverse-surface": "#e1e3e4",
+                "surface-container-highest": "#323536",
+                "surface-tint": "#5cde94",
+                "on-secondary-fixed": "#241436",
+                "on-error": "#690005",
+                "surface": "#111415",
+                "surface-container-low": "#191c1d",
+                "inverse-primary": "#006d3e",
+                "on-primary-container": "#004224",
+                "tertiary-fixed": "#ffdcc4",
+                "surface-variant": "#323536",
+                "on-tertiary-fixed": "#2f1500",
+                "on-secondary": "#39294c",
+                "surface-container": "#1d2021",
+                "on-primary-fixed-variant": "#00522e",
+                "inverse-on-surface": "#2e3132",
+                "surface-container-lowest": "#0c0f10",
+                "surface-bright": "#373a3b",
+                "error-container": "#93000a",
+                "primary-container": "#2eb872",
+                "outline-variant": "#3d4a40",
+                "tertiary-fixed-dim": "#ffb77f",
+                "primary-fixed-dim": "#5cde94",
+                "on-primary": "#00391e",
+                "error": "#ffb4ab",
+                "secondary-fixed-dim": "#d4beea",
+                "primary-fixed": "#7afbae"
+            },
+            "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "gutter-md": "16px",
+                "stack-md": "12px",
+                "section-gap": "32px",
+                "stack-sm": "8px",
+                "container-margin": "24px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Plus Jakarta Sans"],
+                "display-lg": ["Plus Jakarta Sans"],
+                "body-sm": ["Plus Jakarta Sans"],
+                "label-bold": ["Plus Jakarta Sans"],
+                "body-lg": ["Plus Jakarta Sans"],
+                "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                "headline-md-mobile": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                "label-bold-mobile": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #111415; /* Base Layer */
+            color: #e1e3e4;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Glassmorphism for card effects */
+        .glass-panel {
+            background: rgba(29, 32, 33, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(135, 148, 136, 0.1);
+        }
+
+        /* Custom Input Styling */
+        .input-group:focus-within .input-icon {
+            color: #5cde94;
+        }
+
+        /* Animated Mesh Background */
+        .bg-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(0, 109, 62, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(81, 63, 100, 0.1) 0%, transparent 50%);
+        }
+
+        .tap-scale:active {
+            transform: scale(0.96);
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-lg overflow-x-hidden min-h-screen">
+<!-- Atmospheric Background -->
+<div class="bg-mesh"></div>
+<div class="relative flex flex-col min-h-screen">
+<!-- Navigation / Header -->
+<header class="flex items-center h-16 px-container-margin fixed top-0 w-full z-50">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high/50 hover:bg-primary/20 transition-colors tap-scale text-on-surface">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex-1 text-center pr-10">
+<span class="text-primary font-headline-lg-mobile font-bold tracking-tight">ElectroStream</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col px-container-margin pt-24 pb-12">
+<!-- Hero Branding Section -->
+<div class="mb-section-gap mt-4">
+<h1 class="text-display-lg-mobile font-display-lg-mobile text-on-surface">Login</h1>
+<p class="text-on-surface-variant font-body-sm mt-2">Welcome back to the future of sound and light.</p>
+</div>
+<!-- Login Form -->
+<section class="space-y-gutter-md">
+<!-- Email Field -->
+<div class="space-y-stack-sm">
+<label class="text-label-bold-mobile font-label-bold-mobile text-on-surface-variant uppercase tracking-widest ml-1">Email Address</label>
+<div class="relative group input-group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary transition-colors input-icon">mail</span>
+</div>
+<input class="w-full h-14 bg-surface-container-low border border-outline-variant/30 rounded-lg pl-12 pr-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-on-surface placeholder:text-outline/50" placeholder="name@email.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-stack-sm">
+<div class="flex justify-between items-center px-1">
+<label class="text-label-bold-mobile font-label-bold-mobile text-on-surface-variant uppercase tracking-widest">Password</label>
+<a class="text-primary font-label-bold-mobile hover:opacity-80 transition-opacity" href="#">Forgot Password?</a>
+</div>
+<div class="relative group input-group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary transition-colors input-icon">lock</span>
+</div>
+<input class="w-full h-14 bg-surface-container-low border border-outline-variant/30 rounded-lg pl-12 pr-12 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-on-surface placeholder:text-outline/50" placeholder="••••••••" type="password"/>
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full h-16 bg-primary text-on-primary font-bold text-headline-md-mobile rounded-lg shadow-lg shadow-primary/10 hover:opacity-90 active:scale-95 transition-all mt-4 tap-scale">
+                    Sign In
+                </button>
+</section>
+<!-- Divider -->
+<div class="relative flex items-center py-section-gap">
+<div class="flex-grow border-t border-outline-variant/20"></div>
+<span class="flex-shrink mx-4 text-on-surface-variant font-label-bold-mobile uppercase">Or continue with</span>
+<div class="flex-grow border-t border-outline-variant/20"></div>
+</div>
+<!-- Social Login -->
+<div class="grid grid-cols-2 gap-gutter-md">
+<button class="flex items-center justify-center h-14 rounded-lg bg-surface-container-high border border-outline-variant/30 hover:bg-surface-bright transition-colors tap-scale">
+<img alt="Google Logo" class="w-6 h-6 mr-3" data-alt="Official high-resolution Google logo with its characteristic vibrant red, yellow, green, and blue colors, rendered cleanly on a transparent background for professional UI integration. The aesthetic is clean and modern, representing universal accessibility and high-tech corporate reliability within the ElectroStream application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBavQPSc_VCYQQ7RQGQcvjUjt3w8b5XmDzKcRIKmSsO4BxK2mvuU-r2sHv-N5JO4gHDQP7Ewz8dL6bgwz2nQv18CefZxo0E3dvAHyQPd4epLiybbOEtwAmcs2SWCVJbbyoTcmMADgnKTT2kZL7cvnUK_ynaKTUmR_ADIcB6kLirWDkE1WUbzmAe2KEjTZ9UhgaY6YCf-KYejbTYtSYng15vp2H2RH1braqmSgLN6nE0xdg_JlOp_SHkZUfevHq2fbzdXGICS9t2RPI"/>
+<span class="text-on-surface font-label-bold-mobile">GOOGLE</span>
+</button>
+<button class="flex items-center justify-center h-14 rounded-lg bg-surface-container-high border border-outline-variant/30 hover:bg-surface-bright transition-colors tap-scale">
+<span class="material-symbols-outlined text-on-surface mr-3" style="font-variation-settings: 'FILL' 1;">apps</span>
+<span class="text-on-surface font-label-bold-mobile">APPLE</span>
+</button>
+</div>
+<!-- Footer Link -->
+<div class="mt-auto pt-12 text-center">
+<p class="text-on-surface-variant font-body-sm">
+                    Don't have an account?
+                    <a class="text-primary font-bold ml-1 hover:underline" href="#">Create Account</a>
+</p>
+</div>
+</main>
+<!-- Illustration / Mood Section (Mobile Focus) -->
+<div class="px-container-margin pb-12">
+<div class="relative h-48 rounded-lg overflow-hidden glass-panel">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/5"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-full h-full bg-cover bg-center mix-blend-overlay opacity-60" data-alt="A cinematic, low-angle shot of a glowing high-tech emerald green circuit board pulsating with energy inside a dark, obsidian-colored metallic casing. The scene is illuminated by sharp neon green light trails that wrap around premium audio components, creating a deep navy and vibrant emerald atmosphere. The lighting is moody and sophisticated, emphasizing a luxury electronics aesthetic with high contrast and sharp focus." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxgf3CJofe2fwz2k2I1Qrm4MQBKR2SGgBW3KBacRaxHIxOc4fb0YJIP2TJ1IWxHP6tioTwRRhnzo6gVnMBbODIj9oNTviLtAfCNuSPwz6WH9BbZ9LcqecZUQ1vGZJqwFJKKcIeOBM76eOVfDT03XVkOM-bodwwAxcUQrEtzKNZAWGuTY3LYA0fctPOtuaCHrRifspWb4H4Y0WK5C9gxPj9zadrf8NI_-ttt0vB5IM_0A2LLqAR3m9S2UrUJ9heljAzdjw5BknAbeQ')"></div>
+<div class="relative z-10 text-center px-8">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">bolt</span>
+<p class="text-on-surface font-label-bold-mobile tracking-[0.2em]">POWERING YOUR STREAM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.parentElement.classList.add('scale-[1.01]');
+                input.parentElement.parentElement.classList.add('transition-transform');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+</body></html>

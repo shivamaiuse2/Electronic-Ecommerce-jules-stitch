@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream - Sign Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#879488",
+                    "on-tertiary-container": "#592c00",
+                    "on-secondary-fixed-variant": "#513f64",
+                    "tertiary": "#ffb77f",
+                    "surface-dim": "#111415",
+                    "on-tertiary": "#4e2600",
+                    "tertiary-container": "#f58400",
+                    "on-surface-variant": "#bccabd",
+                    "secondary-container": "#513f64",
+                    "surface-container-high": "#282a2b",
+                    "secondary": "#d4beea",
+                    "secondary-fixed": "#efdbff",
+                    "on-surface": "#e1e3e4",
+                    "on-secondary-container": "#c2add8",
+                    "background": "#111415",
+                    "primary": "#5cde94",
+                    "on-tertiary-fixed-variant": "#6f3900",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#00210f",
+                    "on-background": "#e1e3e4",
+                    "inverse-surface": "#e1e3e4",
+                    "surface-container-highest": "#323536",
+                    "surface-tint": "#5cde94",
+                    "on-secondary-fixed": "#241436",
+                    "on-error": "#690005",
+                    "surface": "#111415",
+                    "surface-container-low": "#191c1d",
+                    "inverse-primary": "#006d3e",
+                    "on-primary-container": "#004224",
+                    "tertiary-fixed": "#ffdcc4",
+                    "surface-variant": "#323536",
+                    "on-tertiary-fixed": "#2f1500",
+                    "on-secondary": "#39294c",
+                    "surface-container": "#1d2021",
+                    "on-primary-fixed-variant": "#00522e",
+                    "inverse-on-surface": "#2e3132",
+                    "surface-container-lowest": "#0c0f10",
+                    "surface-bright": "#373a3b",
+                    "error-container": "#93000a",
+                    "primary-container": "#2eb872",
+                    "outline-variant": "#3d4a40",
+                    "tertiary-fixed-dim": "#ffb77f",
+                    "primary-fixed-dim": "#5cde94",
+                    "on-primary": "#00391e",
+                    "error": "#ffb4ab",
+                    "secondary-fixed-dim": "#d4beea",
+                    "primary-fixed": "#7afbae"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter-md": "16px",
+                    "stack-md": "12px",
+                    "section-gap": "32px",
+                    "stack-sm": "8px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-surface {
+            background: rgba(29, 32, 33, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(135, 148, 136, 0.1);
+        }
+
+        .input-focus-effect:focus-within {
+            box-shadow: 0 0 0 2px #5cde94;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col overflow-x-hidden">
+<!-- Hero/Atmospheric Background Decor -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="absolute top-1/2 -left-48 w-80 h-80 bg-secondary/10 rounded-full blur-[80px]"></div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col px-container-margin py-stack-md z-10 max-w-lg mx-auto w-full">
+<!-- Back Navigation -->
+<nav class="flex items-center h-16 mb-stack-sm">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+</nav>
+<!-- Header -->
+<header class="mb-section-gap">
+<h1 class="text-display-lg font-display-lg text-on-surface mb-2">Create Account</h1>
+<p class="text-body-lg text-on-surface-variant">Join the future of high-performance electronics and exclusive tech streams.</p>
+</header>
+<!-- Signup Form -->
+<section class="flex flex-col gap-gutter-md">
+<!-- Full Name -->
+<div class="flex flex-col gap-stack-sm">
+<label class="text-label-bold font-label-bold text-primary uppercase tracking-wider px-1">Full Name</label>
+<div class="flex items-center gap-3 bg-surface-container-low p-4 rounded-lg border border-outline-variant/30 input-focus-effect transition-all">
+<span class="material-symbols-outlined text-outline" data-icon="person">person</span>
+<input class="bg-transparent border-none outline-none flex-1 text-on-surface placeholder:text-outline/50 p-0 focus:ring-0" placeholder="John Doe" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-stack-sm">
+<label class="text-label-bold font-label-bold text-primary uppercase tracking-wider px-1">Email Address</label>
+<div class="flex items-center gap-3 bg-surface-container-low p-4 rounded-lg border border-outline-variant/30 input-focus-effect transition-all">
+<span class="material-symbols-outlined text-outline" data-icon="mail">mail</span>
+<input class="bg-transparent border-none outline-none flex-1 text-on-surface placeholder:text-outline/50 p-0 focus:ring-0" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-stack-sm">
+<label class="text-label-bold font-label-bold text-primary uppercase tracking-wider px-1">Phone Number</label>
+<div class="flex items-center gap-3 bg-surface-container-low p-4 rounded-lg border border-outline-variant/30 input-focus-effect transition-all">
+<span class="material-symbols-outlined text-outline" data-icon="call">call</span>
+<input class="bg-transparent border-none outline-none flex-1 text-on-surface placeholder:text-outline/50 p-0 focus:ring-0" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<!-- Password -->
+<div class="flex flex-col gap-stack-sm">
+<label class="text-label-bold font-label-bold text-primary uppercase tracking-wider px-1">Password</label>
+<div class="flex items-center gap-3 bg-surface-container-low p-4 rounded-lg border border-outline-variant/30 input-focus-effect transition-all">
+<span class="material-symbols-outlined text-outline" data-icon="lock">lock</span>
+<input class="bg-transparent border-none outline-none flex-1 text-on-surface placeholder:text-outline/50 p-0 focus:ring-0" placeholder="••••••••" type="password"/>
+<button class="text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="mt-stack-md w-full bg-primary text-on-primary h-14 rounded-lg font-headline-md text-headline-md hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+                Create Account
+            </button>
+</section>
+<!-- Social Signups -->
+<section class="mt-section-gap">
+<div class="flex items-center gap-4 mb-section-gap">
+<div class="h-[1px] flex-1 bg-outline-variant/30"></div>
+<span class="text-label-bold font-label-bold text-outline">OR SIGN UP WITH</span>
+<div class="h-[1px] flex-1 bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-2 gap-gutter-md">
+<button class="flex items-center justify-center gap-2 bg-surface-container h-14 rounded-lg border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+<div class="w-6 h-6 rounded-full overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-contain" data-alt="A clean, minimalist 3D render of the Google 'G' logo on a white circular badge, captured with cinematic studio lighting and subtle depth of field. The style is premium, tech-focused, and highly professional, utilizing the brand's iconic blue, red, yellow, and green colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB74b749tRZYbyUPXZBkc949T8VSs6ec2iFgh56jqKknjI9k4x3qESJ4na50PgFzOfTWD2DRwJkKo-KMtbOBDLb0czRrdYxPiQV2Wts9H9L9OJY3M9p0l4kitPALuSOp9QB4MqWlRm_v0OBHRC0TJopcdlF4b22vIUNnIPDk4wHZrj_oEhO27nKZsTPQt1mFG37RHu3lW3vU8t-bCx8ZKc5X9w8T94XNDQHVoUG_D0i5Qc61GSDGLwRTDYpsoX3qVLmiz_4Y7advMQ"/>
+</div>
+<span class="text-body-lg font-headline-md text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 bg-surface-container h-14 rounded-lg border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+<div class="w-6 h-6 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface" data-icon="apple">apps</span>
+</div>
+<span class="text-body-lg font-headline-md text-on-surface">Apple</span>
+</button>
+</div>
+</section>
+<!-- Terms and Conditions Footer -->
+<footer class="mt-auto pt-section-gap pb-container-margin text-center">
+<p class="text-body-sm text-on-surface-variant max-w-xs mx-auto">
+                By creating an account, you agree to ElectroStream's
+                <a class="text-primary hover:underline font-bold" href="#">Terms of Service</a>
+                and
+                <a class="text-primary hover:underline font-bold" href="#">Privacy Policy</a>.
+            </p>
+<div class="mt-gutter-md">
+<p class="text-body-lg text-on-surface">
+                    Already have an account?
+                    <a class="text-primary font-bold hover:underline" href="#">Log In</a>
+</p>
+</div>
+</footer>
+</main>
+<!-- Floating Atmosphere Elements -->
+<div class="fixed bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-background to-transparent pointer-events-none -z-10"></div>
+<script>
+        // Simple micro-interaction for button hover
+        const primaryBtn = document.querySelector('button.bg-primary');
+        primaryBtn.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = primaryBtn.getBoundingClientRect();
+            const x = (e.clientX - left) / width;
+            const y = (e.clientY - top) / height;
+            primaryBtn.style.transform = `scale(1.02) translateY(-2px)`;
+        });
+        primaryBtn.addEventListener('mouseleave', () => {
+            primaryBtn.style.transform = '';
+        });
+
+        // Add subtle focus ring effects to all inputs
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            const parent = input.parentElement;
+            input.addEventListener('focus', () => {
+                parent.classList.add('border-primary/50');
+            });
+            input.addEventListener('blur', () => {
+                parent.classList.remove('border-primary/50');
+            });
+        });
+    </script>
+</body></html>

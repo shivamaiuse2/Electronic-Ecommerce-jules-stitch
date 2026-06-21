@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>ElectroStream | Premium Electronics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#191c1d",
+                    "secondary": "#d4beea",
+                    "outline-variant": "#3d4a40",
+                    "on-error-container": "#ffdad6",
+                    "on-error": "#690005",
+                    "surface-dim": "#111415",
+                    "on-tertiary": "#4e2600",
+                    "on-primary-fixed-variant": "#00522e",
+                    "tertiary-fixed-dim": "#ffb77f",
+                    "surface": "#111415",
+                    "on-secondary-fixed": "#241436",
+                    "inverse-surface": "#e1e3e4",
+                    "tertiary-container": "#f58400",
+                    "on-secondary-fixed-variant": "#513f64",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#6f3900",
+                    "inverse-primary": "#006d3e",
+                    "surface-variant": "#323536",
+                    "secondary-fixed": "#efdbff",
+                    "background": "#111415",
+                    "primary-fixed-dim": "#5cde94",
+                    "surface-container-highest": "#323536",
+                    "on-tertiary-container": "#592c00",
+                    "surface-container": "#1d2021",
+                    "on-primary-fixed": "#00210f",
+                    "surface-container-high": "#282a2b",
+                    "tertiary": "#ffb77f",
+                    "secondary-fixed-dim": "#d4beea",
+                    "primary-container": "#2eb872",
+                    "primary": "#5cde94",
+                    "surface-container-lowest": "#0c0f10",
+                    "surface-bright": "#373a3b",
+                    "inverse-on-surface": "#2e3132",
+                    "surface-tint": "#5cde94",
+                    "secondary-container": "#513f64",
+                    "primary-fixed": "#7afbae",
+                    "on-primary": "#00391e",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#bccabd",
+                    "on-background": "#e1e3e4",
+                    "on-secondary": "#39294c",
+                    "outline": "#879488",
+                    "on-tertiary-fixed": "#2f1500",
+                    "tertiary-fixed": "#ffdcc4",
+                    "on-secondary-container": "#c2add8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter-md": "16px",
+                    "container-margin": "24px",
+                    "section-gap": "32px",
+                    "stack-sm": "8px",
+                    "stack-md": "12px"
+            },
+            "fontFamily": {
+                    "label-bold": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-bold-mobile": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #111415;
+            color: #e1e3e4;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .glass-card {
+            background: rgba(50, 53, 54, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(135, 148, 136, 0.1);
+        }
+
+        .product-hover:hover .product-img {
+            transform: scale(1.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background pb-24">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 dark:border-outline-variant/20 shadow-sm">
+<div class="flex justify-between items-center px-container-margin h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">person</span>
+</div>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-primary dark:text-primary">ElectroStream</h1>
+</div>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+</div>
+</header>
+<main class="mt-20 px-container-margin space-y-section-gap">
+<!-- Search & Filter Bar (Mobile Integrated Style) -->
+<div class="flex gap-stack-md mt-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-12 bg-surface-container rounded-full pl-12 pr-4 border-none focus:ring-2 focus:ring-primary text-body-sm" placeholder="Search gadgets..." type="text"/>
+</div>
+<button class="w-12 h-12 bg-tertiary-container rounded-full flex items-center justify-center text-on-tertiary-container shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<!-- Category Carousel -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">Categories</h2>
+<button class="text-primary font-label-bold text-label-bold">View All</button>
+</div>
+<div class="flex gap-6 overflow-x-auto hide-scrollbar py-2">
+<!-- Category Item -->
+<div class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_0_15px_rgba(92,222,148,0.3)] group-active:scale-90 transition-transform border-4 border-surface-container">
+<span class="material-symbols-outlined text-[28px]">laptop_mac</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface">Laptops</span>
+</div>
+<!-- Category Item -->
+<div class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]">sports_esports</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface-variant">Gaming</span>
+</div>
+<!-- Category Item -->
+<div class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]">headphones</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface-variant">Audio</span>
+</div>
+<!-- Category Item -->
+<div class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]">watch</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface-variant">Wearables</span>
+</div>
+<!-- Category Item -->
+<div class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]">smartphone</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface-variant">Phones</span>
+</div>
+</div>
+</section>
+<!-- Hero Promotional Banner -->
+<section class="relative h-64 rounded-lg overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A professional, cinematic shot of the latest dark-colored MacBook Pro on a polished granite surface. The lighting is moody and focused, with sharp green neon reflections highlighting the laptop's metallic edges. The background is a blurred high-tech workspace with subtle deep navy and emerald green ambient lights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFADU2k9s9yi9OiJkrklAPB1BHzW2rjXuwOcoqnMSBgJ3wQZNZLX4gHrdfpapXKyxWZbAStYDdiAlwdl6v8YheC-klwGoTD9868M3mgpMOUmReXgVWMlS-uZyPzI0qLDhW-BRiIfKm7jFOY1bbEnW_SoP7xuX_D9d50W5z0GCTZGInY41hfUImHZbAnJbNvXswXR6iB8MFf22QpFD6YKbLyaQ4wo9nefxW2-JnUr6k2yD4H4n25dVZMYUwI5G0nxjkWLbkxM5nV6w')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/90 via-surface-container-lowest/40 to-transparent"></div>
+<div class="absolute inset-0 flex flex-col justify-center px-8 space-y-4">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-label-bold font-label-bold w-fit">NEW ARRIVAL</span>
+<h3 class="font-display-lg text-display-lg text-white max-w-[200px]">Next Gen MacBook Pro</h3>
+<p class="text-body-sm text-on-surface-variant">Starting at $1,999</p>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-bold text-label-bold w-fit shadow-lg active:scale-95 transition-all">Buy Now</button>
+</div>
+</section>
+<!-- Best Deals Grid -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">Best Deals</h2>
+<div class="flex gap-2">
+<span class="text-error font-label-bold text-label-bold">Ends in 02:45:11</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Product Card 1 -->
+<div class="bg-surface-container rounded-lg p-3 product-hover group">
+<div class="relative bg-surface-container-high rounded-lg aspect-square overflow-hidden mb-3">
+<img class="product-img w-full h-full object-contain transition-transform duration-300" data-alt="Close-up studio shot of premium matte black over-ear noise-cancelling headphones. The product is floating against a dark navy background with sharp emerald green rim lighting. High contrast, sleek technical textures, professional e-commerce style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuOxkQWBkSY2790hLPOUf1TwudUCYMbK0xuyTg1Xqg8t7PpGJ9rhvj-6oHoPNXd5fE28yF2V5XnoBWAFhALQwlc-DsJejPZ4KpaBDa0PDXmjYO1JAsXbARbVgRE6eIbOfm8Zz-HSQFxwBCnDta-zMoGM09IT9fEn5QLaPkBKVCZBmEetdt0FHK4qiuuskSiGlYkPgDquQrNy-SX_vjqahEwp7naIbXF4-bYMFc9o7_qdfCJy2B9Kmrw-TdPxlXyq7ypS9LikqNeYM"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface/60 backdrop-blur-md rounded-full flex items-center justify-center text-primary active:scale-90">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h4 class="font-label-bold text-label-bold text-on-surface truncate">Sony WH-1000XM5</h4>
+<div class="flex items-center gap-1 my-1">
+<span class="material-symbols-outlined text-tertiary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] text-on-surface-variant font-label-bold">4.9 (2k+)</span>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-md text-primary">$349</span>
+<button class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-on-primary active:scale-75 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container rounded-lg p-3 product-hover group">
+<div class="relative bg-surface-container-high rounded-lg aspect-square overflow-hidden mb-3">
+<img class="product-img w-full h-full object-contain transition-transform duration-300" data-alt="A futuristic mechanical gaming keyboard with vibrant RGB lighting focused on emerald green tones. The keyboard is black with brushed aluminum details. Cinematic studio lighting on a dark reflective surface, showcasing high-end industrial design and premium build quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2b2iRelipNbABODEwcOUmm74niEzOY0ZuUgFXMLmfA6kidTEPbb0yE4bDHvbIUW_pXs5TrP4Tfiy26t4FlGlwkJ-G_lZkqMZLnAFaaeiylDrkOD9lpMlzTr5ozo0gkZTqcTONkomzb2s4Rv9_K_BMdJE0fkhKfnxYDcLErgiDvEodm8Loz7LLof1PMKJpqI8ak5Lhx9fljpHIYjZz0JPZRf2mwpLdXUtn4c4vFvEUfAN4H3VDBghNef-bA9-9uKFNA6YcNAXm9GY"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface/60 backdrop-blur-md rounded-full flex items-center justify-center text-primary active:scale-90">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-2 bg-error text-on-error px-2 py-0.5 rounded-full text-[10px] font-bold">-20%</div>
+</div>
+<h4 class="font-label-bold text-label-bold text-on-surface truncate">Razer Huntsman V2</h4>
+<div class="flex items-center gap-1 my-1">
+<span class="material-symbols-outlined text-tertiary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] text-on-surface-variant font-label-bold">4.7 (842)</span>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="font-headline-md text-primary">$159</span>
+<span class="text-[10px] text-on-surface-variant line-through">$199</span>
+</div>
+<button class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-on-primary active:scale-75 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended Bento Section -->
+<section class="pb-8">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Recommended for You</h2>
+<div class="bento-grid">
+<!-- Large Bento Item -->
+<div class="col-span-2 row-span-2 glass-card rounded-lg p-5 flex flex-col justify-between h-80 relative overflow-hidden">
+
+<div class="relative z-10">
+<h4 class="font-headline-lg text-headline-lg text-white">Ultimate Gaming Rig</h4>
+<p class="text-body-sm text-on-surface-variant mt-2">Custom RTX 4090 builds ready to ship.</p>
+</div>
+<div class="relative z-10 flex items-end justify-between">
+<button class="bg-white text-background px-4 py-2 rounded-full font-label-bold text-label-bold active:scale-95 transition-transform">Explore</button>
+<div class="w-24 h-24">
+<img class="w-full h-full object-contain" data-alt="A powerful high-end gaming PC tower with a transparent side panel revealing glowing emerald green liquid cooling pipes and hardware. Set against a dark, minimalist laboratory background with soft bokeh. Premium, high-tech aesthetics, professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHv7Kxy_AE2JWPWgzImlSF2H2mff5uAz5guGPuR5mjWoWwsK3awEQ3J6zz9rvi8AP0ncSSobi1_b1STUURBq6Cx-dZZZirvCreVZDOqeKdm57WdXrgQ-lPrtF-1k-jd_JcFLD9yd3s8MnJca8r1F7Hpxl89KwXVG8jA2gALX2UzM9sLZNqXhn5YfHEFmgYLVokDhhprB3kpX1m9fV7vR7m86p576p4rtHZfDpoe6eDveekGUmfT-WZgIDl6zwCjUW4VGenZeZxJII"/>
+</div>
+</div>
+</div>
+<!-- Small Bento Item -->
+<div class="col-span-2 bg-surface-container-high rounded-lg p-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-primary font-label-bold text-[10px]">ACCESSORIES</span>
+<h4 class="font-label-bold text-on-surface">Magic Trackpad</h4>
+<span class="text-primary font-bold mt-1">$129</span>
+</div>
+<div class="w-16 h-16">
+<img class="w-full h-full object-contain" data-alt="Minimalist top-down view of a white Apple Magic Trackpad on a dark grey desktop. High-key soft lighting from the side creating subtle shadows. Professional, clean tech product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlYO3SBeUD5X-_S81am-WnEOFKU9p37I__eTWNMB0lENCzxP5XbaGEAk_nFahQ8kE2FtWn0yIaRpyMa-oCSUoQ20iBZSqbh7JQM229xRCqpTmB7v-mPllL0KXIQ7qxhZJvGKx7ahVisFg8HgRcLt4eVjMa3O_hHT1GdFA910RtrOXcaz832qX_jZ4FpSXTCgUFdhJjviwNos3J73yKMOigvGn37Yg4gw99V5jPcisdP04EaNg73FKDiDrXxmqOFB_PUhlvoI8pQ7o"/>
+</div>
+</div>
+<!-- Another Small Bento Item -->
+<div class="col-span-2 bg-secondary-container/20 rounded-lg p-4 flex items-center justify-between border border-secondary/10">
+<div class="flex flex-col">
+<span class="text-secondary font-label-bold text-[10px]">SMART HOME</span>
+<h4 class="font-label-bold text-on-surface">HomePod Mini</h4>
+<span class="text-secondary font-bold mt-1">$99</span>
+</div>
+<div class="w-16 h-16">
+<img class="w-full h-full object-contain" data-alt="A mesh-covered dark grey circular smart speaker on a wooden table. Soft warm morning light hitting the top touch interface which shows a subtle colorful glow. Cozy, high-end lifestyle product shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGcA---SRf1kKdmK5yRUNcLeEmJXx0pIiY4bN01u3_2Mmc3Z-8qBTJFAHPe4g3BZTWCIPrJkta2gAOeQADqZXQnJErUD-mPWIe4kvk3FH9oniy21nUUqlF7CVQi7yNgW_P-zonGX7YgsbnHWN_hx4K5fGTWXud_HlKQ-etm_TW--2-43fZ0nvwgz6OEKbucY07EhwrdIB6lHBjCyWdVROv4vX9bcCTYnmuIW1rnN_FVfx5e1XuzxnKjXlTUE65olsTFLB6nOfNiDk"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full rounded-t-lg z-50 bg-surface-container dark:bg-surface-container shadow-[0_-4px_20px_rgba(0,0,0,0.4)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe w-full">
+<!-- Nav Item: Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary gap-1 scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Home</span>
+</a>
+<!-- Nav Item: Cart -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-[26px]">shopping_cart</span>
+<span class="absolute -top-1 -right-1 w-4 h-4 bg-error text-on-error rounded-full text-[10px] flex items-center justify-center font-bold">2</span>
+</div>
+<span class="text-label-bold-mobile font-label-bold-mobile">Cart</span>
+</a>
+<!-- Nav Item: Wishlist -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">favorite</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Wishlist</span>
+</a>
+<!-- Nav Item: Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">person</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Profile</span>
+</a>
+</div>
+</nav>
+<script>
+        // Simple Micro-interaction for categories
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active classes from others
+                document.querySelectorAll('.group .rounded-full').forEach(circle => {
+                    circle.classList.remove('bg-primary', 'text-on-primary', 'shadow-[0_0_15px_rgba(92,222,148,0.3)]', 'border-4', 'border-surface-container');
+                    circle.classList.add('bg-surface-container', 'text-on-surface-variant');
+                });
+                document.querySelectorAll('.group span.font-label-bold').forEach(text => {
+                    text.classList.remove('text-on-surface');
+                    text.classList.add('text-on-surface-variant');
+                });
+
+                // Add to current
+                const circle = item.querySelector('.rounded-full');
+                circle.classList.add('bg-primary', 'text-on-primary', 'shadow-[0_0_15px_rgba(92,222,148,0.3)]', 'border-4', 'border-surface-container');
+                circle.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+                const text = item.querySelector('span.font-label-bold');
+                text.classList.add('text-on-surface');
+                text.classList.remove('text-on-surface-variant');
+            });
+        });
+
+        // Scroll reveal logic placeholder
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

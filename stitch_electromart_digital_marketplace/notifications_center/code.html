@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>ElectroStream | Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-indicator {
+            view-transition-name: active-tab;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .notification-card {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#111415",
+                        "on-tertiary-fixed": "#2f1500",
+                        "inverse-on-surface": "#2e3132",
+                        "on-secondary-container": "#c2add8",
+                        "surface-dim": "#111415",
+                        "surface-container-highest": "#323536",
+                        "secondary-container": "#513f64",
+                        "outline": "#879488",
+                        "on-tertiary-container": "#592c00",
+                        "on-secondary-fixed-variant": "#513f64",
+                        "on-surface-variant": "#bccabd",
+                        "on-primary": "#00391e",
+                        "surface-container-high": "#282a2b",
+                        "primary-container": "#2eb872",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-secondary": "#39294c",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#00522e",
+                        "surface-container-low": "#191c1d",
+                        "on-secondary-fixed": "#241436",
+                        "inverse-primary": "#006d3e",
+                        "surface-container": "#1d2021",
+                        "primary-fixed-dim": "#5cde94",
+                        "primary-fixed": "#7afbae",
+                        "on-tertiary-fixed-variant": "#6f3900",
+                        "secondary-fixed-dim": "#d4beea",
+                        "surface-tint": "#5cde94",
+                        "tertiary": "#ffb77f",
+                        "surface-bright": "#373a3b",
+                        "inverse-surface": "#e1e3e4",
+                        "surface-container-lowest": "#0c0f10",
+                        "secondary-fixed": "#efdbff",
+                        "on-surface": "#e1e3e4",
+                        "on-tertiary": "#4e2600",
+                        "tertiary-container": "#f58400",
+                        "on-primary-fixed": "#00210f",
+                        "background": "#111415",
+                        "on-primary-container": "#004224",
+                        "error": "#ffb4ab",
+                        "secondary": "#d4beea",
+                        "primary": "#5cde94",
+                        "on-background": "#e1e3e4",
+                        "surface-variant": "#323536",
+                        "tertiary-fixed-dim": "#ffb77f",
+                        "tertiary-fixed": "#ffdcc4",
+                        "outline-variant": "#3d4a40"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "section-gap": "32px",
+                        "gutter-md": "16px",
+                        "stack-md": "12px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "label-bold-mobile": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "headline-md-mobile": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-24 selection:bg-primary/30">
+<!-- Top AppBar (from Shared Components) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 dark:border-outline-variant/20 shadow-sm flex justify-between items-center px-container-margin h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a modern tech enthusiast with soft cinematic lighting, against a minimalist dark grey background, matching a premium electronics brand aesthetic. High-quality digital photography with sharp focus and subtle bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD80O3Ou5Bt6RewbwEHsSlYa0TU1Ry7qQJqT1IJeoH5bxNQBOvrFd46VdHB8zc459XX11T2CzMyoDC3Sw5e3s6_EGcjJk1e5DtoN_31spjjtJnB80194RHh266FESqIGsvgrQQdC0_DCWRpHUAzv14bRjzC7-S-09fFBshNrt8SEYG_6Iw9EyfpU68ndhjAhi13nnp_eNo4ctbG84oJk6VqYmdpi6Gld5qFPp_MTZRnpPHnVzaBmHEVDCxv4OjnO_G8TuzUccWupVk"/>
+</div>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-primary dark:text-primary">ElectroStream</h1>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary hover:opacity-80 transition-opacity p-2 active:scale-95 transition-transform duration-200" data-icon="search">search</button>
+</header>
+<main class="pt-20 px-container-margin">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-display-lg font-display-lg text-on-surface">Activity</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Stay updated with your latest tech</p>
+</div>
+<button class="text-label-bold font-label-bold text-primary px-4 py-2 rounded-full border border-primary/20 hover:bg-primary/10 transition-colors" onclick="markAllRead()">
+                Mark all as read
+            </button>
+</div>
+<!-- Category Chips -->
+<div class="flex gap-stack-md mb-8 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-6 py-3 rounded-full bg-primary text-on-primary font-label-bold text-label-bold shadow-lg shadow-primary/20">
+                All
+            </button>
+<button class="px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-label-bold text-label-bold hover:bg-surface-container-highest transition-colors">
+                Orders
+            </button>
+<button class="px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-label-bold text-label-bold hover:bg-surface-container-highest transition-colors">
+                Offers
+            </button>
+<button class="px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-label-bold text-label-bold hover:bg-surface-container-highest transition-colors">
+                Security
+            </button>
+</div>
+<!-- Notifications List -->
+<div class="space-y-4" id="notification-list">
+<!-- Security Alert (Priority) -->
+<div class="notification-card bg-error-container/10 border border-error/20 p-4 rounded-lg flex gap-4 items-start relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="bg-error/20 p-3 rounded-full text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-headline-md-mobile font-headline-md-mobile text-on-surface">Security Alert</h3>
+<span class="text-label-bold font-label-bold text-on-surface-variant">2m ago</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">New login detected from a MacBook Pro in Tokyo, Japan. Was this you?</p>
+<div class="mt-3 flex gap-3">
+<button class="text-label-bold font-label-bold px-4 py-2 bg-error text-on-error rounded-full">Secure Account</button>
+<button class="text-label-bold font-label-bold px-4 py-2 border border-outline-variant text-on-surface rounded-full">It was me</button>
+</div>
+</div>
+</div>
+<!-- Promotional Offer -->
+<div class="notification-card bg-surface-container-low border border-outline-variant/20 p-4 rounded-lg flex gap-4 items-start hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="bg-primary/10 p-3 rounded-full text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_offer</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-headline-md-mobile font-headline-md-mobile text-on-surface">Flash Sale: 24h Only!</h3>
+<span class="text-label-bold font-label-bold text-on-surface-variant">1h ago</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Get up to 40% off on all StreamMax headphones. Upgrade your audio game today.</p>
+<div class="mt-4 rounded-lg overflow-hidden h-32 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="A wide cinematic shot of sleek high-end wireless headphones with glowing green LED accents, resting on a polished obsidian surface with atmospheric smoke and dramatic lighting. The vibe is futuristic and premium, dominated by deep blacks and vibrant emerald green highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0q52zWzZkJ5R_mrp-Tod2G--PAAEaeSiy8oPEBxSKAxKdxXgvE7rZ7__QMoMrgmbf553yz0S-FyjnoSNjVlQ4l4GoZAg4UZ4Zw9YFZ4DED76ewLCkB4abE1sCVpW0H8U5Ug2AFUqW68eqvEU59KagNrelxWGxX6CQLCyapnUsbqI-UrzO-Xn8PVaw3ZtLhHnIYGnFq-z4IjdPfLjZBiMnkQXytPgf3Wbo8NmTcm7BJgpDxTf_nS94oWw6UyTtudpOfeAgiHxBRWc')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
+<span class="text-label-bold font-label-bold text-white bg-primary px-2 py-1 rounded">Code: TECH40</span>
+</div>
+</div>
+</div>
+<div class="w-2 h-2 bg-primary rounded-full mt-2"></div>
+</div>
+<!-- Order Shipped -->
+<div class="notification-card bg-surface-container-low border border-outline-variant/20 p-4 rounded-lg flex gap-4 items-start hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="bg-secondary-container/30 p-3 rounded-full text-secondary group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-headline-md-mobile font-headline-md-mobile text-on-surface">Order Shipped</h3>
+<span class="text-label-bold font-label-bold text-on-surface-variant">5h ago</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Your order #ES-9921 for 'NeuroCore Processor' has been shipped and is on its way.</p>
+</div>
+<div class="w-2 h-2 bg-primary rounded-full mt-2"></div>
+</div>
+<!-- Order Delivered -->
+<div class="notification-card bg-surface-container-low/50 border border-outline-variant/10 p-4 rounded-lg flex gap-4 items-start opacity-70">
+<div class="bg-surface-variant p-3 rounded-full text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">package_2</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-headline-md-mobile font-headline-md-mobile text-on-surface">Order Delivered</h3>
+<span class="text-label-bold font-label-bold text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Your 'Void-Series Mechanical Keyboard' was successfully delivered. Enjoy your typing!</p>
+</div>
+</div>
+<!-- Discount Offer -->
+<div class="notification-card bg-surface-container-low border border-outline-variant/20 p-4 rounded-lg flex gap-4 items-start hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="bg-tertiary-container/20 p-3 rounded-full text-tertiary">
+<span class="material-symbols-outlined">celebration</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-headline-md-mobile font-headline-md-mobile text-on-surface">Anniversary Discount</h3>
+<span class="text-label-bold font-label-bold text-on-surface-variant">2 days ago</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">You've been with ElectroStream for 1 year! Here's a $50 gift card for your next purchase.</p>
+</div>
+<div class="w-2 h-2 bg-primary rounded-full mt-2"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (from Shared Components) -->
+<nav class="fixed bottom-0 w-full rounded-t-lg z-50 bg-surface-container dark:bg-surface-container shadow-[0_-4px_20px_rgba(0,0,0,0.4)] flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Wishlist</span>
+</a>
+<!-- ACTIVE TAB: Profile (as notification is usually a profile-sub-screen or account activity) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary gap-1 scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Profile</span>
+</a>
+</nav>
+<script>
+        function markAllRead() {
+            const dots = document.querySelectorAll('.bg-primary.rounded-full.w-2.h-2');
+            dots.forEach(dot => {
+                dot.style.transition = 'all 0.3s ease';
+                dot.style.opacity = '0';
+                dot.style.transform = 'scale(0)';
+                setTimeout(() => dot.remove(), 300);
+            });
+
+            const cards = document.querySelectorAll('.notification-card');
+            cards.forEach(card => {
+                card.style.opacity = '0.7';
+                card.classList.add('border-outline-variant/10');
+            });
+        }
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.notification-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body></html>

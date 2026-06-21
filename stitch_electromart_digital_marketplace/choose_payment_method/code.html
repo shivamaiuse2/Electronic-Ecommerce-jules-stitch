@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream - Secure Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#191c1d",
+                    "secondary": "#d4beea",
+                    "outline-variant": "#3d4a40",
+                    "on-error-container": "#ffdad6",
+                    "on-surface": "#e1e3e4",
+                    "on-primary-container": "#004224",
+                    "on-error": "#690005",
+                    "surface-dim": "#111415",
+                    "on-tertiary": "#4e2600",
+                    "on-primary-fixed-variant": "#00522e",
+                    "tertiary-fixed-dim": "#ffb77f",
+                    "surface": "#111415",
+                    "on-secondary-fixed": "#241436",
+                    "inverse-surface": "#e1e3e4",
+                    "tertiary-container": "#f58400",
+                    "on-secondary-fixed-variant": "#513f64",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#6f3900",
+                    "inverse-primary": "#006d3e",
+                    "surface-variant": "#323536",
+                    "secondary-fixed": "#efdbff",
+                    "background": "#111415",
+                    "primary-fixed-dim": "#5cde94",
+                    "surface-container-highest": "#323536",
+                    "on-tertiary-container": "#592c00",
+                    "surface-container": "#1d2021",
+                    "on-primary-fixed": "#00210f",
+                    "surface-container-high": "#282a2b",
+                    "tertiary": "#ffb77f",
+                    "secondary-fixed-dim": "#d4beea",
+                    "primary-container": "#2eb872",
+                    "primary": "#5cde94",
+                    "surface-container-lowest": "#0c0f10",
+                    "surface-bright": "#373a3b",
+                    "inverse-on-surface": "#2e3132",
+                    "surface-tint": "#5cde94",
+                    "secondary-container": "#513f64",
+                    "primary-fixed": "#7afbae",
+                    "on-primary": "#00391e",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#bccabd",
+                    "on-background": "#e1e3e4",
+                    "on-secondary": "#39294c",
+                    "outline": "#879488",
+                    "on-tertiary-fixed": "#2f1500",
+                    "tertiary-fixed": "#ffdcc4",
+                    "on-secondary-container": "#c2add8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter-md": "16px",
+                    "container-margin": "24px",
+                    "section-gap": "32px",
+                    "stack-sm": "8px",
+                    "stack-md": "12px"
+            },
+            "fontFamily": {
+                    "label-bold": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-bold-mobile": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md-mobile": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .payment-option-active {
+            border-color: #5cde94;
+            background-color: rgba(92, 222, 148, 0.05);
+        }
+        .glass-card {
+            background: rgba(29, 32, 33, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(135, 148, 136, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm flex justify-between items-center px-container-margin h-16">
+<div class="flex items-center gap-3">
+<button class="active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="text-headline-md-mobile font-headline-md-mobile font-bold text-primary">Secure Checkout</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">lock</span>
+</div>
+</header>
+<main class="pt-20 px-container-margin">
+<!-- Order Summary Glass Card -->
+<section class="mt-4 mb-section-gap">
+<div class="glass-card rounded-lg p- gutter-md overflow-hidden relative">
+<div class="p-4 relative z-10">
+<p class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest mb-1">Total Amount</p>
+<h2 class="text-display-lg font-display-lg text-primary">$1,299.00</h2>
+<div class="flex items-center gap-2 mt-2 opacity-70">
+<span class="material-symbols-outlined text-body-sm">shopping_bag</span>
+<span class="text-body-sm font-body-sm">3 Items in cart</span>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+</div>
+</section>
+<!-- Payment Methods Header -->
+<section class="mb-4">
+<h3 class="text-headline-md font-headline-md text-on-surface">Select Payment Method</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Choose your preferred way to pay securely</p>
+</section>
+<!-- Payment Options List -->
+<form class="space-y-stack-md pb-8" id="paymentForm">
+<!-- UPI Option -->
+<label class="block relative cursor-pointer group">
+<input checked="" class="hidden peer" name="payment" type="radio" value="upi"/>
+<div class="flex items-center justify-between p-4 rounded-DEFAULT bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all duration-200">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-body-lg font-headline-md text-on-surface">UPI</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">GPay, PhonePe, WhatsApp Pay</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary opacity-0 peer-checked:opacity-100 transition-opacity">check_circle</span>
+</div>
+</label>
+<!-- Card Option -->
+<label class="block relative cursor-pointer group">
+<input class="hidden peer" name="payment" type="radio" value="card"/>
+<div class="flex items-center justify-between p-4 rounded-DEFAULT bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all duration-200">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">credit_card</span>
+</div>
+<div>
+<p class="text-body-lg font-headline-md text-on-surface">Credit / Debit Cards</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Visa, Mastercard, RuPay, Amex</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary opacity-0 peer-checked:opacity-100 transition-opacity">check_circle</span>
+</div>
+</label>
+<!-- Net Banking Option -->
+<label class="block relative cursor-pointer group">
+<input class="hidden peer" name="payment" type="radio" value="netbanking"/>
+<div class="flex items-center justify-between p-4 rounded-DEFAULT bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all duration-200">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<p class="text-body-lg font-headline-md text-on-surface">Net Banking</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">All major Indian banks supported</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary opacity-0 peer-checked:opacity-100 transition-opacity">check_circle</span>
+</div>
+</label>
+<!-- Wallet Option -->
+<label class="block relative cursor-pointer group">
+<input class="hidden peer" name="payment" type="radio" value="wallet"/>
+<div class="flex items-center justify-between p-4 rounded-DEFAULT bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all duration-200">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wallet</span>
+</div>
+<div>
+<p class="text-body-lg font-headline-md text-on-surface">Wallets</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Paytm, MobiKwik, Amazon Pay</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary opacity-0 peer-checked:opacity-100 transition-opacity">check_circle</span>
+</div>
+</label>
+</form>
+<!-- Security Badge -->
+<div class="flex flex-col items-center justify-center py-6 text-on-surface-variant gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary scale-75">verified_user</span>
+<span class="text-label-bold font-label-bold uppercase">PCI-DSS Compliant</span>
+</div>
+<p class="text-[10px] text-center max-w-[240px] opacity-60">Your transaction is encrypted and secured by bank-grade security protocols.</p>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 w-full bg-surface-container rounded-t-lg z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] p-4 pb-safe">
+<button class="w-full bg-primary text-on-primary py-4 rounded-DEFAULT font-headline-md flex items-center justify-center gap-2 active:scale-95 transition-transform duration-150 group">
+<span>Pay Now</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+<script>
+        // Simple micro-interaction for payment method selection
+        const radioButtons = document.querySelectorAll('input[name="payment"]');
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                // Potential to trigger haptic feedback or specific UI updates here
+                console.log(`Selected payment method: ${e.target.value}`);
+            });
+        });
+
+        // Pay Now interaction
+        const payButton = document.querySelector('.bg-primary');
+        payButton.addEventListener('click', () => {
+            payButton.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <svg class="animate-spin h-5 w-5 text-on-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>Processing...</span>
+                </div>
+            `;
+
+            setTimeout(() => {
+                payButton.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined">check_circle</span>
+                        <span>Payment Successful</span>
+                    </div>
+                `;
+                payButton.classList.remove('bg-primary');
+                payButton.classList.add('bg-green-600');
+            }, 2000);
+        });
+    </script>
+</body></html>

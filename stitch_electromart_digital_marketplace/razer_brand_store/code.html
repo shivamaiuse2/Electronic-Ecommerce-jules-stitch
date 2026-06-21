@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream | Razer Brand Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .glass-card {
+            background: rgba(29, 32, 33, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .razer-gradient {
+            background: linear-gradient(135deg, rgba(92, 222, 148, 0.15) 0%, rgba(17, 20, 21, 1) 100%);
+        }
+        .hero-glow {
+            box-shadow: 0 0 80px -20px rgba(92, 222, 148, 0.3);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #111415; }
+        ::-webkit-scrollbar-thumb { background: #3d4a40; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #5cde94; }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#111415",
+                    "on-tertiary-fixed": "#2f1500",
+                    "inverse-on-surface": "#2e3132",
+                    "on-secondary-container": "#c2add8",
+                    "surface-dim": "#111415",
+                    "surface-container-highest": "#323536",
+                    "secondary-container": "#513f64",
+                    "outline": "#879488",
+                    "on-tertiary-container": "#592c00",
+                    "on-secondary-fixed-variant": "#513f64",
+                    "on-surface-variant": "#bccabd",
+                    "on-primary": "#00391e",
+                    "surface-container-high": "#282a2b",
+                    "primary-container": "#2eb872",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "on-secondary": "#39294c",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#00522e",
+                    "surface-container-low": "#191c1d",
+                    "on-secondary-fixed": "#241436",
+                    "inverse-primary": "#006d3e",
+                    "surface-container": "#1d2021",
+                    "primary-fixed-dim": "#5cde94",
+                    "primary-fixed": "#7afbae",
+                    "on-tertiary-fixed-variant": "#6f3900",
+                    "secondary-fixed-dim": "#d4beea",
+                    "surface-tint": "#5cde94",
+                    "tertiary": "#ffb77f",
+                    "surface-bright": "#373a3b",
+                    "inverse-surface": "#e1e3e4",
+                    "surface-container-lowest": "#0c0f10",
+                    "secondary-fixed": "#efdbff",
+                    "on-surface": "#e1e3e4",
+                    "on-tertiary": "#4e2600",
+                    "tertiary-container": "#f58400",
+                    "on-primary-fixed": "#00210f",
+                    "background": "#111415",
+                    "on-primary-container": "#004224",
+                    "error": "#ffb4ab",
+                    "secondary": "#d4beea",
+                    "primary": "#5cde94",
+                    "on-background": "#e1e3e4",
+                    "surface-variant": "#323536",
+                    "tertiary-fixed-dim": "#ffb77f",
+                    "tertiary-fixed": "#ffdcc4",
+                    "outline-variant": "#3d4a40"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "section-gap": "32px",
+                    "gutter-md": "16px",
+                    "stack-md": "12px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-md-mobile": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "label-bold-mobile": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-lg min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm flex justify-between items-center px-container-margin h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A futuristic and professional studio portrait of a young tech enthusiast wearing modern headphones. The lighting is dominated by emerald green and deep violet tones, creating a cinematic, premium electronics vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSkvtHHMuveBq-6O0f7IKxWLDlByHcxNJPOjGex-4zgZJaGZRg3cgGyW_dDuZUDaKAFZHCzip65Pyc7BUjdriw7ZA9JF3YYgtqM8kN5O5SV_dCi_6QfGB0rLJPFJnmrQ9CNAsPpZbNVQACspWebg073PgV6-CSG06dA6qC3qc8XvdLgJ5_D6SEjloHWs6Y7czp6O7KdErBIEWQSdzHtlsQk-zRtcgM6WuaxncjxyYgZjV8S6Vtl4RgqGOBGw40haUfnToDvwMa-I"/>
+</div>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-primary">ElectroStream</h1>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">search</button>
+</header>
+<!-- Main Content -->
+<main class="pt-16 px-container-margin space-y-section-gap">
+<!-- Brand Hero Section -->
+<section class="mt-stack-md relative h-[420px] rounded-lg overflow-hidden hero-glow">
+
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="relative z-10 h-full flex flex-col justify-end p-gutter-md pb-10">
+<div class="space-y-stack-sm max-w-[80%]">
+<span class="text-label-bold font-label-bold bg-primary text-on-primary px-3 py-1 rounded-full uppercase tracking-widest">New Release</span>
+<h2 class="text-display-lg font-display-lg text-primary">Razer Blade 16</h2>
+<p class="text-body-lg text-on-surface-variant">The world's first OLED 240Hz 16" display. Uncompromising performance for the pro gamers.</p>
+</div>
+<div class="mt-6">
+<button class="bg-primary text-on-primary font-label-bold py-4 px-10 rounded-DEFAULT active:scale-95 transition-transform">Explore Series</button>
+</div>
+</div>
+<img class="absolute top-0 right-0 h-full w-full object-cover -z-10 mix-blend-lighten opacity-80" data-alt="A high-end cinematic product shot of the Razer Blade 16 gaming laptop. The laptop is open, displaying a vibrant green abstract wallpaper. The chassis is sleek matte black with an illuminated green logo. It is set against a dark, moody background with subtle green neon light trails, emphasizing a professional yet high-energy tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfX71yfGQ8l5ZJtjULbtO87x2g71Xkq6fjC4E2Ck4V6Zk1pPW9nDvz5EhSWg9SWtIhzfWq5iMqQWbFRD3u_Qw6D_mFTkZKiEKhkp7MUchaN6wzRMdrYqEb-a2KEUIgsLh4VYnI3CKUi76SBVdGZ7WIk_E5iMLfc_i3rECEJNsS8rk3xt9CDAjrr4_TOP6GU0_IF_9DkJ8aqsEOn8G9stUN_hu-xjQYqVEQDiB8n-RwI_gmms8Ph4BqpBj887FWxVT-ssMj4ufmONA"/>
+</section>
+<!-- Philosophy Section -->
+<section class="space-y-stack-md">
+<div class="flex items-center gap-4">
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+<h3 class="text-label-bold font-label-bold uppercase tracking-widest text-primary">For Gamers. By Gamers.</h3>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+</div>
+<p class="text-body-lg text-center leading-relaxed text-on-surface-variant px-4">
+                Razer is the world’s leading lifestyle brand for gamers. Our triple-headed snake trademark is one of the most recognized logos in the global gaming and esports communities. With a fan base that spans every continent, we have designed and built the world’s largest gamer-focused ecosystem of hardware, software, and services.
+            </p>
+</section>
+<!-- Bento Grid: Best Sellers -->
+<section class="space-y-gutter-md">
+<div class="flex justify-between items-end">
+<h3 class="text-headline-md font-headline-md">Best Sellers</h3>
+<span class="text-primary font-label-bold flex items-center gap-1 cursor-pointer">View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+</div>
+<div class="grid grid-cols-2 gap-gutter-md">
+<!-- Large Featured Item -->
+<div class="col-span-2 glass-card rounded-lg p-gutter-md border border-outline-variant/20 flex flex-col items-center">
+<div class="w-full h-48 rounded-lg overflow-hidden bg-surface-container mb-4">
+<img class="w-full h-full object-contain p-4 scale-110 hover:scale-125 transition-transform duration-500" data-alt="A premium close-up of the Razer DeathAdder V3 Pro gaming mouse in white. The lighting is crisp and cool, highlighting the ergonomic curves and minimalist texture. The background is a clean, dark grey with a faint green glow reflecting off the surface, conveying a luxury peripheral feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEVP3-4WtaCguc9q1O444N9YylH0kbe_sXgREWt1Fw_FDaqJRNqzuPL3rROkOJo_vY_E_YuHoVjkNWkZ7BrQCx0z0WZmvL2550ffrWtJh-HdTDyvB4dELLHc6pcAT5U1-8YtvQQgojUa9j9xdkddGsv2TFgnTH-zhyaZ1Ra1U9dzEuEnUtWQeJsqPNhB9YZlOwViaplCufaKnjAcdCRO2xJVPyxz03CRDnPgyVnLkrffmR73O0DtlL7Z1dMBd8wieuhVo1VmNtaBs"/>
+</div>
+<div class="w-full text-center">
+<h4 class="text-headline-md font-headline-md">DeathAdder V3 Pro</h4>
+<p class="text-body-sm text-on-surface-variant">Ultra-lightweight Wireless Ergonomic Mouse</p>
+<div class="mt-4 text-primary font-display-lg">$149.99</div>
+<button class="mt-4 w-full py-3 bg-surface-container-highest border border-primary/30 text-primary rounded-DEFAULT font-label-bold hover:bg-primary hover:text-on-primary transition-colors">Add to Cart</button>
+</div>
+</div>
+<!-- Smaller Items -->
+<div class="glass-card rounded-lg p-gutter-md border border-outline-variant/20 space-y-stack-md">
+<div class="h-32 bg-surface-container rounded-md overflow-hidden p-2">
+<img class="w-full h-full object-contain" data-alt="The Razer Huntsman V3 Pro TKL mechanical keyboard. High-quality render showing the RGB backlighting glowing in a signature toxic green. The keys are sharp and the aluminum plate has a premium brushed finish. Dark studio environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqazx9NbhgvTE_hvqrNbns6KXprwv5GYRdKdhCEjW_dytQ6knr5m03pr2XP9Osx12HB3J1OZ8WB9taUS5l4aK9LqMbBZIm12HqdxTfpkgvZ11aewtf1oxx51ybeYSWUMyWLoZR4OM2BC3MISR3jALWRnQV7KZdEKyMeucOwc14SCsaO-FHJlpC5jOwoKVTXfS5P0vUAX4nEGcR-KKlgP6w2rP-FtCRQ7q1UpADznd17CFFjoP5_IBpYRh4uAd2fNmbN8Q8Hnfs2oU"/>
+</div>
+<div>
+<h4 class="text-body-lg font-bold truncate">Huntsman V3 Pro</h4>
+<div class="text-primary font-bold mt-1">$219.99</div>
+</div>
+</div>
+<div class="glass-card rounded-lg p-gutter-md border border-outline-variant/20 space-y-stack-md">
+<div class="h-32 bg-surface-container rounded-md overflow-hidden p-2">
+<img class="w-full h-full object-contain" data-alt="Razer BlackShark V2 Pro wireless gaming headset. Detailed view of the memory foam ear cushions and the sleek matte black finish. The lighting is soft and moody, with a green glow illuminating the headset from below." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9JaKsf_6H6bmiv_aav03zmnzfIIk9wRsnkYQ3zk9hJQnJL-DgPouj-nuu-m5sCBKEWzPQQG-1CHtcI5JwaPWp4_klA8QDUhbgerrNIn21ADm7dV9I707PEm5fpNJLYo5y-oz99CwMwGvnPWVUQPMM5Os7I3ohuRyOnSQjqIsFFKCOvbbniG1PVIBPZ5drhupun8Qqa1WpXLG1M54v9vFzNohxIt8RjnDcU-75z3xVYheSVYg-zmMk5xwBvFZSc1bpUqJ796ADDSg"/>
+</div>
+<div>
+<h4 class="text-body-lg font-bold truncate">BlackShark V2 Pro</h4>
+<div class="text-primary font-bold mt-1">$199.99</div>
+</div>
+</div>
+</div>
+</section>
+<!-- New Arrivals Horizontal Scroll -->
+<section class="space-y-gutter-md">
+<h3 class="text-headline-md font-headline-md">New Arrivals</h3>
+<div class="flex overflow-x-auto gap-gutter-md pb-4 snap-x -mx-container-margin px-container-margin no-scrollbar">
+<div class="snap-start flex-shrink-0 w-64 glass-card p-gutter-md rounded-lg border border-outline-variant/20">
+<div class="relative">
+<span class="absolute top-0 right-0 bg-tertiary-container text-on-tertiary-container text-label-bold px-2 py-1 rounded">NEW</span>
+<div class="h-40 bg-surface-container-low rounded-md mb-4 flex items-center justify-center">
+<img class="w-4/5 h-4/5 object-contain" data-alt="The new Razer Kishi Ultra mobile gaming controller. Designed for high-end smartphones, it features full-sized buttons and glowing RGB edges. Shot in a high-tech dark background with sharp emerald accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4vh4GYnpZNIXBHZ8B6kxxhsLP1A8LGqJIgvQtx7S2O9X0VJSiTxM4ZWH6DB-UCD-5z5qyopEt8mJisq8__3csc3QZj-pekb-sfp2YQgtyDEc70nWtUJYMfomu1tJU1u-dQ3va6BNZJMStA6y_NFwFqLswEU8SPBBFRkwR_FvOnTyPCvFkqmTIMzsdkX6qAc9FfDhvRWZX25ZG_n6gZBdUjRHIKE-n7SmOpToEYaxumL81JeQQ2y6h1ochQvJ4Lo3PXM5FB9-9t78"/>
+</div>
+</div>
+<h4 class="font-bold">Razer Kishi Ultra</h4>
+<p class="text-body-sm text-on-surface-variant">The Console for Mobile</p>
+<div class="flex justify-between items-center mt-3">
+<span class="text-primary font-bold">$149.99</span>
+<button class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-full">add_shopping_cart</button>
+</div>
+</div>
+<div class="snap-start flex-shrink-0 w-64 glass-card p-gutter-md rounded-lg border border-outline-variant/20">
+<div class="relative">
+<span class="absolute top-0 right-0 bg-tertiary-container text-on-tertiary-container text-label-bold px-2 py-1 rounded">NEW</span>
+<div class="h-40 bg-surface-container-low rounded-md mb-4 flex items-center justify-center">
+<img class="w-4/5 h-4/5 object-contain" data-alt="Razer Seiren V3 Chroma RGB professional microphone. The translucent body is filled with vibrant green lighting. Modern desktop setup context with cinematic bokeh in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpfztl20rBiyhYSUmPINsdQDeYUIh7ZNAa9vQni879GtTyCp90v4S7Z2frW5TV85r42Zn2jvlasiqn3z-i_CkJRozfGifYGJjeg6m4csqvh6iCYLgDhzig8ONaDKUxoeuqJWLY3074IWs7dK22Jpk1cmy34IaRKozHHt1CU1nFH5xUiVgXHDIvRJ3tMHkUONyuJtiiqCOkrMBwzwDs55TeSlQPAUGVwdg7VAGAYh6DHwZU65DTj2c9YGrewRvel9uSUJsqu-QxAk4"/>
+</div>
+</div>
+<h4 class="font-bold">Seiren V3 Chroma</h4>
+<p class="text-body-sm text-on-surface-variant">Superior Stream Quality</p>
+<div class="flex justify-between items-center mt-3">
+<span class="text-primary font-bold">$129.99</span>
+<button class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-full">add_shopping_cart</button>
+</div>
+</div>
+<div class="snap-start flex-shrink-0 w-64 glass-card p-gutter-md rounded-lg border border-outline-variant/20">
+<div class="h-40 bg-surface-container-low rounded-md mb-4 flex items-center justify-center">
+<img class="w-4/5 h-4/5 object-contain" data-alt="Razer Iskur V2 gaming chair in black and green. Focus on the sophisticated lumbar support system and high-quality synthetic leather texture. Premium studio lighting environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANy03mcz5gxxgDS-P03RfziLVgWGYFwdvdQrCGrTUwZmdbGZj6hiyou4Rwoo-8oYrdngbsQBlLljqq7euIIhfifnHhEvy7blBQLL-CCUUOXJoa88QlQO8TTM0NnlJOpwTKtxtubGJg_QKlfF-fCA3aQ4wOsnodAPW43EYLAJtry4us07m04BL6MeWvZS2YigTx9LRHEdv5lgv24D2gY09jNHJKSR7KjncdPEp3NJVvVYypnF-m_CMqJjs4uuIYy8qrk5mEefE4rhQ"/>
+</div>
+<h4 class="font-bold">Iskur V2</h4>
+<p class="text-body-sm text-on-surface-variant">Perfect Gaming Form</p>
+<div class="flex justify-between items-center mt-3">
+<span class="text-primary font-bold">$649.99</span>
+<button class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-full">add_shopping_cart</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Grid: Gaming Peripherals -->
+<section class="space-y-gutter-md">
+<h3 class="text-headline-md font-headline-md">Gaming Peripherals</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-4 rounded-lg flex flex-col items-center gap-3 border border-outline-variant/10 active:bg-surface-container-high transition-colors">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">mouse</span>
+</div>
+<span class="font-label-bold text-on-surface">Mice</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex flex-col items-center gap-3 border border-outline-variant/10 active:bg-surface-container-high transition-colors">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">keyboard</span>
+</div>
+<span class="font-label-bold text-on-surface">Keyboards</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex flex-col items-center gap-3 border border-outline-variant/10 active:bg-surface-container-high transition-colors">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">headphones</span>
+</div>
+<span class="font-label-bold text-on-surface">Audio</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex flex-col items-center gap-3 border border-outline-variant/10 active:bg-surface-container-high transition-colors">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">monitor</span>
+</div>
+<span class="font-label-bold text-on-surface">Streaming</span>
+</div>
+</div>
+</section>
+<!-- Spacer for Bottom Nav -->
+<div class="h-12"></div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full rounded-t-lg z-50 bg-surface-container shadow-[0_-4px_20px_rgba(0,0,0,0.4)] flex justify-around items-center h-20 px-4 pb-safe">
+<div class="flex flex-col items-center justify-center text-primary gap-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Cart</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Wishlist</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Profile</span>
+</div>
+</nav>
+<script>
+        // Micro-interactions and subtle effects
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Simple scroll event for the header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('bg-surface/95');
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('bg-surface/95');
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>ElectroStream - Verify Phone</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(29, 32, 33, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .emerald-glow {
+            box-shadow: 0 0 20px rgba(92, 222, 148, 0.2);
+        }
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #5cde94;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0c0f10",
+                        "surface-container-high": "#282a2b",
+                        "primary-fixed": "#7afbae",
+                        "on-secondary-fixed-variant": "#513f64",
+                        "secondary-fixed": "#efdbff",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#111415",
+                        "on-surface": "#e1e3e4",
+                        "surface-container-low": "#191c1d",
+                        "surface-variant": "#323536",
+                        "on-primary-fixed-variant": "#00522e",
+                        "secondary-container": "#513f64",
+                        "tertiary-fixed-dim": "#ffb77f",
+                        "on-background": "#e1e3e4",
+                        "secondary-fixed-dim": "#d4beea",
+                        "on-surface-variant": "#bccabd",
+                        "surface-dim": "#111415",
+                        "on-secondary-container": "#c2add8",
+                        "on-secondary": "#39294c",
+                        "tertiary-fixed": "#ffdcc4",
+                        "surface-container": "#1d2021",
+                        "on-tertiary-fixed-variant": "#6f3900",
+                        "inverse-primary": "#006d3e",
+                        "outline-variant": "#3d4a40",
+                        "on-primary": "#00391e",
+                        "inverse-surface": "#e1e3e4",
+                        "primary-container": "#2eb872",
+                        "tertiary": "#ffb77f",
+                        "on-secondary-fixed": "#241436",
+                        "inverse-on-surface": "#2e3132",
+                        "surface-bright": "#373a3b",
+                        "surface-tint": "#5cde94",
+                        "primary": "#5cde94",
+                        "on-tertiary": "#4e2600",
+                        "primary-fixed-dim": "#5cde94",
+                        "background": "#111415",
+                        "surface-container-highest": "#323536",
+                        "on-tertiary-container": "#592c00",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "secondary": "#d4beea",
+                        "on-primary-fixed": "#00210f",
+                        "on-primary-container": "#004224",
+                        "tertiary-container": "#f58400",
+                        "on-error": "#690005",
+                        "outline": "#879488",
+                        "on-tertiary-fixed": "#2f1500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter-md": "16px",
+                        "section-gap": "32px",
+                        "container-margin": "24px",
+                        "stack-sm": "8px",
+                        "stack-md": "12px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center overflow-hidden">
+<!-- Top AppBar (Back Button only for transaction focus) -->
+<header class="fixed top-0 left-0 w-full h-16 flex items-center px-container-margin z-50">
+<button class="p-2 -ml-2 text-on-surface hover:opacity-80 transition-opacity active:scale-95" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[28px]">arrow_back</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 w-full max-w-md px-container-margin flex flex-col pt-24 pb-8 relative z-10">
+<!-- Background Imagery / Atmosphere -->
+<div class="absolute inset-0 -z-10 pointer-events-none opacity-30 overflow-hidden">
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary/20 blur-[120px] rounded-full"></div>
+<div class="absolute top-1/2 -left-20 w-60 h-60 bg-secondary/10 blur-[100px] rounded-full"></div>
+</div>
+<!-- Visual Anchor (matching IMAGE_5 aesthetic) -->
+<div class="mb-stack-md relative h-48 w-full rounded-lg overflow-hidden border border-outline-variant/30">
+<img alt="" class="w-full h-full object-cover grayscale opacity-60 mix-blend-lighten" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBghK0bKKhXM9OPsrcDPPCdhzU-Uzd68qzQ4IBFcazT0DK_Gg8fTqTYy8xA1z7SIlH2Ps02VPShunaj8imvZdP09pT4ouDq8cBLSM1-aUrhlCKfgqNDocNlacZMkKpGMoFTjZh5wc8CrotG0AyWVEf1a-QDFzxuaOpc3sdXXu-HzR5S0yyubWU2jd3Mpgsy_uOe2YFtrnFGLjHzuLIcEk2kqxaNKeOkK5ecuJxp9E2RCTM0wXRNeYFPHDGWszJOpQEpkaYeUTkbTpM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<!-- Typography -->
+<div class="mb-section-gap">
+<h1 class="text-display-lg-mobile font-display-lg-mobile text-on-surface tracking-tight mb-2">Verify Phone</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-[280px]">Enter your mobile number to receive a verification code.</p>
+</div>
+<!-- Entry Form -->
+<div class="flex flex-col gap-6">
+<!-- Phone Input Component -->
+<div class="flex flex-col gap-stack-sm">
+<label class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest ml-1">Mobile Number</label>
+<div class="flex gap-2">
+<!-- Country Picker Mock -->
+<div class="h-14 px-4 flex items-center gap-2 bg-surface-container rounded-DEFAULT border border-outline-variant/50 focus-within:border-primary transition-all cursor-pointer">
+<span class="text-body-lg font-body-lg text-on-surface">+1</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">expand_more</span>
+</div>
+<!-- Number Input -->
+<div class="flex-1 relative">
+<input class="w-full h-14 bg-surface-container border border-outline-variant/50 rounded-DEFAULT px-4 text-body-lg font-body-lg text-on-surface placeholder:text-on-surface-variant/40 transition-all" placeholder="(555) 000-0000" type="tel"/>
+</div>
+</div>
+</div>
+<!-- Hint / Compliance -->
+<p class="text-body-sm font-body-sm text-on-surface-variant/60">
+                By continuing, you may receive an SMS for verification. Message and data rates may apply.
+            </p>
+<!-- Primary Action -->
+<button class="w-full h-14 bg-primary text-on-primary rounded-DEFAULT flex items-center justify-center gap-2 font-label-bold text-label-bold emerald-glow active:scale-[0.98] transition-transform shadow-lg mt-4">
+<span>Send Code</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Alternative Options (Footer of focused page) -->
+<div class="mt-auto pt-section-gap flex flex-col items-center gap-4">
+<div class="flex items-center gap-4 w-full">
+<div class="h-[1px] flex-1 bg-outline-variant/30"></div>
+<span class="text-label-bold font-label-bold text-on-surface-variant/40">OR</span>
+<div class="h-[1px] flex-1 bg-outline-variant/30"></div>
+</div>
+<button class="flex items-center gap-3 px-6 py-3 rounded-full border border-outline-variant text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-label-bold font-label-bold">Verify with Email</span>
+</button>
+</div>
+</main>
+<!-- Haptic feedback script simulation -->
+<script>
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (window.navigator.vibrate) {
+                    window.navigator.vibrate(10);
+                }
+            });
+        });
+
+        // Simple animation trigger for the visual anchor
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('main');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+
+            requestAnimationFrame(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

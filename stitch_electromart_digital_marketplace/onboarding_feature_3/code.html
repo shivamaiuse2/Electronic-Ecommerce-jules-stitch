@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .glass-card {
+            background: rgba(29, 32, 33, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(135, 148, 136, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#00522e",
+                        "surface-container": "#1d2021",
+                        "on-secondary-fixed": "#241436",
+                        "inverse-on-surface": "#2e3132",
+                        "primary-fixed-dim": "#5cde94",
+                        "on-secondary": "#39294c",
+                        "primary-fixed": "#7afbae",
+                        "secondary-container": "#513f64",
+                        "secondary-fixed": "#efdbff",
+                        "outline": "#879488",
+                        "on-surface-variant": "#bccabd",
+                        "secondary-fixed-dim": "#d4beea",
+                        "on-tertiary-container": "#592c00",
+                        "on-tertiary": "#4e2600",
+                        "secondary": "#d4beea",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#2f1500",
+                        "tertiary-container": "#f58400",
+                        "surface-variant": "#323536",
+                        "surface": "#111415",
+                        "on-background": "#e1e3e4",
+                        "on-secondary-container": "#c2add8",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#004224",
+                        "primary": "#5cde94",
+                        "surface-dim": "#111415",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0c0f10",
+                        "surface-container-low": "#191c1d",
+                        "tertiary-fixed": "#ffdcc4",
+                        "background": "#111415",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#00210f",
+                        "on-surface": "#e1e3e4",
+                        "surface-bright": "#373a3b",
+                        "inverse-surface": "#e1e3e4",
+                        "on-secondary-fixed-variant": "#513f64",
+                        "primary-container": "#2eb872",
+                        "surface-container-high": "#282a2b",
+                        "tertiary": "#ffb77f",
+                        "on-tertiary-fixed-variant": "#6f3900",
+                        "outline-variant": "#3d4a40",
+                        "surface-container-highest": "#323536",
+                        "tertiary-fixed-dim": "#ffb77f",
+                        "inverse-primary": "#006d3e",
+                        "surface-tint": "#5cde94",
+                        "on-primary": "#00391e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "12px",
+                        "gutter-md": "16px",
+                        "section-gap": "32px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "label-bold-mobile": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg-mobile": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "headline-md-mobile": ["18px", {"lineHeight": "26px", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-sm-mobile": ["12px", {"lineHeight": "18px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen overflow-hidden font-body-lg flex flex-col">
+<!-- Atmospheric Background Overlay -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] bg-secondary-container/20 rounded-full blur-[100px]"></div>
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+</div>
+<!-- Main Content Wrapper -->
+<main class="relative z-10 flex-1 flex flex-col items-center justify-between px-container-margin py-12 safe-area-inset">
+<!-- Header Branding (Skip-able) -->
+<header class="w-full flex justify-between items-center">
+<span class="text-headline-md-mobile font-headline-md-mobile font-bold tracking-tight text-primary">ElectroStream</span>
+<button class="text-label-bold-mobile font-label-bold-mobile text-on-surface-variant hover:text-primary transition-colors duration-300">SKIP</button>
+</header>
+<!-- Hero Illustration Section -->
+<div class="relative w-full flex-1 flex items-center justify-center py-stack-md">
+<!-- Central Product Halo -->
+<div class="absolute w-64 h-64 bg-primary/20 rounded-full blur-[80px] animate-pulse"></div>
+<!-- Main Hero Image Content -->
+<div class="relative z-10 w-full max-w-[320px] aspect-square flex items-center justify-center animate-float">
+<div class="relative w-full h-full">
+<!-- High-end Smartwatch Image -->
+<img class="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(92,222,148,0.3)]" data-alt="A sleek, high-end professional smartwatch featuring a glowing AMOLED interface with health metrics and smart home controls. The watch has a brushed titanium frame and a dark charcoal silicone strap. It is positioned diagonally in a studio setting with dramatic green rim lighting against a deep obsidian background. Modern, corporate aesthetic, premium tech feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3VFXd0QNncH0dEVMXk1sp9lxEoIL-F20SmjZ2oNCIPN-U3lVhpZm6DG4ObT1VmKD7KcxIgZvcF-Gbg-QgKnbeBA8XAyYUQZPnZgTPOaGT8fCCBxrTOGKNMpmIWwLFLHy_uAvJhjP5PQLLkxXm5zqGszxhSEYSOOhe3ykl0vSrqSh9HUOvYuSxnIdRJWStJiBuKcuZ6XeY8W6FBFcJCCceWUkBuDoQDAgDzSwbgxNCSVyMnR1yrRYY6Egh7tLI26P1GVa27QoAwVc"/>
+<!-- Floating Tech Accents -->
+<div class="absolute -top-4 -right-2 bg-surface-container/80 backdrop-blur-md p-3 rounded-2xl border border-outline-variant/30 shadow-lg">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div class="absolute bottom-8 -left-6 bg-surface-container/80 backdrop-blur-md p-3 rounded-2xl border border-outline-variant/30 shadow-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Content & Action Section -->
+<div class="w-full space-y-section-gap pb-8">
+<!-- Text Content -->
+<div class="text-center space-y-stack-md">
+<h1 class="text-display-lg-mobile font-display-lg-mobile text-on-surface leading-tight px-4">
+                    Smart Tech for a <span class="text-primary">Smarter You</span>
+</h1>
+<p class="text-body-lg-mobile font-body-lg-mobile text-on-surface-variant max-w-[280px] mx-auto">
+                    Explore a curated selection of smart gadgets and mobile accessories.
+                </p>
+</div>
+<!-- Interaction Controls -->
+<div class="space-y-stack-md">
+<!-- Progress Indicators -->
+<div class="flex justify-center items-center gap-2 mb-8">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-8 h-2 rounded-full bg-primary transition-all duration-500"></div>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary-container text-on-primary-container font-label-bold py-5 rounded-2xl flex items-center justify-center gap-2 group active:scale-95 transition-all duration-200 shadow-[0_8px_30px_rgb(46,184,114,0.3)] hover:brightness-110" onclick="handleGetStarted()">
+<span class="text-label-bold-mobile font-label-bold-mobile uppercase tracking-widest">Get Started</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        function handleGetStarted() {
+            // Visual feedback for the button
+            const btn = document.querySelector('button[onclick="handleGetStarted()"]');
+            btn.innerHTML = `
+                <svg class="animate-spin h-5 w-5 text-on-primary-container" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            `;
+
+            // Simulating navigation transition
+            setTimeout(() => {
+                document.body.style.opacity = '0';
+                document.body.style.transition = 'opacity 0.5s ease';
+            }, 500);
+        }
+
+        // Add slight parallax to floating items
+        document.addEventListener('mousemove', (e) => {
+            const amount = 20;
+            const x = (e.clientX / window.innerWidth - 0.5) * amount;
+            const y = (e.clientY / window.innerHeight - 0.5) * amount;
+
+            document.querySelectorAll('.animate-float').forEach(el => {
+                el.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body></html>
