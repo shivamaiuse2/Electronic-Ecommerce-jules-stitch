@@ -94,7 +94,7 @@ class SearchResultsScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(AppConstants.containerMargin),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 0.75,
+                      childAspectRatio: 0.65,
                       crossAxisSpacing: 16,
                       mainAxisSpacing: 16,
                     ),

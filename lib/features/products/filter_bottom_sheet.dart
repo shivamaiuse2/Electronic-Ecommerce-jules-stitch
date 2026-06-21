@@ -42,7 +42,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.between,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Filters', style: theme.textTheme.headlineMedium),
               TextButton(
@@ -87,7 +87,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
             },
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.between,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('\$${_minPrice.toInt()}', style: theme.textTheme.bodySmall),
               Text('\$${_maxPrice.toInt()}', style: theme.textTheme.bodySmall),

@@ -102,7 +102,7 @@ class HomeDashboardScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: AppConstants.sectionGap),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.between,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Categories', style: theme.textTheme.headlineMedium),
                     GestureDetector(
@@ -184,7 +184,7 @@ class HomeDashboardScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: AppConstants.sectionGap),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.between,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Best Deals', style: theme.textTheme.headlineMedium),
                     Text('Ends in 02:45:11', style: theme.textTheme.labelLarge?.copyWith(color: theme.colorScheme.error)),
@@ -196,7 +196,7 @@ class HomeDashboardScreen extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.75,
+                    childAspectRatio: 0.65,
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
                   ),
