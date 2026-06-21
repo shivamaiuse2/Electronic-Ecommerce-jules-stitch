@@ -118,7 +118,7 @@ class ProductCard extends StatelessWidget {
             ),
             const Spacer(),
             Row(
-              mainAxisAlignment: CrossAxisAlignment.between,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

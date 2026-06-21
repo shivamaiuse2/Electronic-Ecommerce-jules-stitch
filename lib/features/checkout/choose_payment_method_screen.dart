@@ -76,7 +76,7 @@ class _ChoosePaymentMethodScreenState extends State<ChoosePaymentMethodScreen> {
             child: Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.between,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Total Amount', style: theme.textTheme.bodyLarge),
                     Text('\$538.92', style: theme.textTheme.headlineMedium?.copyWith(color: theme.colorScheme.primary)),

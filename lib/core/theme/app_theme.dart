@@ -48,7 +48,7 @@ class AppTheme {
         bodySmall: AppTypography.bodySmall,
         labelLarge: AppTypography.labelBold,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.surfaceContainer,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppConstants.borderRadiusDefault),
