@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/constants/app_constants.dart';
 import '../../shared/widgets/category_item.dart';
+import '../../shared/widgets/glass_card.dart';
 import '../../shared/widgets/product_card.dart';
 import '../../shared/models/product.dart';
+import '../../core/services/product_repository.dart';
 import '../cart/cart_bloc.dart';
 import '../wishlist/wishlist_bloc.dart';
 
@@ -23,34 +25,7 @@ class HomeDashboardScreen extends StatelessWidget {
       {'name': 'Phones', 'icon': Icons.smartphone},
     ];
 
-    final products = [
-      Product(
-        id: '1',
-        name: 'Sony WH-1000XM5',
-        category: 'Audio',
-        description: 'Premium noise-cancelling headphones.',
-        price: 349,
-        originalPrice: 349,
-        discount: 0,
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAuOxkQWBkSY2790hLPOUf1TwudUCYMbK0xuyTg1Xqg8t7PpGJ9rhvj-6oHoPNXd5fE28yF2V5XnoBWAFhALQwlc-DsJejPZ4KpaBDa0PDXmjYO1JAsXbARbVgRE6eIbOfm8Zz-HSQFxwBCnDta-zMoGM09IT9fEn5QLaPkBKVCZBmEetdt0FHK4qiuuskSiGlYkPgDquQrNy-SX_vjqahEwp7naIbXF4-bYMFc9o7_qdfCJy2B9Kmrw-TdPxlXyq7ypS9LikqNeYM',
-        rating: 4.9,
-        reviewsCount: 2000,
-        specifications: ['30-hour battery life', 'Industry-leading noise cancellation'],
-      ),
-      Product(
-        id: '2',
-        name: 'Razer Huntsman V2',
-        category: 'Gaming',
-        description: 'Optical gaming keyboard.',
-        price: 159,
-        originalPrice: 199,
-        discount: 20,
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC2b2iRelipNbABODEwcOUmm74niEzOY0ZuUgFXMLmfA6kidTEPbb0yE4bDHvbIUW_pXs5TrP4Tfiy26t4FlGlwkJ-G_lZkqMZLnAFaaeiylDrkOD9lpMlzTr5ozo0gkZTqcTONkomzb2s4Rv9_K_BMdJE0fkhKfnxYDcLErgiDvEodm8Loz7LLof1PMKJpqI8ak5Lhx9fljpHIYjZz0JPZRf2mwpLdXUtn4c4vFvEUfAN4H3VDBghNef-bA9-9uKFNA6YcNAXm9GY',
-        rating: 4.7,
-        reviewsCount: 842,
-        specifications: ['Razer Linear Optical Switches', 'Doubleshot PBT Keycaps'],
-      ),
-    ];
+    final products = ProductRepository.allProducts;
 
     return Scaffold(
       drawer: const NavigationDrawerWidget(),
@@ -127,7 +102,7 @@ class HomeDashboardScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: AppConstants.sectionGap),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.between,
                   children: [
                     Text('Categories', style: theme.textTheme.headlineMedium),
                     GestureDetector(
@@ -209,7 +184,7 @@ class HomeDashboardScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: AppConstants.sectionGap),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.between,
                   children: [
                     Text('Best Deals', style: theme.textTheme.headlineMedium),
                     Text('Ends in 02:45:11', style: theme.textTheme.labelLarge?.copyWith(color: theme.colorScheme.error)),
@@ -221,7 +196,7 @@ class HomeDashboardScreen extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.65,
+                    childAspectRatio: 0.75,
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
                   ),
@@ -265,55 +240,143 @@ class NavigationDrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Drawer(
-      backgroundColor: theme.colorScheme.surface,
-      child: Column(
-        children: [
-          DrawerHeader(
-            decoration: BoxDecoration(color: theme.colorScheme.surfaceVariant.withOpacity(0.5)),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: theme.colorScheme.primary,
-                  child: Icon(Icons.person, size: 40, color: theme.colorScheme.onPrimary),
-                ),
-                const SizedBox(width: 16),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('John Doe', style: theme.textTheme.headlineMedium),
-                    Text('john.doe@example.com', style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant)),
+      backgroundColor: Colors.transparent,
+      child: GlassCard(
+        borderRadius: 0,
+        padding: EdgeInsets.zero,
+        child: Column(
+          children: [
+            Container(
+              height: 220,
+              padding: const EdgeInsets.all(24),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    theme.colorScheme.primary.withOpacity(0.2),
+                    theme.colorScheme.primary.withOpacity(0.05),
                   ],
                 ),
-              ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    radius: 36,
+                    backgroundColor: theme.colorScheme.primary,
+                    child: Icon(Icons.person, size: 40, color: theme.colorScheme.onPrimary),
+                  ),
+                  const SizedBox(height: 16),
+                  Text('John Doe', style: theme.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold)),
+                  Text('john.doe@example.com', style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant)),
+                ],
+              ),
             ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.home_outlined),
-            title: const Text('Home'),
-            onTap: () => Navigator.pop(context),
-          ),
-          ListTile(
-            leading: const Icon(Icons.category_outlined),
-            title: const Text('Categories'),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.shopping_bag_outlined),
-            title: const Text('My Orders'),
-            onTap: () => context.push('/orders'),
-          ),
-          const Divider(),
-          const Spacer(),
-          ListTile(
-            leading: const Icon(Icons.logout, color: Colors.red),
-            title: const Text('Logout', style: TextStyle(color: Colors.red)),
-            onTap: () => context.go('/gateway'),
-          ),
-          const SizedBox(height: 24),
-        ],
+            const SizedBox(height: 24),
+            _DrawerItem(
+              icon: Icons.home_outlined,
+              title: 'Home',
+              onTap: () => Navigator.pop(context),
+            ),
+            _DrawerItem(
+              icon: Icons.category_outlined,
+              title: 'Categories',
+              onTap: () {
+                Navigator.pop(context);
+                context.push('/categories');
+              },
+            ),
+            _DrawerItem(
+              icon: Icons.branding_watermark_outlined,
+              title: 'Brands',
+              onTap: () {
+                Navigator.pop(context);
+                context.push('/brands');
+              },
+            ),
+            _DrawerItem(
+              icon: Icons.shopping_bag_outlined,
+              title: 'My Orders',
+              onTap: () {
+                Navigator.pop(context);
+                context.push('/orders');
+              },
+            ),
+            _DrawerItem(
+              icon: Icons.compare_arrows,
+              title: 'Comparison',
+              onTap: () {
+                Navigator.pop(context);
+                context.push('/compare');
+              },
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              child: Divider(color: Colors.white10),
+            ),
+            _DrawerItem(
+              icon: Icons.help_outline,
+              title: 'Help & Support',
+              onTap: () {
+                Navigator.pop(context);
+                context.push('/help-support');
+              },
+            ),
+            _DrawerItem(
+              icon: Icons.notifications_none,
+              title: 'Notifications',
+              onTap: () {
+                Navigator.pop(context);
+                context.push('/notifications');
+              },
+            ),
+            const Spacer(),
+            _DrawerItem(
+              icon: Icons.logout,
+              title: 'Logout',
+              isDestructive: true,
+              onTap: () => context.go('/gateway'),
+            ),
+            const SizedBox(height: 32),
+          ],
+        ),
       ),
+    );
+  }
+}
+
+class _DrawerItem extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final VoidCallback onTap;
+  final bool isDestructive;
+
+  const _DrawerItem({
+    required this.icon,
+    required this.title,
+    required this.onTap,
+    this.isDestructive = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final color = isDestructive ? Colors.redAccent : theme.colorScheme.onSurface;
+
+    return ListTile(
+      onTap: onTap,
+      leading: Icon(icon, color: color.withOpacity(0.8)),
+      title: Text(
+        title,
+        style: theme.textTheme.bodyLarge?.copyWith(
+          color: color,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 24),
+      horizontalTitleGap: 0,
     );
   }
 }

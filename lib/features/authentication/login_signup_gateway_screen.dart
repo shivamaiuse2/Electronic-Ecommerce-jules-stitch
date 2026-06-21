@@ -44,7 +44,7 @@ class LoginSignupGatewayScreen extends StatelessWidget {
                 const SizedBox(height: 32),
                 Text(
                   'Welcome to ElectroStream',
-                  textAlign: TextAlign.center,
+                  textAlign: Center,
                   style: theme.textTheme.headlineLarge?.copyWith(fontWeight: FontWeight.w800),
                 ),
                 const SizedBox(height: 12),

@@ -48,7 +48,7 @@ class MyOrdersScreen extends StatelessWidget {
             child: Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.between,
                   children: [
                     Text('Order ${order['id']}', style: theme.textTheme.labelLarge?.copyWith(fontWeight: FontWeight.bold)),
                     Container(

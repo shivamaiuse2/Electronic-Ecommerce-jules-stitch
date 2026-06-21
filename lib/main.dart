@@ -17,6 +17,8 @@ import 'features/cart/shopping_cart_screen.dart';
 import 'features/cart/cart_bloc.dart';
 import 'features/wishlist/wishlist_screen.dart';
 import 'features/wishlist/wishlist_bloc.dart';
+import 'features/products/filter_bloc.dart';
+import 'features/checkout/address_bloc.dart';
 import 'features/products/category_hub_screen.dart';
 import 'features/products/brand_directory_screen.dart';
 import 'features/products/search_results_screen.dart';
@@ -24,7 +26,9 @@ import 'features/products/product_comparison_screen.dart';
 import 'features/products/product_reviews_screen.dart';
 import 'features/products/razer_brand_store_screen.dart';
 import 'features/products/laptop_collection_screen.dart';
+import 'features/products/product_details_screen.dart';
 import 'features/checkout/select_delivery_address_screen.dart';
+import 'features/checkout/add_new_address_screen.dart';
 import 'features/checkout/choose_payment_method_screen.dart';
 import 'features/orders/order_confirmed_screen.dart';
 import 'features/orders/my_orders_screen.dart';
@@ -51,6 +55,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => AuthBloc()..add(AuthCheckRequested())),
         BlocProvider(create: (context) => CartBloc()..add(LoadCart())),
         BlocProvider(create: (context) => WishlistBloc()..add(LoadWishlist())),
+        BlocProvider(create: (context) => FilterBloc()),
+        BlocProvider(create: (context) => AddressBloc()..add(LoadAddresses())),
       ],
       child: MaterialApp.router(
         title: 'ElectroStream',
@@ -173,8 +179,19 @@ final GoRouter _router = GoRouter(
       builder: (context, state) => const LaptopCollectionScreen(),
     ),
     GoRoute(
+      path: '/product-details',
+      builder: (context, state) {
+        final product = state.extra as Product;
+        return ProductDetailsScreen(product: product);
+      },
+    ),
+    GoRoute(
       path: '/address-selection',
       builder: (context, state) => const SelectDeliveryAddressScreen(),
+    ),
+    GoRoute(
+      path: '/add-address',
+      builder: (context, state) => const AddNewAddressScreen(),
     ),
     GoRoute(
       path: '/payment-method',

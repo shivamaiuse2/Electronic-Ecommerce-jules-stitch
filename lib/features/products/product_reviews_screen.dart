@@ -67,7 +67,7 @@ class ProductReviewsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.between,
                     children: [
                       Text(review['user'] as String, style: theme.textTheme.labelLarge?.copyWith(fontWeight: FontWeight.bold)),
                       Text(review['date'] as String, style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant)),

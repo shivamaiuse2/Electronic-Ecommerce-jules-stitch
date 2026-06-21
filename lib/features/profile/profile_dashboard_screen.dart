@@ -56,7 +56,7 @@ class ProfileDashboardScreen extends StatelessWidget {
               onTap: () => context.push('/orders'),
             ),
             _ProfileMenuItem(
-              icon: Icons.location_on_outlined,
+              icon: Icons.location_on_outline,
               title: 'Shipping Addresses',
               onTap: () => context.push('/address-selection'),
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:go_router/go_router.dart';
 import '../models/product.dart';
 import '../../core/constants/app_constants.dart';
 
@@ -22,7 +23,10 @@ class ProductCard extends StatelessWidget {
     final theme = Theme.of(context);
 
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        context.push('/product-details', extra: product);
+        onTap();
+      },
       child: Container(
         padding: const EdgeInsets.all(AppConstants.stackMd),
         decoration: BoxDecoration(
@@ -43,11 +47,14 @@ class ProductCard extends StatelessWidget {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(AppConstants.borderRadiusSm),
-                      child: CachedNetworkImage(
-                        imageUrl: product.image,
-                        fit: BoxFit.contain,
-                        placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
-                        errorWidget: (context, url, error) => const Icon(Icons.error),
+                      child: Hero(
+                        tag: 'product_${product.id}',
+                        child: CachedNetworkImage(
+                          imageUrl: product.image,
+                          fit: BoxFit.contain,
+                          placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                          errorWidget: (context, url, error) => const Icon(Icons.error),
+                        ),
                       ),
                     ),
                   ),
@@ -118,7 +125,7 @@ class ProductCard extends StatelessWidget {
             ),
             const Spacer(),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: CrossAxisAlignment.between,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
