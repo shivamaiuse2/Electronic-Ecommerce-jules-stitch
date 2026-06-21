@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream - Track Order</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-active .step-line {
+            background-color: #5cde94;
+        }
+        .step-active .step-dot {
+            background-color: #5cde94;
+            box-shadow: 0 0 15px rgba(92, 222, 148, 0.5);
+        }
+        .glass-panel {
+            background: rgba(29, 32, 33, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#00522e",
+                        "surface": "#111415",
+                        "on-secondary-fixed": "#241436",
+                        "secondary-fixed-dim": "#d4beea",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#39294c",
+                        "on-error": "#690005",
+                        "surface-dim": "#111415",
+                        "inverse-surface": "#e1e3e4",
+                        "tertiary-container": "#f58400",
+                        "outline": "#879488",
+                        "surface-container-high": "#282a2b",
+                        "primary": "#5cde94",
+                        "on-tertiary-container": "#592c00",
+                        "background": "#111415",
+                        "secondary-fixed": "#efdbff",
+                        "on-primary": "#00391e",
+                        "secondary": "#d4beea",
+                        "surface-bright": "#373a3b",
+                        "tertiary": "#ffb77f",
+                        "primary-fixed-dim": "#5cde94",
+                        "on-secondary-container": "#c2add8",
+                        "on-primary-container": "#004224",
+                        "on-tertiary": "#4e2600",
+                        "on-primary-fixed": "#00210f",
+                        "on-tertiary-fixed": "#2f1500",
+                        "on-background": "#e1e3e4",
+                        "secondary-container": "#513f64",
+                        "on-tertiary-fixed-variant": "#6f3900",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#006d3e",
+                        "surface-container-highest": "#323536",
+                        "surface-variant": "#323536",
+                        "surface-container": "#1d2021",
+                        "tertiary-fixed": "#ffdcc4",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#5cde94",
+                        "tertiary-fixed-dim": "#ffb77f",
+                        "on-surface": "#e1e3e4",
+                        "primary-fixed": "#7afbae",
+                        "on-surface-variant": "#bccabd",
+                        "surface-container-lowest": "#0c0f10",
+                        "on-secondary-fixed-variant": "#513f64",
+                        "primary-container": "#2eb872",
+                        "surface-container-low": "#191c1d",
+                        "outline-variant": "#3d4a40",
+                        "inverse-on-surface": "#2e3132"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter-md": "16px",
+                        "stack-sm": "8px",
+                        "container-margin": "24px",
+                        "stack-md": "12px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-24">
+<!-- Top AppBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm flex justify-between items-center px-container-margin h-16">
+<div class="flex items-center gap-stack-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-headline-md-mobile font-headline-md-mobile font-bold text-primary">Track Order</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity cursor-pointer" data-icon="search">search</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/30">
+<img class="w-full h-full object-cover" data-alt="A professional high-resolution close-up portrait of a modern tech user with a stylish aesthetic, set against a dark obsidian background with subtle emerald green rim lighting. The image should convey a premium, cinematic feel consistent with a luxury electronics brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_mEcyXq8ZomsmTbTteWDsf1zF3_SZ79qFOa_c3pZ09qYFedoxsbhCl14GkcUWIWO2uIxSSYi8dqUiNfNX7wuCwwNyK07gXMyheAKHCxLVf8aEppsFlSECE3bcs9Aew-MFBx14VHAlfXnJIxhvQKoHT6oIuIEpRHssCqQYniolJx0hU8nAzuC5_ZvheHrB-PWkp43b0EJ8HXSDWzGqYsvTxBmNHqpp1jMgMOEerAvqRTOBOuUIFaN4H5Kpd_dvED6SAvxJMA2rUow"/>
+</div>
+</div>
+</nav>
+<main class="pt-16 max-w-2xl mx-auto">
+<!-- Map View Section -->
+<section class="relative h-[353px] w-full overflow-hidden">
+<div class="absolute inset-0 z-0">
+<!-- Using placeholder for Map via data-location -->
+<div class="w-full h-full bg-surface-container-highest" data-alt="A high-contrast, dark-themed satellite map of a metropolitan city area. The map uses deep navy and obsidian tones for land, with glowing emerald green lines representing the delivery route. A pulsing green icon marks the delivery vehicle's real-time position. The overall aesthetic is professional, sleek, and technologically advanced." data-location="San Francisco, California" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADumYYsQGaIqAaOsglPDzWzoZ1RnN6Dt10bdXM0YIgWrh2jCH-beNyQks5TQVNNkozyiyGtqZWi-8QtO5bmOXVlKDl-zYWBrxcDldzp0Iz1QTtfGTqOIvSp5tOtRVd4rUO2YPSAxHZUTkltqBf0vQAOIOnB07Ngbl_cjRq1kgd4uFlxPARnCTVXHK0V623OLogOyei4MdxUXhn_g6x1WSV6IaJ9LK3K3og9lBCZt2I113yERZrfQvPLRpOqQFyVEpT2Gw7E1b8_kc')"></div>
+</div>
+<!-- Map Overlay: Driver Info Card -->
+<div class="absolute bottom-gutter-md left-container-margin right-container-margin z-10">
+<div class="glass-panel p-4 rounded-lg flex items-center justify-between border border-outline-variant/20 shadow-lg">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a friendly delivery professional wearing a modern, dark navy corporate uniform with a subtle green logo. The lighting is soft and professional, set against a blurred urban evening background. High-quality photography with a premium commercial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsEzGPom19KRFGeh1wKQNQ_gv8u0X2x1tjA2WNdYA4ku1MoL_vGd3u6YqT9kVcITuKyDcwoGuY-UM7n_22De48eCez2_feaaT8-3rLnp4fwKkHz6CJrZVd8WdKdYJ_STQMa4lwGPy4mpxpbcgxOlwucXOq4os8LZIQbrosMIi3E_T2W6SQgopDm4aQchiB2eKopK_iaa68HcwqjDK-aM2WRJYFIvNjqJ_sTj0epNlfFWBtlhca2ocLGCtgPz-BYzolFxIADwbsfJM"/>
+</div>
+<div>
+<p class="text-label-bold font-label-bold text-on-surface">Alex Rivera</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Arriving in 12 mins</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Delivery Status & Timeline -->
+<section class="px-container-margin py-section-gap">
+<div class="flex flex-col gap-1 mb-8">
+<div class="flex justify-between items-baseline">
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface">Order #ES-98421</h2>
+<span class="text-label-bold font-label-bold text-primary px-3 py-1 bg-primary/10 rounded-full">IN TRANSIT</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Expected delivery: Today, 4:30 PM - 5:15 PM</p>
+</div>
+<!-- Vertical Timeline -->
+<div class="relative flex flex-col gap-0">
+<!-- Order Placed -->
+<div class="flex gap-6 pb-8 group step-active">
+<div class="flex flex-col items-center">
+<div class="step-dot w-4 h-4 rounded-full z-10 mt-1.5 transition-all"></div>
+<div class="step-line w-0.5 flex-1 bg-outline-variant/30 transition-all"></div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-body-lg font-bold text-on-surface">Order Placed</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">We've received your order and are preparing it.</p>
+<p class="text-label-bold font-label-bold text-primary opacity-70">Oct 12, 09:15 AM</p>
+</div>
+</div>
+<!-- Shipped -->
+<div class="flex gap-6 pb-8 group step-active">
+<div class="flex flex-col items-center">
+<div class="step-dot w-4 h-4 rounded-full z-10 mt-1.5 transition-all"></div>
+<div class="step-line w-0.5 flex-1 bg-outline-variant/30 transition-all"></div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-body-lg font-bold text-on-surface">Shipped</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Your package has left our Oakland warehouse.</p>
+<p class="text-label-bold font-label-bold text-primary opacity-70">Oct 13, 02:40 PM</p>
+</div>
+</div>
+<!-- Out for Delivery -->
+<div class="flex gap-6 pb-8 group step-active">
+<div class="flex flex-col items-center">
+<div class="step-dot w-4 h-4 rounded-full z-10 mt-1.5 transition-all animate-pulse"></div>
+<div class="step-line w-0.5 flex-1 bg-outline-variant/30 transition-all"></div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-body-lg font-bold text-primary">Out for Delivery</h3>
+<p class="text-body-sm font-body-sm text-on-surface">The courier is in your neighborhood.</p>
+<p class="text-label-bold font-label-bold text-primary">Today, 04:12 PM</p>
+</div>
+</div>
+<!-- Delivered -->
+<div class="flex gap-6 group">
+<div class="flex flex-col items-center">
+<div class="w-4 h-4 rounded-full z-10 mt-1.5 bg-outline-variant/40 border-2 border-surface transition-all"></div>
+<!-- Last item line ends -->
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-body-lg font-bold text-on-surface-variant">Delivered</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant/60">Estimated arrival by 5:15 PM</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Summary Glass Card -->
+<section class="px-container-margin mb-8">
+<div class="bg-surface-container border border-outline-variant/20 p-4 rounded-lg flex gap-4">
+<div class="w-20 h-20 bg-surface-container-high rounded flex items-center justify-center p-2">
+<img class="w-full h-full object-contain" data-alt="A premium 3D render of high-end wireless noise-cancelling headphones in a sleek matte black finish. The headphones are positioned asymmetrically on a dark surface with sharp green light reflections on the metallic edges. Professional product photography aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeSCwbKUgVOX7Nq1enUZG50770ypV9BuNYPplaEmMbUSOcOIdCzQl3PJZY10JntPRfIJij02m1ifEI_QeOXWGs68o-BFDHiJkhdgeGljcq6QQRo-KDB-SZnatQ_avDViodRVgrv1KORKdmE6EzibflLEX3WKnZkqNndSg2PHAByXj48lWxuKj9rWuChyzx0dCGsFgnkE3WZapInmiVDEX2albvP2SzXsFbTj-DI_NHkZUbbwYtfUE4sz66VxcAWXKXuf8AHxS9DOs"/>
+</div>
+<div class="flex flex-col justify-center gap-1">
+<p class="text-label-bold font-label-bold text-primary uppercase tracking-widest">Premium Audio</p>
+<h4 class="text-body-lg font-bold text-on-surface leading-tight">SonicPro Wireless X2 - Obsidian</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">$299.99 • Qty: 1</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full rounded-t-lg z-50 bg-surface-container shadow-[0_-4px_20px_rgba(0,0,0,0.4)] flex justify-around items-center h-20 px-4 pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Wishlist</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary gap-1 scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Profile</span>
+</button>
+</nav>
+<script>
+        // Simple interaction for the tracking timeline
+        document.querySelectorAll('.step-active').forEach(step => {
+            step.addEventListener('click', () => {
+                step.classList.toggle('opacity-50');
+                setTimeout(() => step.classList.toggle('opacity-50'), 200);
+            });
+        });
+
+        // Micro-interaction for the "Help" floating button logic (if needed in future)
+        console.log("ElectroStream Order Tracking initialized.");
+    </script>
+</body></html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream | Product Reviews</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#e1e3e4",
+                    "on-primary-fixed-variant": "#00522e",
+                    "inverse-surface": "#e1e3e4",
+                    "on-tertiary-fixed-variant": "#6f3900",
+                    "on-secondary-fixed": "#241436",
+                    "tertiary-fixed-dim": "#ffb77f",
+                    "surface": "#111415",
+                    "on-tertiary-fixed": "#2f1500",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#2e3132",
+                    "surface-bright": "#373a3b",
+                    "primary-fixed-dim": "#5cde94",
+                    "error-container": "#93000a",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#323536",
+                    "on-surface-variant": "#bccabd",
+                    "on-primary-fixed": "#00210f",
+                    "surface-container-lowest": "#0c0f10",
+                    "outline-variant": "#3d4a40",
+                    "surface-container": "#1d2021",
+                    "on-primary": "#00391e",
+                    "inverse-primary": "#006d3e",
+                    "on-secondary-container": "#c2add8",
+                    "tertiary-container": "#f58400",
+                    "secondary-fixed": "#efdbff",
+                    "on-tertiary-container": "#592c00",
+                    "tertiary": "#ffb77f",
+                    "on-primary-container": "#004224",
+                    "background": "#111415",
+                    "on-secondary-fixed-variant": "#513f64",
+                    "tertiary-fixed": "#ffdcc4",
+                    "surface-tint": "#5cde94",
+                    "surface-container-low": "#191c1d",
+                    "secondary-fixed-dim": "#d4beea",
+                    "secondary": "#d4beea",
+                    "outline": "#879488",
+                    "on-background": "#e1e3e4",
+                    "surface-container-high": "#282a2b",
+                    "on-secondary": "#39294c",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#2eb872",
+                    "primary": "#5cde94",
+                    "surface-dim": "#111415",
+                    "surface-container-highest": "#323536",
+                    "primary-fixed": "#7afbae",
+                    "on-tertiary": "#4e2600",
+                    "secondary-container": "#513f64"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "12px",
+                    "stack-sm": "8px",
+                    "gutter-md": "16px",
+                    "section-gap": "32px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "800"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-card {
+            background: rgba(29, 32, 33, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(135, 148, 136, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface flex justify-between items-center px-container-margin py-stack-md w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity text-primary">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-primary dark:text-primary">ElectroStream</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-container-margin max-w-4xl mx-auto">
+<!-- Hero Product Context -->
+<section class="mb-section-gap flex items-center gap- gutter-md bg-surface-container rounded-lg p-gutter-md">
+<div class="w-24 h-24 bg-surface-container-highest rounded flex-shrink-0">
+<img class="w-full h-full object-contain p-2" data-alt="A professional high-angle shot of a sleek, ultra-thin obsidian black laptop with emerald green keyboard backlighting glowing in a dimly lit studio. The lighting is cinematic, highlighting the metallic texture and sharp edges of the device. The background is a clean, dark tech-oriented environment, emphasizing a premium corporate modern aesthetic with high-contrast emerald and deep purple tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr8PZuyKh1zUsfsG-Aa-QoYR5aSSuqlUOOO2mxaMcr_05aVLDwvfoeOzXJ_fF7s6qjCGlXXw5otUwFxs8xen5JR0ARdRV8s6k6DixmQKseYu54x6Gaogleb8vFluJbPFDVWiCE4zVGbEswtVdcmuwoHsZw-y14C0ZJllkaZ4n3f-Malkr_6B41Q3wGZba0fP5eT-Z8N75MsTqsQZTzo0Pa6Qi5ivee0YvgcgceNDM2l-4XPZjVUTIDnELbIEUxOSRaafDqzxZxWJk"/>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Titan X Pro 16"</h2>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold text-label-bold">4.9 (1,248 Reviews)</span>
+</div>
+</div>
+</section>
+<!-- Ratings Summary Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-md mb-section-gap">
+<!-- Main Score -->
+<div class="md:col-span-5 glass-card rounded-lg p-gutter-md flex flex-col items-center justify-center text-center">
+<span class="text-[64px] font-extrabold text-primary leading-none">4.9</span>
+<div class="flex gap-1 my-2 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Global rating consistency</p>
+</div>
+<!-- Detailed Breakdown -->
+<div class="md:col-span-7 glass-card rounded-lg p-gutter-md flex flex-col justify-between">
+<div class="space-y-3">
+<!-- 5 Star -->
+<div class="flex items-center gap-4">
+<span class="font-label-bold text-label-bold w-12 text-on-surface-variant">5 Star</span>
+<div class="flex-1 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[88%] rounded-full"></div>
+</div>
+<span class="font-label-bold text-label-bold w-10 text-right">88%</span>
+</div>
+<!-- 4 Star -->
+<div class="flex items-center gap-4">
+<span class="font-label-bold text-label-bold w-12 text-on-surface-variant">4 Star</span>
+<div class="flex-1 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[9%] rounded-full"></div>
+</div>
+<span class="font-label-bold text-label-bold w-10 text-right">9%</span>
+</div>
+<!-- 3 Star -->
+<div class="flex items-center gap-4">
+<span class="font-label-bold text-label-bold w-12 text-on-surface-variant">3 Star</span>
+<div class="flex-1 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[2%] rounded-full"></div>
+</div>
+<span class="font-label-bold text-label-bold w-10 text-right">2%</span>
+</div>
+<!-- 2 Star -->
+<div class="flex items-center gap-4">
+<span class="font-label-bold text-label-bold w-12 text-on-surface-variant">2 Star</span>
+<div class="flex-1 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[1%] rounded-full"></div>
+</div>
+<span class="font-label-bold text-label-bold w-10 text-right">1%</span>
+</div>
+<!-- 1 Star -->
+<div class="flex items-center gap-4">
+<span class="font-label-bold text-label-bold w-12 text-on-surface-variant">1 Star</span>
+<div class="flex-1 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[0%] rounded-full"></div>
+</div>
+<span class="font-label-bold text-label-bold w-10 text-right">0%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-stack-md overflow-x-auto hide-scrollbar mb-gutter-md">
+<button class="px-gutter-md py-2 bg-primary text-on-primary font-label-bold text-label-bold rounded-full whitespace-nowrap">All Reviews</button>
+<button class="px-gutter-md py-2 bg-surface-container-high text-on-surface-variant font-label-bold text-label-bold rounded-full whitespace-nowrap hover:bg-surface-variant transition-colors">With Media</button>
+<button class="px-gutter-md py-2 bg-surface-container-high text-on-surface-variant font-label-bold text-label-bold rounded-full whitespace-nowrap hover:bg-surface-variant transition-colors">Verified Purchase</button>
+<button class="px-gutter-md py-2 bg-surface-container-high text-on-surface-variant font-label-bold text-label-bold rounded-full whitespace-nowrap hover:bg-surface-variant transition-colors">Critical</button>
+</div>
+<!-- Review List -->
+<div class="space-y- gutter-md">
+<!-- Review Card 1 -->
+<article class="bg-surface-container p-gutter-md rounded-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young tech professional with a clean, modern look, wearing sleek glasses. The photo has professional studio lighting with a subtle emerald green rim light reflecting off the side of their face, set against a dark, out-of-focus tech workspace background. The mood is confident and sophisticated, matching the Emerald Electronica corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoA5T6lKoPpn52FTsqkfjjJvQmI0xxdSkklgksUmr1tOYgcFE9kB1fQ1Q359yDdCR4DQV5Hr0Wb4wmS-5vSNt2cPpc1ZsFm8I0x4JDBJnKwe9EqCa6xMaIEHSvG_Z1QWSyLRsh-mxBMzr-yAM-QhvBIIL_ASjPBXFcvIH564__RIWADdA7yoncrnalcjg5r_uyYyy_xXV-b55fpvY6Uyb-OoWgUoQEtgqFRWJeJyNwLziATdmX47v6h5EdfUlj-T-kEZGZnxR8A00"/>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface">Alex Chen</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Verified Buyer • 2 days ago</p>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Absolute Performance Beast</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
+                    The build quality on the Titan X Pro is second to none. I've been using it for high-end 3D rendering and the thermal management is incredible. The emerald backlighting isn't just aesthetic—it's highly functional in low light. Highly recommended for creative pros.
+                </p>
+<div class="flex gap-2 mb-4 overflow-x-auto hide-scrollbar">
+<div class="w-24 h-16 bg-surface-variant rounded-md overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up shot of a high-end laptop keyboard with glowing emerald green LED backlighting. The keys are matte black, and the light spills out from underneath, reflecting off the brushed aluminum chassis. The shot is angled to show the premium texture and precision engineering of the device in a dark room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIbZRcKWBlygdnMd756hAcuE9hHJmg7-htOI2mZiMnAtxnytK_2j0BT15QAGRBRGUWRgvvdVFPyaToawnvu7IM9vDMtgLIz4tGggB9MLUxRDQQAU7AmCvVd585HIz6tFa2Qr9y8ca5sVGjQrC1HJ9-DNptSWZO44j0pd5g0wfOtWI7Am9adU_MzM0ysR5bM2WdPZ3PBLAVuUykqn-iph2AHSiSD7T7xEoqz26nyY9sE2B-Y0nTaMGpSMCKo151Kn8coykprro5MYs"/>
+</div>
+<div class="w-24 h-16 bg-surface-variant rounded-md overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A wide-angle lifestyle shot of a sleek black laptop sitting on a minimalist wooden desk with a glowing green desk lamp nearby. The screen displays a complex coding interface with vibrant syntax highlighting. The atmosphere is professional, clean, and high-tech, emphasizing productivity and premium design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtFSCVEtVDpvBXFne2DYz3hWbtJw6QKu2EgasIhVzrU-mBWzU1G5cMhC8NPqtCsMQ5BitegE74n4vj1zl0R6OLL45_fnEscu0YlfFD-AhkFfzT1z7Oe2_sCfOVU48osDp7rZOhv5qJc37ssv7c35A8bsFWeINqZ1gTZAFYOExsuL-SREX0191T2RlZGABbkcpiF7gSXAfCC5XTS5YLYEvt9AUnfWMFlIyIX3k37Ty1kqZO9rxuEHb6DlHZYSqyYUJN-MD6jhyBYz8"/>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-outline-variant pt-4">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-active:scale-125 transition-transform">thumb_up</span>
+<span class="font-label-bold text-label-bold">Helpful (42)</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</button>
+</div>
+</article>
+<!-- Review Card 2 -->
+<article class="bg-surface-container p-gutter-md rounded-lg">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a modern female software developer with vibrant, colorful hair, captured in a creative and high-tech environment. The lighting features sharp contrasts with deep shadows and soft emerald highlights. The aesthetic is professional yet expressive, perfectly fitting a futuristic electronics brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATBsV_7_7kQc5prS57k6Va1bnOpUpKiH_fYvZQUJGGoVPenw-NvtbdCOzuJB9QpMPz0TgFJOzGKepRMbYw4qEVcha8bqHNR-IYU3mhIZS3yOg6l2XDW3Z-abUG1OCQMCrPFu5U7l1E1FOPNDOt70XuUMHugjAMMOejYmbr4Xn907kJbxhYW_Y0xIz4GjQ8vtlGUNH7uSpMOe3d6GSD-1vQvkuC5LEnHoMyHj9gQtHSM_npXBK95CGmVOSYiPQyeyQwk1Ph6ARC_Us"/>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface">Sarah J.</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Verified Buyer • 1 week ago</p>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Stunning Display, Average Battery</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
+                    The 4K OLED display is probably the best I've ever seen on a portable machine. Colors pop and the obsidian black level is true. My only gripe is battery life—while good, it doesn't quite reach the 12 hours advertised when doing heavy tasks. More like 8 hours.
+                </p>
+<div class="flex items-center gap-6 border-t border-outline-variant pt-4">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-active:scale-125 transition-transform">thumb_up</span>
+<span class="font-label-bold text-label-bold">Helpful (18)</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</button>
+</div>
+</article>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-container-margin w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform duration-150 z-50">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-lg bg-surface-container dark:bg-surface-container shadow-[0px_-4px_20px_rgba(0,0,0,0.05)] flex justify-around items-center h-16 px-container-margin">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-bold text-label-bold">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-bold text-label-bold">Wishlist</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary hover:text-primary transition-colors active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-bold text-label-bold">Profile</span>
+</button>
+</nav>
+<script>
+        // Simple Interaction Logic
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Haptic feedback simulation
+                if (window.navigator && window.navigator.vibrate) {
+                    window.navigator.vibrate(5);
+                }
+            });
+        });
+
+        // Add "helpful" count increment logic
+        document.querySelectorAll('.group').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const countSpan = this.querySelector('span:last-child');
+                const currentCount = parseInt(countSpan.textContent.match(/\d+/)[0]);
+                if (!this.classList.contains('text-primary')) {
+                    this.classList.add('text-primary');
+                    countSpan.textContent = `Helpful (${currentCount + 1})`;
+                } else {
+                    this.classList.remove('text-primary');
+                    countSpan.textContent = `Helpful (${currentCount - 1})`;
+                }
+            });
+        });
+    </script>
+</body></html>

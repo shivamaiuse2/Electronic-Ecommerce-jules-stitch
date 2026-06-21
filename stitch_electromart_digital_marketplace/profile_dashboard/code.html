@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>ElectroStream | User Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(29, 32, 33, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .bento-card {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .bento-card:active {
+            transform: scale(0.97);
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#00522e",
+                      "surface": "#111415",
+                      "on-secondary-fixed": "#241436",
+                      "secondary-fixed-dim": "#d4beea",
+                      "error": "#ffb4ab",
+                      "on-secondary": "#39294c",
+                      "on-error": "#690005",
+                      "surface-dim": "#111415",
+                      "inverse-surface": "#e1e3e4",
+                      "tertiary-container": "#f58400",
+                      "outline": "#879488",
+                      "surface-container-high": "#282a2b",
+                      "primary": "#5cde94",
+                      "on-tertiary-container": "#592c00",
+                      "background": "#111415",
+                      "secondary-fixed": "#efdbff",
+                      "on-primary": "#00391e",
+                      "secondary": "#d4beea",
+                      "surface-bright": "#373a3b",
+                      "tertiary": "#ffb77f",
+                      "primary-fixed-dim": "#5cde94",
+                      "on-secondary-container": "#c2add8",
+                      "on-primary-container": "#004224",
+                      "on-tertiary": "#4e2600",
+                      "on-primary-fixed": "#00210f",
+                      "on-tertiary-fixed": "#2f1500",
+                      "on-background": "#e1e3e4",
+                      "secondary-container": "#513f64",
+                      "on-tertiary-fixed-variant": "#6f3900",
+                      "error-container": "#93000a",
+                      "inverse-primary": "#006d3e",
+                      "surface-container-highest": "#323536",
+                      "surface-variant": "#323536",
+                      "surface-container": "#1d2021",
+                      "tertiary-fixed": "#ffdcc4",
+                      "on-error-container": "#ffdad6",
+                      "surface-tint": "#5cde94",
+                      "tertiary-fixed-dim": "#ffb77f",
+                      "on-surface": "#e1e3e4",
+                      "primary-fixed": "#7afbae",
+                      "on-surface-variant": "#bccabd",
+                      "surface-container-lowest": "#0c0f10",
+                      "on-secondary-fixed-variant": "#513f64",
+                      "primary-container": "#2eb872",
+                      "surface-container-low": "#191c1d",
+                      "outline-variant": "#3d4a40",
+                      "inverse-on-surface": "#2e3132"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter-md": "16px",
+                      "stack-sm": "8px",
+                      "container-margin": "24px",
+                      "stack-md": "12px",
+                      "section-gap": "32px"
+              },
+              "fontFamily": {
+                      "label-bold": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-sm": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "label-bold-mobile": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                      "headline-md-mobile": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 dark:border-outline-variant/20 shadow-sm flex justify-between items-center px-container-margin h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/30">
+<img class="w-full h-full object-cover" data-alt="A high-resolution professional studio portrait of a young tech enthusiast named Alex Chen, wearing a sleek black minimalist hoodie. The lighting is dramatic and cinematic with neon emerald green highlights reflecting off his glasses, set against a dark obsidian background that matches the ElectroStream premium branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbG8XSquc7AECh9ZMvaFKbVt5M04Sr1OuMbIZrhYGARsg98nvs5cgInCFiv_MsPg1KziA_cZP-PcXh7HTJ3QS70k3MvVhFaIZerozqtFhJIulLYdSXtDs9DGI1VRFVoXOlol9klpXlK6zXx7qjpjW0WVo9BDHCwrFtY7RwFIX-N1BJxMUknRuc8SCXJ-oCZxRjghgz7FU7r6Cc9QHQtxUcm2VDjPcip6hYcLd5JeID8sJSeB8J9_fT1LFsvj5jM_L20iP2-4oBiyg"/>
+</div>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-primary dark:text-primary">ElectroStream</h1>
+</div>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-container-margin max-w-md mx-auto">
+<!-- Profile Hero Section -->
+<section class="relative mb-section-gap">
+
+<div class="relative z-10 flex flex-col items-center py-6">
+<div class="w-24 h-24 rounded-full border-4 border-background overflow-hidden shadow-xl mb-4">
+<img class="w-full h-full object-cover" data-alt="Close up detailed avatar of Alex Chen, a modern tech professional. He has a confident expression, short dark hair, and is surrounded by a soft glowing green aura. The aesthetic is futuristic and high-end, utilizing deep navy and vibrant emerald tones to create a luxury tech feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzbtKuIn4N6sPyULeyOkHroKC3IdJ7Rp_Q-vCYbI-ggR_vi2LM9p8PesqXG4DNi68MWIfpvcfNJHGEO37GZU95GQeO7BpE15G_D4xV5rvNPGFk-P_gbGnkGZhAtJDWBBOMq8lzSRlN8zfyKjjVSVjUUW7mAz3pa7-LMD9IfdEBErW6wM-9SZbQj4wN8QNSDpJOFov3JM9O2oQL5me470ycTZfosNNMR7luCzAMM7wbKbshviIjL4jDGG0DKpsGLEJWmyKhYbhv4zc"/>
+</div>
+<h2 class="text-display-lg font-display-lg text-on-surface">Alex Chen</h2>
+<p class="text-body-sm font-body-sm text-primary">Pro Member • Since 2023</p>
+</div>
+</section>
+<!-- Profile Navigation Bento Grid -->
+<nav class="space-y-stack-md">
+<div class="grid grid-cols-2 gap-stack-md">
+<!-- Edit Profile -->
+<button class="bento-card bg-surface-container hover:bg-surface-container-high p-gutter-md rounded flex flex-col items-start gap-stack-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary" data-icon="person_edit">person_edit</span>
+<span class="text-label-bold font-label-bold">Edit Profile</span>
+</button>
+<!-- Notifications -->
+<button class="bento-card bg-surface-container hover:bg-surface-container-high p-gutter-md rounded flex flex-col items-start gap-stack-sm border border-outline-variant/10">
+<div class="flex justify-between w-full">
+<span class="material-symbols-outlined text-tertiary" data-icon="notifications">notifications</span>
+<span class="bg-error text-on-error text-[10px] px-1.5 py-0.5 rounded-full font-bold">3</span>
+</div>
+<span class="text-label-bold font-label-bold">Notifications</span>
+</button>
+</div>
+<!-- List Navigation -->
+<div class="bg-surface-container rounded-lg overflow-hidden border border-outline-variant/10">
+<button class="w-full flex items-center justify-between p-gutter-md hover:bg-surface-container-high transition-colors active:scale-[0.99]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+<span class="text-body-lg font-body-lg">Saved Addresses</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="h-[1px] bg-outline-variant/10 mx-gutter-md"></div>
+<button class="w-full flex items-center justify-between p-gutter-md hover:bg-surface-container-high transition-colors active:scale-[0.99]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="history">history</span>
+<span class="text-body-lg font-body-lg">Order History</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="h-[1px] bg-outline-variant/10 mx-gutter-md"></div>
+<button class="w-full flex items-center justify-between p-gutter-md hover:bg-surface-container-high transition-colors active:scale-[0.99]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="favorite">favorite</span>
+<span class="text-body-lg font-body-lg">Wishlist</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="h-[1px] bg-outline-variant/10 mx-gutter-md"></div>
+<button class="w-full flex items-center justify-between p-gutter-md hover:bg-surface-container-high transition-colors active:scale-[0.99]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="settings">settings</span>
+<span class="text-body-lg font-body-lg">Settings</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Stats/Engagement Banner -->
+<div class="relative bg-primary-container text-on-primary-container p-gutter-md rounded-lg overflow-hidden group">
+<div class="relative z-10">
+<p class="text-label-bold font-label-bold opacity-80 uppercase tracking-widest">Premium Rewards</p>
+<h3 class="text-headline-md font-headline-md mb-1">2,450 XP Points</h3>
+<p class="text-body-sm font-body-sm mb-4">You're only 550 points away from a 15% discount on your next tech upgrade.</p>
+<button class="bg-on-primary-container text-primary-container px-4 py-2 rounded-full text-label-bold font-label-bold active:scale-95 transition-transform">Redeem Now</button>
+</div>
+<div class="absolute right-[-20px] top-[-20px] opacity-20 transform rotate-12 group-hover:rotate-45 transition-transform duration-700">
+<span class="material-symbols-outlined text-[120px]" data-icon="rocket_launch">rocket_launch</span>
+</div>
+</div>
+<!-- Log Out Button -->
+<button class="w-full mt-stack-md py-4 rounded-lg border-2 border-error/30 text-error flex items-center justify-center gap-2 font-bold hover:bg-error/5 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Log Out</span>
+</button>
+</nav>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full rounded-t-lg z-50 bg-surface-container dark:bg-surface-container shadow-[0_-4px_20px_rgba(0,0,0,0.4)] flex justify-around items-center h-20 px-4 pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Wishlist</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary gap-1 scale-110">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Profile</span>
+</button>
+</nav>
+<script>
+        // Simple haptic-like feedback for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                if (window.navigator.vibrate) {
+                    window.navigator.vibrate(10);
+                }
+            });
+        });
+
+        // Dynamic header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.replace('bg-surface/80', 'bg-surface/95');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.replace('bg-surface/95', 'bg-surface/80');
+            }
+        });
+    </script>
+</body></html>

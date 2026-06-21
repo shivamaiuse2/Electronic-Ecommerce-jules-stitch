@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#00522e",
+                        "surface-container": "#1d2021",
+                        "on-secondary-fixed": "#241436",
+                        "inverse-on-surface": "#2e3132",
+                        "primary-fixed-dim": "#5cde94",
+                        "on-secondary": "#39294c",
+                        "primary-fixed": "#7afbae",
+                        "secondary-container": "#513f64",
+                        "secondary-fixed": "#efdbff",
+                        "outline": "#879488",
+                        "on-surface-variant": "#bccabd",
+                        "secondary-fixed-dim": "#d4beea",
+                        "on-tertiary-container": "#592c00",
+                        "on-tertiary": "#4e2600",
+                        "secondary": "#d4beea",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#2f1500",
+                        "tertiary-container": "#f58400",
+                        "surface-variant": "#323536",
+                        "surface": "#111415",
+                        "on-background": "#e1e3e4",
+                        "on-secondary-container": "#c2add8",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#004224",
+                        "primary": "#5cde94",
+                        "surface-dim": "#111415",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0c0f10",
+                        "surface-container-low": "#191c1d",
+                        "tertiary-fixed": "#ffdcc4",
+                        "background": "#111415",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#00210f",
+                        "on-surface": "#e1e3e4",
+                        "surface-bright": "#373a3b",
+                        "inverse-surface": "#e1e3e4",
+                        "on-secondary-fixed-variant": "#513f64",
+                        "primary-container": "#2eb872",
+                        "surface-container-high": "#282a2b",
+                        "tertiary": "#ffb77f",
+                        "on-tertiary-fixed-variant": "#6f3900",
+                        "outline-variant": "#3d4a40",
+                        "surface-container-highest": "#323536",
+                        "tertiary-fixed-dim": "#ffb77f",
+                        "inverse-primary": "#006d3e",
+                        "surface-tint": "#5cde94",
+                        "on-primary": "#00391e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "12px",
+                        "gutter-md": "16px",
+                        "section-gap": "32px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #111415;
+            overflow: hidden;
+        }
+        .hero-clip {
+            clip-path: ellipse(150% 100% at 50% 0%);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+<!-- Mobile Container Emulator -->
+<main class="relative w-full max-w-[430px] h-[932px] bg-background overflow-hidden flex flex-col">
+<!-- Top Visual Section (White Background) -->
+<section class="relative h-[60%] bg-on-background hero-clip flex flex-col items-center justify-center overflow-hidden">
+<!-- Atmospheric Glow Background (Animated Shader) -->
+
+<!-- Brand Logo Overlay -->
+<div class="absolute top-12 left-0 w-full px-container-margin flex justify-between items-center z-20">
+<span class="text-headline-lg font-headline-lg font-bold text-surface">ElectroStream</span>
+<button class="text-label-bold font-label-bold text-surface/60 hover:text-surface transition-colors uppercase tracking-widest">Skip</button>
+</div>
+<!-- Hero Image Asset -->
+<div class="relative w-full px-8 animate-float z-10 mt-12">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-75 transform -translate-y-4"></div>
+<img class="w-full h-auto drop-shadow-2xl object-contain" data-alt="A professional studio product shot of a slim, high-end gaming laptop with a matte obsidian finish and vibrant green backlit keyboard. The screen displays a colorful abstract liquid design in shades of emerald and neon green. The lighting is cinematic, highlighting the sharp metallic edges and premium textures of the device. The background is a clean, neutral studio white that makes the dark hardware pop with high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB29d9EGLkF5SY93ZBrQyLEo8iVEfIWhr8opQdb2sCqdS333gr8rLF6CBsdO6bF3jo_poAeq75pSECejUYAKfBfM-RFYO7mobwKTMbJb77pz9I7ClMBJeW34HKTDOrSTb5zOtUBmsiImYGmNuNnj-P1wOqQXJ2KcgKOVFBR4AzUGCZ5AVJgy2RahDN3cPKdZKkbKdtNr_mR1-4l8IcPf9-ryiCZ4ezkUBy12U0JI1Ix7tnILPwxgKuqBIgPnQRgve7AXBOHflaPPjw"/>
+</div>
+</section>
+<!-- Bottom Content Section (Dark Navy/Obsidian) -->
+<section class="flex-1 bg-background px-container-margin pt-12 pb-16 flex flex-col justify-between">
+<div class="space-y-6 text-center">
+<!-- Typography levels from config -->
+<h1 class="text-display-lg font-display-lg text-on-background tracking-tight">
+                    Let's find Your Gadget!
+                </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-[90%] mx-auto leading-relaxed">
+                    Discover the latest in high-performance computing and smart electronics.
+                </p>
+</div>
+<div class="space-y-10">
+<!-- Progress Dots -->
+<div class="flex justify-center items-center gap-2">
+<div class="h-1.5 w-8 rounded-full bg-primary transition-all duration-300"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-outline-variant"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-outline-variant"></div>
+</div>
+<!-- Primary Action Button -->
+<div class="relative group">
+<!-- Subtle Glow effect -->
+<div class="absolute -inset-1 bg-primary/40 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<button class="relative w-full h-16 bg-primary text-on-primary font-headline-md text-headline-md rounded-full flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-primary/20" onclick="handleNext()">
+                        Next
+                        <span class="material-symbols-outlined font-bold">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Dynamic Micro-interactions -->
+<script>
+            function handleNext() {
+                // Subtle ripple effect or navigation logic would go here
+                const btn = document.querySelector('button');
+                btn.classList.add('opacity-80');
+                setTimeout(() => {
+                    btn.classList.remove('opacity-80');
+                    // Logical navigation placeholder
+                    console.log("Navigating to next screen...");
+                }, 150);
+            }
+
+            // Simple parallax on scroll or subtle mouse move (emulated)
+            document.addEventListener('mousemove', (e) => {
+                const moveX = (e.clientX - window.innerWidth / 2) / 50;
+                const moveY = (e.clientY - window.innerHeight / 2) / 50;
+                const hero = document.querySelector('.animate-float');
+                if (hero) {
+                    hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                }
+            });
+        </script>
+</main>
+</body></html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream | Compare Laptops</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(29, 32, 33, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface": "#111415",
+                "on-tertiary-fixed": "#2f1500",
+                "inverse-on-surface": "#2e3132",
+                "on-secondary-container": "#c2add8",
+                "surface-dim": "#111415",
+                "surface-container-highest": "#323536",
+                "secondary-container": "#513f64",
+                "outline": "#879488",
+                "on-tertiary-container": "#592c00",
+                "on-secondary-fixed-variant": "#513f64",
+                "on-surface-variant": "#bccabd",
+                "on-primary": "#00391e",
+                "surface-container-high": "#282a2b",
+                "primary-container": "#2eb872",
+                "on-error": "#690005",
+                "error-container": "#93000a",
+                "on-secondary": "#39294c",
+                "on-error-container": "#ffdad6",
+                "on-primary-fixed-variant": "#00522e",
+                "surface-container-low": "#191c1d",
+                "on-secondary-fixed": "#241436",
+                "inverse-primary": "#006d3e",
+                "surface-container": "#1d2021",
+                "primary-fixed-dim": "#5cde94",
+                "primary-fixed": "#7afbae",
+                "on-tertiary-fixed-variant": "#6f3900",
+                "secondary-fixed-dim": "#d4beea",
+                "surface-tint": "#5cde94",
+                "tertiary": "#ffb77f",
+                "surface-bright": "#373a3b",
+                "inverse-surface": "#e1e3e4",
+                "surface-container-lowest": "#0c0f10",
+                "secondary-fixed": "#efdbff",
+                "on-surface": "#e1e3e4",
+                "on-tertiary": "#4e2600",
+                "tertiary-container": "#f58400",
+                "on-primary-fixed": "#00210f",
+                "background": "#111415",
+                "on-primary-container": "#004224",
+                "error": "#ffb4ab",
+                "secondary": "#d4beea",
+                "primary": "#5cde94",
+                "on-background": "#e1e3e4",
+                "surface-variant": "#323536",
+                "tertiary-fixed-dim": "#ffb77f",
+                "tertiary-fixed": "#ffdcc4",
+                "outline-variant": "#3d4a40"
+            },
+            "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "stack-sm": "8px",
+                "section-gap": "32px",
+                "gutter-md": "16px",
+                "stack-md": "12px",
+                "container-margin": "24px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Plus Jakarta Sans"],
+                "body-sm": ["Plus Jakarta Sans"],
+                "body-lg": ["Plus Jakarta Sans"],
+                "label-bold": ["Plus Jakarta Sans"],
+                "headline-md": ["Plus Jakarta Sans"],
+                "display-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "label-bold-mobile": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                "headline-md-mobile": ["18px", {"lineHeight": "26px", "fontWeight": "700"}],
+                "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24 font-body-lg">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm flex justify-between items-center px-container-margin h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional close-up studio portrait of a tech-savvy user with soft ambient lighting from a computer screen, creating a modern and clean aesthetic consistent with high-end digital lifestyle photography. The background is a blurred dark office with subtle emerald green light accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB13Y2zSZ5MArc8fJhBP5zhrt3sZEv7U90UOmJmFA_So_WeSktzagM7wm1JLgjnfk1OkLbR6GSXEW0H4Frx_kiAhheN8VJbZHHS-mwN1Qr5uF1x9XF4u4gdI42JUxfltuSJorAu8ftDqwVekKhZwkMQ-8kp683pJGjxoZZ6ye-HmZV8LjkzTkwYriFDPx6wUZlL2tb3tfjseOo5XkuGAqp66F8Wss3EPyiXngHQilMqeCHMdFRQEcxM02WnkXxEn7O9l-5MotF3XVA"/>
+</div>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-primary">ElectroStream</h1>
+</div>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">search</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="pt-20 px-container-margin">
+<!-- Header Section -->
+<section class="mt-stack-md py-6 text-center">
+<p class="text-label-bold font-label-bold text-primary uppercase tracking-widest mb-2">Comparison Hub</p>
+<h2 class="text-display-lg font-display-lg text-on-surface">Pro Performance</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-md mx-auto mt-2">Side-by-side analysis of the market's leading workstation gadgets.</p>
+</section>
+<!-- Product Cards Hero -->
+<section class="grid grid-cols-2 gap-gutter-md mt-6">
+<!-- Laptop 1: Titan X-Pro -->
+<div class="bg-surface-container rounded-lg p-4 flex flex-col items-center border border-outline-variant/10">
+<div class="w-full aspect-square bg-surface-container-low rounded-DEFAULT flex items-center justify-center mb-4 relative group">
+<img class="w-4/5 object-contain transition-transform duration-300 group-hover:scale-110" data-alt="A sleek, metallic obsidian black high-end gaming laptop featuring a thin bezel display and a backlit keyboard with emerald green accents. The laptop is positioned at an angle on a dark reflective surface, showcasing its aggressive yet professional design. High-energy cinematic lighting with sharp highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3R0XlWtrdM9qO6Py3JBEEYh9NB7wNtEVJ5IBhuA_izbrQJqg7TWSfM06EZLIpOiBQ7Tgvf3EHv7GX8K8SLGLEo2A_7FEJ5oVHwoc7xIaTM9aVyRt7v3lc1xxOPnyS_BrK3-JXFfb_zmKQTgmf6QX5D9iQaEgCZsWT-M967un4DY3Mu4y0AVc1WuMDZ7iF9gQ2wJ0C18raFXE45u9dLlLyJsaXZntsA3Ls0qDdk2L8Ec1A9CFpmG5qDQwl08E3mCyUdvsX4k-kIXw"/>
+<span class="absolute top-2 left-2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded-full font-bold">TOP RATED</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface text-center leading-tight">Titan X-Pro</h3>
+<p class="text-label-bold font-label-bold text-on-surface-variant mt-1">Obsidian Black</p>
+</div>
+<!-- Laptop 2: FlowBook Pro -->
+<div class="bg-surface-container rounded-lg p-4 flex flex-col items-center border border-outline-variant/10">
+<div class="w-full aspect-square bg-surface-container-low rounded-DEFAULT flex items-center justify-center mb-4 relative group">
+<img class="w-4/5 object-contain transition-transform duration-300 group-hover:scale-110" data-alt="A minimalist, ultra-slim titanium silver workstation laptop with a bright, vibrant high-resolution screen showing a clean desktop interface. The design is elegant and professional, sitting on a pristine white surface in a high-key lit environment. Soft shadows and a premium luxury tech atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAOEEjiEOixwlldi2h5pwUclc2I7muy66mlwdQpy9MI_1-YFj1rHdbf0cRRPleDt_gP6E71Leu_qkVa1ItjdRqY2be7bSGnkUThZqYBcfBZg-Odz1KhJk23AAFxn5xg3Npv-kBOjLShPpddcXuHTV3bEg_L141AL0x_rQozZwbYZ9c9Ko9AKMCp_oiLbbIpIQybx30RHxy4z_rrseAHmnOCw9CUwj13NTcnGHaT99bjNMSyHSYkSovFGbNBoIulOIxILilkjXvvYg"/>
+<span class="absolute top-2 left-2 bg-secondary text-on-secondary text-[10px] px-2 py-1 rounded-full font-bold">POPULAR</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface text-center leading-tight">FlowBook Pro</h3>
+<p class="text-label-bold font-label-bold text-on-surface-variant mt-1">Stellar Silver</p>
+</div>
+</section>
+<!-- Comparison Table (Bento Inspired) -->
+<section class="mt-section-gap space-y-gutter-md">
+<!-- Processor -->
+<div class="bg-surface-container-low rounded-lg p-5 border border-outline-variant/10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">memory</span>
+<span class="text-label-bold font-label-bold text-on-surface-variant uppercase">Processor</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter-md">
+<div class="flex flex-col">
+<span class="text-primary text-label-bold font-label-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> BETTER
+                        </span>
+<p class="text-headline-md font-headline-md text-on-surface">Core i9 Gen 14</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">24-Core 5.8GHz</p>
+</div>
+<div class="flex flex-col opacity-60">
+<span class="text-transparent text-label-bold font-label-bold">—</span>
+<p class="text-headline-md font-headline-md text-on-surface">M3 Ultra Chip</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">16-Core 4.0GHz</p>
+</div>
+</div>
+</div>
+<!-- Graphics -->
+<div class="bg-surface-container-low rounded-lg p-5 border border-outline-variant/10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">speed</span>
+<span class="text-label-bold font-label-bold text-on-surface-variant uppercase">Graphics</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter-md">
+<div class="flex flex-col">
+<span class="text-primary text-label-bold font-label-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> BETTER
+                        </span>
+<p class="text-headline-md font-headline-md text-on-surface">RTX 5080 Ti</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">16GB VRAM GDDR7</p>
+</div>
+<div class="flex flex-col opacity-60">
+<span class="text-transparent text-label-bold font-label-bold">—</span>
+<p class="text-headline-md font-headline-md text-on-surface">40-Core GPU</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Integrated Raytracing</p>
+</div>
+</div>
+</div>
+<!-- RAM & Storage -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md">
+<!-- RAM -->
+<div class="bg-surface-container-low rounded-lg p-5 border border-outline-variant/10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">developer_board</span>
+<span class="text-label-bold font-label-bold text-on-surface-variant uppercase">Memory</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter-md">
+<div class="opacity-60">
+<p class="text-headline-md font-headline-md text-on-surface">32GB</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">DDR5X</p>
+</div>
+<div>
+<span class="text-primary text-label-bold font-label-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> BETTER
+                            </span>
+<p class="text-headline-md font-headline-md text-on-surface">64GB</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Unified</p>
+</div>
+</div>
+</div>
+<!-- Storage -->
+<div class="bg-surface-container-low rounded-lg p-5 border border-outline-variant/10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">hard_drive</span>
+<span class="text-label-bold font-label-bold text-on-surface-variant uppercase">Storage</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter-md">
+<div>
+<span class="text-primary text-label-bold font-label-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> BETTER
+                            </span>
+<p class="text-headline-md font-headline-md text-on-surface">2TB</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">NVMe Gen5</p>
+</div>
+<div class="opacity-60">
+<span class="text-transparent text-label-bold font-label-bold">—</span>
+<p class="text-headline-md font-headline-md text-on-surface">1TB</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">SSD Pro</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Price & Buy Actions -->
+<div class="bg-surface-container-highest rounded-lg p-6 mt-stack-md border-2 border-primary/20 shadow-lg">
+<div class="flex items-center justify-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">payments</span>
+<h4 class="text-label-bold font-label-bold text-on-surface uppercase tracking-widest">Final Verdict</h4>
+</div>
+<div class="grid grid-cols-2 gap-gutter-md">
+<!-- Action Titan -->
+<div class="flex flex-col items-center">
+<p class="text-display-lg font-display-lg text-on-surface">$2,899</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Enterprise Edition</p>
+<button class="w-full bg-primary text-on-primary py-3 px-4 rounded-DEFAULT font-label-bold text-label-bold uppercase tracking-tight hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span> Add to Cart
+                        </button>
+</div>
+<!-- Action FlowBook -->
+<div class="flex flex-col items-center">
+<p class="text-display-lg font-display-lg text-on-surface">$3,199</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Creative Studio</p>
+<button class="w-full bg-on-surface text-surface py-3 px-4 rounded-DEFAULT font-label-bold text-label-bold uppercase tracking-tight hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span> Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Decorative Info Section -->
+<section class="mt-section-gap mb-12">
+<div class="relative w-full h-48 rounded-lg overflow-hidden flex items-center p-8">
+
+<div class="relative z-10">
+<h5 class="text-headline-md font-headline-md text-primary">Zero Latency.</h5>
+<p class="text-body-lg font-body-lg text-on-surface max-w-xs mt-2">All ElectroStream devices come with a lifetime performance guarantee and 24/7 priority support.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full rounded-t-lg z-50 bg-surface-container shadow-[0_-4px_20px_rgba(0,0,0,0.4)] flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary gap-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for comparison highlighting
+        document.querySelectorAll('.bg-surface-container-low').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('border-primary/40');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('border-primary/40');
+            });
+        });
+
+        // Dynamic active state simulation
+        const navItems = document.querySelectorAll('nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                navItems.forEach(i => {
+                    i.classList.remove('text-primary');
+                    i.classList.add('text-on-surface-variant');
+                });
+                item.classList.add('text-primary');
+                item.classList.remove('text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>

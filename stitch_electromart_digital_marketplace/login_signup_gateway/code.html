@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream | Login Gateway</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #111415;
+            overflow-x: hidden;
+        }
+        .glass-container {
+            background: rgba(29, 32, 33, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(135, 148, 136, 0.1);
+        }
+        .auth-card-transition {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .auth-card-transition:active {
+            transform: scale(0.98);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#00522e",
+                        "surface-container": "#1d2021",
+                        "on-secondary-fixed": "#241436",
+                        "inverse-on-surface": "#2e3132",
+                        "primary-fixed-dim": "#5cde94",
+                        "on-secondary": "#39294c",
+                        "primary-fixed": "#7afbae",
+                        "secondary-container": "#513f64",
+                        "secondary-fixed": "#efdbff",
+                        "outline": "#879488",
+                        "on-surface-variant": "#bccabd",
+                        "secondary-fixed-dim": "#d4beea",
+                        "on-tertiary-container": "#592c00",
+                        "on-tertiary": "#4e2600",
+                        "secondary": "#d4beea",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#2f1500",
+                        "tertiary-container": "#f58400",
+                        "surface-variant": "#323536",
+                        "surface": "#111415",
+                        "on-background": "#e1e3e4",
+                        "on-secondary-container": "#c2add8",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#004224",
+                        "primary": "#5cde94",
+                        "surface-dim": "#111415",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0c0f10",
+                        "surface-container-low": "#191c1d",
+                        "tertiary-fixed": "#ffdcc4",
+                        "background": "#111415",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#00210f",
+                        "on-surface": "#e1e3e4",
+                        "surface-bright": "#373a3b",
+                        "inverse-surface": "#e1e3e4",
+                        "on-secondary-fixed-variant": "#513f64",
+                        "primary-container": "#2eb872",
+                        "surface-container-high": "#282a2b",
+                        "tertiary": "#ffb77f",
+                        "on-tertiary-fixed-variant": "#6f3900",
+                        "outline-variant": "#3d4a40",
+                        "surface-container-highest": "#323536",
+                        "tertiary-fixed-dim": "#ffb77f",
+                        "inverse-primary": "#006d3e",
+                        "surface-tint": "#5cde94",
+                        "on-primary": "#00391e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "12px",
+                        "gutter-md": "16px",
+                        "section-gap": "32px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col justify-center items-center overflow-hidden">
+<!-- Background Atmospheric Element -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -left-[10%] w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px]"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full max-w-md px-container-margin py-section-gap flex flex-col items-center">
+<!-- Brand Header Section -->
+<div class="flex flex-col items-center mb-12 text-center">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-on-primary-container text-[40px]" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h1 class="text-display-lg font-display-lg text-primary tracking-tight mb-2">ElectroStream</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant opacity-80">Welcome back to the future of gadgets.</p>
+</div>
+<!-- Action Container -->
+<div class="w-full glass-container rounded-lg p-gutter-md flex flex-col gap-6 shadow-2xl border border-outline-variant/30">
+<!-- Welcome Text -->
+<div class="space-y-1">
+<h2 class="text-headline-md font-headline-md text-on-surface">Login to your account</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Enter your details to continue your tech journey.</p>
+</div>
+<!-- Auth Form Fields (Simplified Visuals) -->
+<div class="space-y-4">
+<div class="group">
+<label class="block text-label-bold font-label-bold text-on-surface-variant mb-2 ml-1">EMAIL ADDRESS</label>
+<div class="relative">
+<input class="w-full bg-surface-container-high border-none rounded-DEFAULT px-4 py-4 text-on-surface placeholder:text-outline/50 focus:ring-2 focus:ring-primary transition-all duration-300" placeholder="name@electrostream.com" type="email"/>
+</div>
+</div>
+<div class="group">
+<label class="block text-label-bold font-label-bold text-on-surface-variant mb-2 ml-1">PASSWORD</label>
+<div class="relative">
+<input class="w-full bg-surface-container-high border-none rounded-DEFAULT px-4 py-4 text-on-surface placeholder:text-outline/50 focus:ring-2 focus:ring-primary transition-all duration-300" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex justify-end">
+<a class="text-label-bold font-label-bold text-primary hover:opacity-80 transition-opacity" href="#">Forgot Password?</a>
+</div>
+</div>
+<!-- Primary Actions -->
+<div class="flex flex-col gap-3">
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-4 rounded-DEFAULT auth-card-transition hover:brightness-110 shadow-lg shadow-primary/10">
+                    Sign In
+                </button>
+<button class="w-full border border-outline-variant text-on-surface font-headline-md text-headline-md py-4 rounded-DEFAULT auth-card-transition hover:bg-surface-variant/50">
+                    Create Account
+                </button>
+</div>
+<!-- Divider -->
+<div class="relative flex items-center py-4">
+<div class="flex-grow border-t border-outline-variant/50"></div>
+<span class="flex-shrink mx-4 text-label-bold font-label-bold text-outline uppercase tracking-widest">or continue with</span>
+<div class="flex-grow border-t border-outline-variant/50"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 bg-surface-container-highest py-3 rounded-DEFAULT auth-card-transition hover:bg-surface-variant border border-outline-variant/20">
+<div class="w-6 h-6 flex items-center justify-center bg-white rounded-full p-1">
+<img class="w-full h-full object-contain" data-alt="A clean, minimalist vector of the Google 'G' logo in its original four colors, centered on a crisp white background with high-contrast sharp edges. The aesthetic is modern and corporate, fitting for a premium electronics e-commerce login portal. Digital graphics style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEZaijO5MhqskQT2o_5_sf1fLZyWeAAosgTYO6TJgy8gOrSugn9pavZXA1PehVfXPoLY5CUx-UBD5GDN8tM9Fnfod-RkwhqUjDOiRaniCi5GYiRdETPsPLVmx53mzGS8raOjNN3rwQi1-71icYd7lnLtTZI-S7YVpjx8h1-0-M5acQjEla2miBo_VmkpczcbIcqP6s_JkJ6x1jelE9i_RZQNGypqsr5NMmGZaN1bDrXQitgyM5TtDN-v2VshvE5njRuTGfos33p8I"/>
+</div>
+<span class="text-label-bold font-label-bold text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 bg-surface-container-highest py-3 rounded-DEFAULT auth-card-transition hover:bg-surface-variant border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface" data-icon="apple" style="font-variation-settings: 'FILL' 1;">apps</span>
+<span class="text-label-bold font-label-bold text-on-surface">Apple</span>
+</button>
+</div>
+</div>
+<!-- Footer / Policy Links -->
+<footer class="mt-12 text-center space-y-4">
+<p class="text-body-sm font-body-sm text-outline px-8 leading-relaxed">
+                By signing in, you agree to our <a class="text-on-surface-variant font-bold border-b border-outline-variant" href="#">Terms of Service</a> and <a class="text-on-surface-variant font-bold border-b border-outline-variant" href="#">Privacy Policy</a>.
+            </p>
+<div class="flex justify-center gap-6 pt-4">
+<div class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary/50 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="language">language</span>
+</div>
+<div class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary/50 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="help_outline">help_outline</span>
+</div>
+</div>
+</footer>
+</main>
+<!-- Visual Polish: Floating Particles -->
+<div class="fixed inset-0 pointer-events-none z-0 opacity-20" id="particles-container"></div>
+<script>
+        // Simple ambient particle animation
+        const container = document.getElementById('particles-container');
+        const particleCount = 15;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'absolute bg-primary rounded-full opacity-40';
+            
+            const size = Math.random() * 4 + 2;
+            const startX = Math.random() * 100;
+            const startY = Math.random() * 100;
+            const duration = Math.random() * 20 + 10;
+            const delay = Math.random() * 5;
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${startX}%`;
+            particle.style.top = `${startY}%`;
+            particle.style.filter = 'blur(1px)';
+            
+            particle.animate([
+                { transform: 'translate(0, 0)', opacity: 0.2 },
+                { transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`, opacity: 0.5 },
+                { transform: 'translate(0, 0)', opacity: 0.2 }
+            ], {
+                duration: duration * 1000,
+                iterations: Infinity,
+                delay: delay * 1000,
+                easing: 'ease-in-out'
+            });
+            
+            container.appendChild(particle);
+        }
+
+        // Micro-interaction: Focus effects for inputs
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.closest('.glass-container').style.boxShadow = '0 0 40px rgba(92, 222, 148, 0.05)';
+            });
+            input.addEventListener('blur', () => {
+                input.closest('.glass-container').style.boxShadow = '';
+            });
+        });
+    </script>
+</body></html>

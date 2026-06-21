@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .address-card-radio:checked + .address-card-content {
+            border-color: #5cde94;
+            background-color: rgba(92, 222, 148, 0.05);
+        }
+        .address-card-radio:checked + .address-card-content .radio-indicator {
+            background-color: #5cde94;
+            border-color: #5cde94;
+        }
+        .address-card-radio:checked + .address-card-content .radio-indicator::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #00391e;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #111415;
+            color: #e1e3e4;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#191c1d",
+                        "secondary": "#d4beea",
+                        "outline-variant": "#3d4a40",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e1e3e4",
+                        "on-primary-container": "#004224",
+                        "on-error": "#690005",
+                        "surface-dim": "#111415",
+                        "on-tertiary": "#4e2600",
+                        "on-primary-fixed-variant": "#00522e",
+                        "tertiary-fixed-dim": "#ffb77f",
+                        "surface": "#111415",
+                        "on-secondary-fixed": "#241436",
+                        "inverse-surface": "#e1e3e4",
+                        "tertiary-container": "#f58400",
+                        "on-secondary-fixed-variant": "#513f64",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#6f3900",
+                        "inverse-primary": "#006d3e",
+                        "surface-variant": "#323536",
+                        "secondary-fixed": "#efdbff",
+                        "background": "#111415",
+                        "primary-fixed-dim": "#5cde94",
+                        "surface-container-highest": "#323536",
+                        "on-tertiary-container": "#592c00",
+                        "surface-container": "#1d2021",
+                        "on-primary-fixed": "#00210f",
+                        "surface-container-high": "#282a2b",
+                        "tertiary": "#ffb77f",
+                        "secondary-fixed-dim": "#d4beea",
+                        "primary-container": "#2eb872",
+                        "primary": "#5cde94",
+                        "surface-container-lowest": "#0c0f10",
+                        "surface-bright": "#373a3b",
+                        "inverse-on-surface": "#2e3132",
+                        "surface-tint": "#5cde94",
+                        "secondary-container": "#513f64",
+                        "primary-fixed": "#7afbae",
+                        "on-primary": "#00391e",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#bccabd",
+                        "on-background": "#e1e3e4",
+                        "on-secondary": "#39294c",
+                        "outline": "#879488",
+                        "on-tertiary-fixed": "#2f1500",
+                        "tertiary-fixed": "#ffdcc4",
+                        "on-secondary-container": "#c2add8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter-md": "16px",
+                        "container-margin": "24px",
+                        "section-gap": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "12px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-bold-mobile": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg-mobile": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-sm-mobile": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "headline-md-mobile": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- Top AppBar (Generated from JSON) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm flex justify-between items-center px-container-margin h-16">
+<div class="flex items-center gap-stack-md">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-primary">ElectroStream</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity">search</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A high-quality, professional headshot of a modern tech enthusiast with a clean cinematic background. The lighting is soft and directional, highlighting the features of a diverse young professional. The overall aesthetic is sleek and corporate-modern with deep obsidian tones and a subtle emerald glow in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM3nZDoBCsPnq80jIVu0l6-kMCfB2LvP4_MzAOq0RWqI7yS2gRx-WhaxEuUgCtgJs4H3ektABKAd6z9hCICJCxvEGyFYfO7KVgWGsW8H7ePNu1ekurVLNknDURstQqUvFgykYIO_WKPNHiv5qaNaJNNWQYj_ny_vTl03jXAfyPkugkrG1pJIvnHdenxZUEjYH_TDI7jW-f6pkYg9xcQSB6UwgXCs8JdLo2_Tqo4nik-x8zIxXhaNTh0S1M82UOvDnytwgwB_CkHTc"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-container-margin max-w-2xl mx-auto">
+<!-- Title Section -->
+<div class="mb-section-gap">
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface mb-2">Delivery Address</h2>
+<p class="text-body-sm-mobile font-body-sm-mobile text-on-surface-variant">Select where you want your premium gadgets delivered. Fast shipping guaranteed.</p>
+</div>
+<!-- Address List Selection -->
+<div class="space-y-gutter-md">
+<!-- Home Address Card -->
+<label class="block relative cursor-pointer group">
+<input checked="" class="sr-only address-card-radio" name="address" type="radio"/>
+<div class="address-card-content p-gutter-md bg-surface-container border border-outline-variant/20 rounded-lg transition-all duration-200 hover:border-primary/50">
+<div class="flex items-start justify-between">
+<div class="flex gap-stack-md">
+<div class="radio-indicator relative w-5 h-5 rounded-full border-2 border-outline-variant transition-all mt-1"></div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-headline-md-mobile font-headline-md-mobile text-on-surface">Home</span>
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Default</span>
+</div>
+<p class="text-body-lg-mobile font-body-lg-mobile text-on-surface-variant mb-1">Alex Chen</p>
+<p class="text-body-sm-mobile font-body-sm-mobile text-on-surface-variant/80">42 Digital Way, Silicon Valley, CA 94025</p>
+<p class="text-body-sm-mobile font-body-sm-mobile text-on-surface-variant/80">+1 (555) 012-3456</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+</button>
+</div>
+</div>
+</label>
+<!-- Office Address Card -->
+<label class="block relative cursor-pointer group">
+<input class="sr-only address-card-radio" name="address" type="radio"/>
+<div class="address-card-content p-gutter-md bg-surface-container border border-outline-variant/20 rounded-lg transition-all duration-200 hover:border-primary/50">
+<div class="flex items-start justify-between">
+<div class="flex gap-stack-md">
+<div class="radio-indicator relative w-5 h-5 rounded-full border-2 border-outline-variant transition-all mt-1"></div>
+<div>
+<span class="text-headline-md-mobile font-headline-md-mobile text-on-surface block mb-1">Office</span>
+<p class="text-body-lg-mobile font-body-lg-mobile text-on-surface-variant mb-1">ElectroStream HQ</p>
+<p class="text-body-sm-mobile font-body-sm-mobile text-on-surface-variant/80">77 Innovation Drive, Austin, TX 78701</p>
+<p class="text-body-sm-mobile font-body-sm-mobile text-on-surface-variant/80">+1 (555) 987-6543</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+</button>
+</div>
+</div>
+</label>
+<!-- Other Address Card -->
+<label class="block relative cursor-pointer group">
+<input class="sr-only address-card-radio" name="address" type="radio"/>
+<div class="address-card-content p-gutter-md bg-surface-container border border-outline-variant/20 rounded-lg transition-all duration-200 hover:border-primary/50">
+<div class="flex items-start justify-between">
+<div class="flex gap-stack-md">
+<div class="radio-indicator relative w-5 h-5 rounded-full border-2 border-outline-variant transition-all mt-1"></div>
+<div>
+<span class="text-headline-md-mobile font-headline-md-mobile text-on-surface block mb-1">Friend's Place</span>
+<p class="text-body-lg-mobile font-body-lg-mobile text-on-surface-variant mb-1">Sarah Miller</p>
+<p class="text-body-sm-mobile font-body-sm-mobile text-on-surface-variant/80">128 Sunset Blvd, Los Angeles, CA 90012</p>
+<p class="text-body-sm-mobile font-body-sm-mobile text-on-surface-variant/80">+1 (555) 234-5678</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+</button>
+</div>
+</div>
+</label>
+</div>
+<!-- Add New Address Button -->
+<button class="w-full mt-gutter-md py-4 border-2 border-dashed border-outline-variant/40 rounded-lg flex items-center justify-center gap-2 text-on-surface-variant hover:border-primary hover:text-primary transition-all group">
+<span class="material-symbols-outlined transition-transform group-hover:scale-110">add_location</span>
+<span class="text-label-bold font-label-bold">ADD NEW ADDRESS</span>
+</button>
+<!-- Delivery Map Section (Atmospheric) -->
+<div class="mt-section-gap rounded-lg overflow-hidden relative h-48 border border-outline-variant/20">
+<div class="absolute inset-0 z-0" data-alt="A futuristic, high-contrast digital map interface showing a simplified grid of San Francisco streets. The aesthetic is dark mode, with deep charcoal streets and glowing neon emerald lines representing routes. Subtle data points and UI overlays appear in a translucent green glow. Cinematic lighting and depth of field create a premium tech atmosphere." data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHWBrnUSshZYzqNZj8z0P6KG3DQ4khIJ54Y10dxoReTOBrs3KDKCP8K8n_-j4Zjsb-cgMxGZJCwLhqPg3zAeH9dG0A3-ZGqdFy5sjGFMYxQz6-fSbeIyfPB1n0fHa5hdNxYcnrQ5wHs-crCODYDFuN-73iWqyf94h-KYe5YncjLnV_Boz44bvu2ZvtXYQyCN35oqgUKsandUJ_OeVeHlahYAbIHzafdHnjk7vmg1366M-4PeY0c5AawJy1004UFADP9YfccdHhW0k')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4 z-10 flex items-center gap-2">
+<div class="bg-primary p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-on-primary text-sm" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<span class="text-label-bold-mobile font-label-bold-mobile text-on-surface bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant/30">Near Silicon Valley</span>
+</div>
+</div>
+</main>
+<!-- Bottom Actions Container -->
+<div class="fixed bottom-0 w-full p-container-margin bg-surface-container border-t border-outline-variant/20 z-50">
+<div class="max-w-2xl mx-auto">
+<button class="w-full py-4 bg-primary text-on-primary rounded-full text-label-bold font-label-bold flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20">
+                DELIVER TO THIS ADDRESS
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Floating Navigation Bar (Generated from JSON) -->
+<nav class="fixed bottom-24 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-md rounded-lg bg-surface-container shadow-lg flex justify-around items-center h-20 px-4 pb-safe z-50 border border-outline-variant/10">
+<button class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors group">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary gap-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Wishlist</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-bold-mobile font-label-bold-mobile">Profile</span>
+</button>
+</nav>
+<script>
+        // Micro-interactions for address selection
+        document.querySelectorAll('.address-card-radio').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                // Add a subtle ripple or scale effect if desired
+                if (e.target.checked) {
+                    const card = e.target.nextElementSibling;
+                    card.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        card.style.transform = 'scale(1)';
+                    }, 150);
+                }
+            });
+        });
+
+        // Toggle map overlay visibility on scroll
+        const main = document.querySelector('main');
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            const map = document.querySelector('[data-location]');
+            if (map) {
+                map.style.opacity = 1 - (scrollPos / 300);
+            }
+        });
+    </script>
+</body></html>

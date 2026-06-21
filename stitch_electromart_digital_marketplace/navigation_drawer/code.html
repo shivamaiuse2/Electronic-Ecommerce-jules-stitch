@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream - Navigation Drawer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#513f64",
+            "primary-fixed-dim": "#5cde94",
+            "on-primary": "#00391e",
+            "primary-fixed": "#7afbae",
+            "on-tertiary": "#4e2600",
+            "on-secondary": "#39294c",
+            "primary": "#5cde94",
+            "secondary": "#d4beea",
+            "outline-variant": "#3d4a40",
+            "error-container": "#93000a",
+            "primary-container": "#2eb872",
+            "on-tertiary-fixed": "#2f1500",
+            "on-surface": "#e1e3e4",
+            "inverse-on-surface": "#2e3132",
+            "secondary-fixed": "#efdbff",
+            "error": "#ffb4ab",
+            "on-secondary-fixed-variant": "#513f64",
+            "on-error-container": "#ffdad6",
+            "on-error": "#690005",
+            "on-primary-container": "#004224",
+            "surface-variant": "#323536",
+            "surface-container-low": "#191c1d",
+            "on-primary-fixed": "#00210f",
+            "surface-tint": "#5cde94",
+            "secondary-fixed-dim": "#d4beea",
+            "on-secondary-fixed": "#241436",
+            "tertiary-fixed": "#ffdcc4",
+            "surface-container-high": "#282a2b",
+            "surface": "#111415",
+            "on-primary-fixed-variant": "#00522e",
+            "inverse-primary": "#006d3e",
+            "surface-container": "#1d2021",
+            "tertiary": "#ffb77f",
+            "on-surface-variant": "#bccabd",
+            "surface-bright": "#373a3b",
+            "inverse-surface": "#e1e3e4",
+            "surface-dim": "#111415",
+            "on-secondary-container": "#c2add8",
+            "on-tertiary-fixed-variant": "#6f3900",
+            "tertiary-container": "#f58400",
+            "on-background": "#e1e3e4",
+            "surface-container-highest": "#323536",
+            "outline": "#879488",
+            "background": "#111415",
+            "tertiary-fixed-dim": "#ffb77f",
+            "surface-container-lowest": "#0c0f10",
+            "on-tertiary-container": "#592c00"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-md": "16px",
+            "container-margin": "24px",
+            "stack-sm": "8px",
+            "stack-md": "12px",
+            "section-gap": "32px"
+          },
+          "fontFamily": {
+            "label-bold": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "label-bold-mobile": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-sm-mobile": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+            "headline-md-mobile": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+            "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+            "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #111415;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .active-nav-item {
+      background-color: #2eb872;
+      color: white;
+    }
+    .drawer-shadow {
+      box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    }
+    .perspective-container {
+      perspective: 1000px;
+    }
+    .bg-dashboard-preview {
+      transform: translateX(15%) rotateY(-10deg) scale(0.9);
+      filter: brightness(0.4) blur(1px);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen overflow-hidden selection:bg-primary/30">
+<!-- Main View Container (Simulating Navigation Drawer State) -->
+<div class="relative w-full h-screen flex overflow-hidden">
+<!-- Navigation Drawer Sidebar -->
+<aside class="w-[80%] h-full bg-surface-container-lowest z-20 flex flex-col pt-12 pb-10 px-container-margin drawer-shadow border-r border-outline-variant/10">
+<!-- User Profile Section -->
+<div class="flex flex-col gap-stack-md mb-12">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A professional close-up portrait of a young woman named Mia Johnson, featuring soft studio lighting against a dark navy background. Her expression is friendly and confident, matching a high-end corporate modern tech aesthetic. The image uses a clean, cinematic style with sharp focus and subtle highlights on her features." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFGJzP9bE4i2jGg2atJL7SMCct_EVyhl70cfYhcFgtH09mNdyoKOnu02ZW5qD6Ast2KNDBv2iumUARWO67rKfUEJnZdComapcvkgkmfViYQ7ZR_VXq_8xyX9uUXXT2VaYiHueoxnJwESXdxOI2OsfEbCpaALMED2cZ0VDh-oTH9ce3xfQ0WK00mBAOupMp33G_Pq6wdF71_Cs7WNaoxONwpJ1eFDCHfdnbmFxlEpmdhqh9MI5viRc26JhcshKVWraq45H7xr9w4TQ"/>
+</div>
+<div class="mt-4">
+<p class="text-on-surface-variant font-body-sm-mobile text-body-sm-mobile">Hey</p>
+<h2 class="text-on-surface font-headline-lg-mobile text-headline-lg-mobile tracking-tight">Mia Johnson</h2>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-grow flex flex-col gap-2">
+<!-- Profile -->
+<a class="flex items-center gap-4 px-4 py-4 rounded-full text-on-surface-variant hover:bg-surface-variant/20 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+<span class="font-label-bold-mobile text-label-bold-mobile">Profile</span>
+</a>
+<!-- Home Page (Active) -->
+<a class="active-nav-item flex items-center gap-4 px-4 py-4 rounded-full transition-all duration-200 shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-bold-mobile text-label-bold-mobile">Home Page</span>
+</a>
+<!-- My Cart -->
+<a class="flex items-center gap-4 px-4 py-4 rounded-full text-on-surface-variant hover:bg-surface-variant/20 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+<span class="font-label-bold-mobile text-label-bold-mobile">My Cart</span>
+</a>
+<!-- Favorite -->
+<a class="flex items-center gap-4 px-4 py-4 rounded-full text-on-surface-variant hover:bg-surface-variant/20 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+<span class="font-label-bold-mobile text-label-bold-mobile">Favorite</span>
+</a>
+<!-- Orders -->
+<a class="flex items-center gap-4 px-4 py-4 rounded-full text-on-surface-variant hover:bg-surface-variant/20 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+<span class="font-label-bold-mobile text-label-bold-mobile">Orders</span>
+</a>
+<!-- Notifications -->
+<a class="flex items-center gap-4 px-4 py-4 rounded-full text-on-surface-variant hover:bg-surface-variant/20 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="font-label-bold-mobile text-label-bold-mobile">Notifications</span>
+</a>
+</nav>
+<!-- Bottom Sign Out -->
+<div class="mt-auto">
+<button class="flex items-center gap-4 px-4 py-4 rounded-full text-on-surface-variant hover:text-error transition-colors duration-200 w-full group">
+<span class="material-symbols-outlined text-[24px] group-hover:translate-x-1 transition-transform">logout</span>
+<span class="font-label-bold-mobile text-label-bold-mobile">Sign Out</span>
+</button>
+</div>
+</aside>
+<!-- Background Dashboard Preview (Simulating the 'rest of the screen') -->
+<main class="fixed inset-y-0 right-0 w-full z-10 bg-dashboard-preview transition-transform duration-500 ease-out origin-right pointer-events-none">
+<div class="w-full h-full bg-surface-bright flex flex-col p-6 rounded-l-[3rem] shadow-2xl">
+<div class="flex justify-between items-center mb-8">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight mb-6">Let's find<br/>Your Gadget!</h1>
+<div class="w-full h-12 bg-surface-container rounded-full flex items-center px-4 gap-3 mb-8">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<div class="h-4 w-24 bg-surface-variant/30 rounded-full"></div>
+</div>
+<div class="w-full aspect-[16/9] bg-primary-container rounded-lg p-6 flex flex-col justify-end">
+<div class="h-6 w-32 bg-white/20 rounded-full mb-2"></div>
+<div class="h-4 w-48 bg-white/10 rounded-full"></div>
+</div>
+<div class="mt-8">
+<div class="flex justify-between mb-4">
+<div class="h-6 w-24 bg-surface-container rounded-full"></div>
+<div class="h-4 w-12 bg-surface-container rounded-full"></div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="aspect-square bg-surface-container rounded-lg"></div>
+<div class="aspect-square bg-surface-container rounded-lg"></div>
+<div class="aspect-square bg-surface-container rounded-lg"></div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Micro-interactions Overlay -->
+<div class="fixed inset-0 bg-black/40 z-10 transition-opacity duration-300 opacity-100" id="drawer-overlay"></div>
+<script>
+    // Subtle tilt effect for the background preview on mouse move
+    const mainContent = document.querySelector('main');
+    document.addEventListener('mousemove', (e) => {
+      const x = (window.innerWidth / 2 - e.pageX) / 50;
+      const y = (window.innerHeight / 2 - e.pageY) / 50;
+      mainContent.style.transform = `translateX(15%) rotateY(${-10 + x}deg) rotateX(${y}deg) scale(0.9)`;
+    });
+
+    // Touch feedback for nav items
+    const navItems = document.querySelectorAll('nav a, button');
+    navItems.forEach(item => {
+      item.addEventListener('touchstart', () => {
+        item.style.transform = 'scale(0.97)';
+      });
+      item.addEventListener('touchend', () => {
+        item.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+</body></html>

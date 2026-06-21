@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroStream | Splash</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @keyframes pulse-emerald {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(0.98); }
+        }
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes progress-bar {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+        .animate-logo { animation: pulse-emerald 3s ease-in-out infinite; }
+        .animate-content { animation: slide-up 1s ease-out forwards; }
+        .progress-fill { animation: progress-bar 2.5s ease-in-out forwards; }
+        
+        body {
+            background-color: #111415; /* Fallback for surface color */
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#00522e",
+                        "surface-container": "#1d2021",
+                        "on-secondary-fixed": "#241436",
+                        "inverse-on-surface": "#2e3132",
+                        "primary-fixed-dim": "#5cde94",
+                        "on-secondary": "#39294c",
+                        "primary-fixed": "#7afbae",
+                        "secondary-container": "#513f64",
+                        "secondary-fixed": "#efdbff",
+                        "outline": "#879488",
+                        "on-surface-variant": "#bccabd",
+                        "secondary-fixed-dim": "#d4beea",
+                        "on-tertiary-container": "#592c00",
+                        "on-tertiary": "#4e2600",
+                        "secondary": "#d4beea",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#2f1500",
+                        "tertiary-container": "#f58400",
+                        "surface-variant": "#323536",
+                        "surface": "#111415",
+                        "on-background": "#e1e3e4",
+                        "on-secondary-container": "#c2add8",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#004224",
+                        "primary": "#5cde94",
+                        "surface-dim": "#111415",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0c0f10",
+                        "surface-container-low": "#191c1d",
+                        "tertiary-fixed": "#ffdcc4",
+                        "background": "#111415",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#00210f",
+                        "on-surface": "#e1e3e4",
+                        "surface-bright": "#373a3b",
+                        "inverse-surface": "#e1e3e4",
+                        "on-secondary-fixed-variant": "#513f64",
+                        "primary-container": "#2eb872",
+                        "surface-container-high": "#282a2b",
+                        "tertiary": "#ffb77f",
+                        "on-tertiary-fixed-variant": "#6f3900",
+                        "outline-variant": "#3d4a40",
+                        "surface-container-highest": "#323536",
+                        "tertiary-fixed-dim": "#ffb77f",
+                        "inverse-primary": "#006d3e",
+                        "surface-tint": "#5cde94",
+                        "on-primary": "#00391e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "12px",
+                        "gutter-md": "16px",
+                        "section-gap": "32px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background flex flex-col items-center justify-center min-h-screen selection:bg-primary/30">
+<!-- Atmospheric Background Ambient Light -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-on-primary-fixed-variant/20 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-secondary-container/10 blur-[100px] rounded-full"></div>
+</div>
+<!-- Main Splash Content Container -->
+<main class="relative z-10 flex flex-col items-center justify-center w-full px-container-margin h-screen">
+<!-- Brand Logo Cluster -->
+<div class="animate-content flex flex-col items-center gap-stack-md text-center">
+<div class="animate-logo flex items-center justify-center w-24 h-24 mb-stack-md rounded-xl bg-surface-container-high border border-outline-variant/30 shadow-2xl">
+<span class="material-symbols-outlined text-[48px] text-primary" style="font-variation-settings: 'FILL' 1;">
+                    bolt
+                </span>
+</div>
+<h1 class="font-display-lg text-display-lg tracking-tight">
+<span class="text-on-surface">Electro</span><span class="text-primary">Stream</span>
+</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant max-w-[280px] opacity-80 leading-snug">
+                Your Gateway to Next-Gen Tech
+            </p>
+</div>
+<!-- Minimalist Loader at Bottom -->
+<div class="absolute bottom-16 left-0 right-0 flex flex-col items-center gap-4 px-12">
+<div class="w-full max-w-[200px] h-[2px] bg-surface-container-highest rounded-full overflow-hidden">
+<div class="progress-fill h-full bg-primary shadow-[0_0_8px_rgba(92,222,148,0.5)]"></div>
+</div>
+<span class="font-label-bold text-label-bold text-outline uppercase tracking-widest opacity-60">
+                Initializing System
+            </span>
+</div>
+<!-- Decorative Tech Element -->
+<div class="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay">
+<div class="w-full h-full bg-cover bg-center" data-alt="A macro shot of a complex high-tech circuit board with glowing emerald green traces and silver components. The lighting is dramatic and cinematic, emphasizing depth and precision engineering. The overall color palette is deep obsidian and vibrant emerald green, reflecting a premium corporate tech aesthetic with sophisticated contrast." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCTZGVkozScahwxgv6Yo9YOlbaZJd93g0PXF7xyOgb9dvPnrArrduTjzX4LobevpwsLv-EqzW_ctMszW8-vWXyz5gfJcErPOVCzZS4RQAxhMhBu1Ey0yU1k69o2D_vEUQboj_dBmsRuMltWxcWSxqbtAlLeFO28kczX-HLVFojJ7hvzFoxu0owd5Hp-g9RxhIpsCcKD_Deo-QzEy2oi17m8OC5nud43yxj_Bzj0L6ciMVXSqzFNWWaQ9WjmoZsS9JgiYoPa6gsrXno')"></div>
+</div>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simulated transition after 3 seconds
+            setTimeout(() => {
+                const main = document.querySelector('main');
+                main.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                main.style.opacity = '0';
+                main.style.transform = 'scale(1.05)';
+                
+                // Note: In a real app, this would route to the Home screen
+                console.log('Transitioning to Dashboard...');
+            }, 3000);
+            
+            // Subtle parallax mouse effect
+            window.addEventListener('mousemove', (e) => {
+                const moveX = (e.clientX - window.innerWidth / 2) / 50;
+                const moveY = (e.clientY - window.innerHeight / 2) / 50;
+                const bgElements = document.querySelectorAll('.fixed > div');
+                bgElements[0].style.transform = `translate(${moveX}px, ${moveY}px)`;
+                bgElements[1].style.transform = `translate(${-moveX}px, ${-moveY}px)`;
+            });
+        });
+    </script>
+</body></html>
