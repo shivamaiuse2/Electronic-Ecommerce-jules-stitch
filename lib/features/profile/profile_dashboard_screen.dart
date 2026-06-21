@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/constants/app_constants.dart';
+import '../authentication/auth_bloc.dart';
 
 class ProfileDashboardScreen extends StatelessWidget {
   const ProfileDashboardScreen({super.key});
@@ -73,7 +75,10 @@ class ProfileDashboardScreen extends StatelessWidget {
               icon: Icons.logout,
               title: 'Logout',
               isDestructive: true,
-              onTap: () => context.go('/gateway'),
+              onTap: () {
+                context.read<AuthBloc>().add(AuthLoggedOut());
+                context.go('/gateway');
+              },
             ),
           ],
         ),

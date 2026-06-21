@@ -7,12 +7,14 @@ class ProductCard extends StatelessWidget {
   final Product product;
   final VoidCallback onTap;
   final VoidCallback onAddToCart;
+  final VoidCallback? onFavoriteToggle;
 
   const ProductCard({
     super.key,
     required this.product,
     required this.onTap,
     required this.onAddToCart,
+    this.onFavoriteToggle,
   });
 
   @override
@@ -64,7 +66,7 @@ class ProductCard extends StatelessWidget {
                         size: 18,
                         color: theme.colorScheme.primary,
                       ),
-                      onPressed: () {},
+                      onPressed: onFavoriteToggle,
                       constraints: const BoxConstraints(),
                       padding: const EdgeInsets.all(6),
                     ),

@@ -1,0 +1,109 @@
+Analyzing app...
+
+   info • 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre • lib/core/theme/app_theme.dart:29:9 • deprecated_member_use
+   info • 'onBackground' is deprecated and shouldn't be used. Use onSurface instead. This feature was deprecated after v3.18.0-0.1.pre • lib/core/theme/app_theme.dart:30:9 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/core/theme/app_theme.dart:33:9 • deprecated_member_use
+  error • The argument type 'CardTheme' can't be assigned to the parameter type 'CardThemeData?'.  • lib/core/theme/app_theme.dart:51:18 • argument_type_not_assignable
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/authentication/login_signup_gateway_screen.dart:24:50 • deprecated_member_use
+  error • The argument type 'Type' can't be assigned to the parameter type 'TextAlign?'.  • lib/features/authentication/login_signup_gateway_screen.dart:47:30 • argument_type_not_assignable
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/authentication/login_signup_gateway_screen.dart:64:54 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/authentication/login_signup_gateway_screen.dart:64:69 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/authentication/login_signup_gateway_screen.dart:71:85 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/authentication/login_signup_gateway_screen.dart:76:85 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/authentication/login_signup_gateway_screen.dart:115:36 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/authentication/login_signup_gateway_screen.dart:115:51 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/authentication/login_signup_gateway_screen.dart:117:70 • deprecated_member_use
+   info • 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/authentication/onboarding_screen.dart:45:39 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/authentication/onboarding_screen.dart:45:50 • deprecated_member_use
+   info • 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/authentication/onboarding_screen.dart:46:39 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/authentication/onboarding_screen.dart:70:66 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/authentication/otp_verification_screen.dart:46:46 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/authentication/otp_verification_screen.dart:46:61 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/authentication/otp_verification_screen.dart:48:80 • deprecated_member_use
+warning • Unused import: 'dart:convert' • lib/features/cart/cart_bloc.dart:1:8 • unused_import
+warning • Unused import: '../../core/services/local_storage_service.dart' • lib/features/cart/cart_bloc.dart:6:8 • unused_import
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/cart/shopping_cart_screen.dart:55:50 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/cart/shopping_cart_screen.dart:55:65 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/cart/shopping_cart_screen.dart:167:70 • deprecated_member_use
+  error • There's no constant named 'between' in 'MainAxisAlignment' • lib/features/cart/shopping_cart_screen.dart:186:44 • undefined_enum_constant
+  error • There's no constant named 'between' in 'MainAxisAlignment' • lib/features/checkout/choose_payment_method_screen.dart:79:56 • undefined_enum_constant
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/checkout/choose_payment_method_screen.dart:127:66 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/checkout/choose_payment_method_screen.dart:127:103 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/checkout/choose_payment_method_screen.dart:127:118 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/checkout/choose_payment_method_screen.dart:130:94 • deprecated_member_use
+   info • 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre • lib/features/checkout/choose_payment_method_screen.dart:158:15 • deprecated_member_use
+   info • 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre • lib/features/checkout/choose_payment_method_screen.dart:159:15 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/checkout/select_delivery_address_screen.dart:68:78 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/checkout/select_delivery_address_screen.dart:68:115 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/checkout/select_delivery_address_screen.dart:68:130 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/checkout/select_delivery_address_screen.dart:71:106 • deprecated_member_use
+   info • 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre • lib/features/checkout/select_delivery_address_screen.dart:79:27 • deprecated_member_use
+   info • 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre • lib/features/checkout/select_delivery_address_screen.dart:80:27 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/home/home_dashboard_screen.dart:61:56 • deprecated_member_use
+  error • The method 'push' isn't defined for the type 'BuildContext' • lib/features/home/home_dashboard_screen.dart:82:42 • undefined_method
+  error • The method 'push' isn't defined for the type 'BuildContext' • lib/features/home/home_dashboard_screen.dart:94:46 • undefined_method
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/home/home_dashboard_screen.dart:98:54 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/home/home_dashboard_screen.dart:98:69 • deprecated_member_use
+  error • There's no constant named 'between' in 'MainAxisAlignment' • lib/features/home/home_dashboard_screen.dart:129:56 • undefined_enum_constant
+  error • The method 'push' isn't defined for the type 'BuildContext' • lib/features/home/home_dashboard_screen.dart:133:44 • undefined_method
+  error • The method 'push' isn't defined for the type 'BuildContext' • lib/features/home/home_dashboard_screen.dart:149:44 • undefined_method
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/home/home_dashboard_screen.dart:168:53 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/home/home_dashboard_screen.dart:169:53 • deprecated_member_use
+  error • There's no constant named 'between' in 'MainAxisAlignment' • lib/features/home/home_dashboard_screen.dart:211:56 • undefined_enum_constant
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/home/home_dashboard_screen.dart:271:64 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/home/home_dashboard_screen.dart:271:79 • deprecated_member_use
+  error • The method 'push' isn't defined for the type 'BuildContext' • lib/features/home/home_dashboard_screen.dart:304:34 • undefined_method
+  error • The method 'go' isn't defined for the type 'BuildContext' • lib/features/home/home_dashboard_screen.dart:311:34 • undefined_method
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/home/main_navigation_shell.dart:48:35 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/orders/my_orders_screen.dart:45:40 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/orders/my_orders_screen.dart:45:55 • deprecated_member_use
+  error • There's no constant named 'between' in 'MainAxisAlignment' • lib/features/orders/my_orders_screen.dart:51:56 • undefined_enum_constant
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/orders/my_orders_screen.dart:57:59 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/orders/my_orders_screen.dart:57:113 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/orders/order_confirmed_screen.dart:23:59 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/orders/track_order_screen.dart:33:42 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/orders/track_order_screen.dart:33:57 • deprecated_member_use
+  error • The method 'push' isn't defined for the type 'BuildContext' • lib/features/products/brand_directory_screen.dart:35:34 • undefined_method
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/products/brand_directory_screen.dart:39:42 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/products/brand_directory_screen.dart:39:57 • deprecated_member_use
+warning • Unused import: 'package:flutter_bloc/flutter_bloc.dart' • lib/features/products/category_hub_screen.dart:2:8 • unused_import
+warning • Unused import: '../../shared/widgets/category_item.dart' • lib/features/products/category_hub_screen.dart:4:8 • unused_import
+warning • Unused import: '../products/search_results_screen.dart' • lib/features/products/category_hub_screen.dart:5:8 • unused_import
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/products/category_hub_screen.dart:47:42 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/products/category_hub_screen.dart:47:57 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/products/category_hub_screen.dart:49:76 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/products/category_hub_screen.dart:57:56 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/products/laptop_collection_screen.dart:60:59 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/products/laptop_collection_screen.dart:62:69 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/products/product_comparison_screen.dart:69:93 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/products/product_reviews_screen.dart:63:42 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/products/product_reviews_screen.dart:63:57 • deprecated_member_use
+  error • There's no constant named 'between' in 'MainAxisAlignment' • lib/features/products/product_reviews_screen.dart:70:58 • undefined_enum_constant
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/profile/help_support_screen.dart:26:50 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/profile/help_support_screen.dart:28:69 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/profile/live_chat_support_screen.dart:74:86 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/profile/live_chat_support_screen.dart:120:71 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/profile/live_chat_support_screen.dart:139:98 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/features/profile/notifications_center_screen.dart:50:40 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/profile/notifications_center_screen.dart:50:55 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/profile/notifications_center_screen.dart:59:53 • deprecated_member_use
+  error • The getter 'location_on_outline' isn't defined for the type 'Icons' • lib/features/profile/profile_dashboard_screen.dart:59:27 • undefined_getter
+warning • Unused import: 'package:go_router/go_router.dart' • lib/features/wishlist/wishlist_screen.dart:3:8 • unused_import
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/shared/widgets/category_item.dart:30:79 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/shared/widgets/category_item.dart:30:94 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/shared/widgets/category_item.dart:34:52 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/shared/widgets/category_item.dart:39:70 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/shared/widgets/electro_text_field.dart:37:53 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/shared/widgets/electro_text_field.dart:47:38 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/shared/widgets/electro_text_field.dart:47:53 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/shared/widgets/glass_card.dart:32:44 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/shared/widgets/glass_card.dart:35:46 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/shared/widgets/product_card.dart:29:36 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/shared/widgets/product_card.dart:29:51 • deprecated_member_use
+   info • 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre • lib/shared/widgets/product_card.dart:41:48 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/shared/widgets/product_card.dart:41:63 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/shared/widgets/product_card.dart:60:56 • deprecated_member_use
+  error • There's no constant named 'between' in 'CrossAxisAlignment' • lib/shared/widgets/product_card.dart:121:53 • undefined_enum_constant
+warning • Unused import: 'package:flutter/material.dart' • test/widget_test.dart:1:8 • unused_import
+
+105 issues found. (ran in 2.1s)

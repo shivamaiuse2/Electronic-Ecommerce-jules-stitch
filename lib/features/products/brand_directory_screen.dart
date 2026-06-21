@@ -31,13 +31,15 @@ class BrandDirectoryScreen extends StatelessWidget {
         separatorBuilder: (context, index) => const SizedBox(height: 16),
         itemBuilder: (context, index) {
           final brand = brands[index];
-          return Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: theme.colorScheme.surfaceVariant.withOpacity(0.3),
-              borderRadius: BorderRadius.circular(AppConstants.borderRadiusDefault),
-            ),
-            child: Row(
+          return GestureDetector(
+            onTap: () => context.push('/search?q=${brand['name']}'),
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.surfaceVariant.withOpacity(0.3),
+                borderRadius: BorderRadius.circular(AppConstants.borderRadiusDefault),
+              ),
+              child: Row(
               children: [
                 Container(
                   width: 60,
@@ -66,8 +68,9 @@ class BrandDirectoryScreen extends StatelessWidget {
                 Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
               ],
             ),
-          );
-        },
+          ),
+        );
+      },
       ),
     );
   }

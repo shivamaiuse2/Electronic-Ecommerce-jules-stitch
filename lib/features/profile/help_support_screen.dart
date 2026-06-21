@@ -29,7 +29,7 @@ class HelpSupportScreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  const Icon(Icons.support_agent, size: 48, color: AppColors.primary),
+                  const Icon(Icons.support_agent, size: 48, color: Color(0xFF5CDE94)),
                   const SizedBox(height: 16),
                   Text('How can we help you?', style: theme.textTheme.headlineMedium),
                   const SizedBox(height: 8),
@@ -87,8 +87,4 @@ class _FaqItem extends StatelessWidget {
       ],
     );
   }
-}
-
-class AppColors {
-  static const Color primary = Color(0xFF5CDE94);
 }

@@ -27,6 +27,40 @@ class Product {
     this.isFavorite = false,
   });
 
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'category': category,
+      'description': description,
+      'price': price,
+      'originalPrice': originalPrice,
+      'discount': discount,
+      'image': image,
+      'rating': rating,
+      'reviewsCount': reviewsCount,
+      'specifications': specifications,
+      'isFavorite': isFavorite,
+    };
+  }
+
+  factory Product.fromJson(Map<String, dynamic> json) {
+    return Product(
+      id: json['id'],
+      name: json['name'],
+      category: json['category'],
+      description: json['description'],
+      price: json['price'].toDouble(),
+      originalPrice: json['originalPrice'].toDouble(),
+      discount: json['discount'].toDouble(),
+      image: json['image'],
+      rating: json['rating'].toDouble(),
+      reviewsCount: json['reviewsCount'],
+      specifications: List<String>.from(json['specifications']),
+      isFavorite: json['isFavorite'] ?? false,
+    );
+  }
+
   Product copyWith({
     String? id,
     String? name,

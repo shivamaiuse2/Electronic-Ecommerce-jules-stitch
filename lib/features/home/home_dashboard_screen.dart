@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../core/constants/app_constants.dart';
 import '../../shared/widgets/category_item.dart';
 import '../../shared/widgets/product_card.dart';
 import '../../shared/models/product.dart';
+import '../cart/cart_bloc.dart';
+import '../wishlist/wishlist_bloc.dart';
 
 class HomeDashboardScreen extends StatelessWidget {
   const HomeDashboardScreen({super.key});
@@ -11,7 +14,6 @@ class HomeDashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    // Mock Data
     final categories = [
       {'name': 'Laptops', 'icon': Icons.laptop_mac},
       {'name': 'Gaming', 'icon': Icons.sports_esports},
@@ -56,7 +58,6 @@ class HomeDashboardScreen extends StatelessWidget {
           SliverAppBar(
             floating: true,
             pinned: true,
-            expandedHeight: 0,
             backgroundColor: theme.colorScheme.surface.withOpacity(0.8),
             title: Row(
               children: [
@@ -78,7 +79,7 @@ class HomeDashboardScreen extends StatelessWidget {
             actions: [
               IconButton(
                 icon: const Icon(Icons.search),
-                onPressed: () {},
+                onPressed: () => context.push('/search'),
               ),
             ],
           ),
@@ -86,26 +87,28 @@ class HomeDashboardScreen extends StatelessWidget {
             padding: const EdgeInsets.all(AppConstants.containerMargin),
             sliver: SliverList(
               delegate: SliverChildListDelegate([
-                // Search Bar
                 Row(
                   children: [
                     Expanded(
-                      child: Container(
-                        height: 48,
-                        decoration: BoxDecoration(
-                          color: theme.colorScheme.surfaceVariant.withOpacity(0.3),
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Row(
-                          children: [
-                            const SizedBox(width: 16),
-                            Icon(Icons.search, color: theme.colorScheme.onSurfaceVariant),
-                            const SizedBox(width: 12),
-                            Text(
-                              'Search gadgets...',
-                              style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-                            ),
-                          ],
+                      child: GestureDetector(
+                        onTap: () => context.push('/search'),
+                        child: Container(
+                          height: 48,
+                          decoration: BoxDecoration(
+                            color: theme.colorScheme.surfaceVariant.withOpacity(0.3),
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                          child: Row(
+                            children: [
+                              const SizedBox(width: 16),
+                              Icon(Icons.search, color: theme.colorScheme.onSurfaceVariant),
+                              const SizedBox(width: 12),
+                              Text(
+                                'Search gadgets...',
+                                style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -122,13 +125,14 @@ class HomeDashboardScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: AppConstants.sectionGap),
-
-                // Categories
                 Row(
                   mainAxisAlignment: MainAxisAlignment.between,
                   children: [
                     Text('Categories', style: theme.textTheme.headlineMedium),
-                    Text('View All', style: theme.textTheme.labelLarge?.copyWith(color: theme.colorScheme.primary)),
+                    GestureDetector(
+                      onTap: () => context.push('/categories'),
+                      child: Text('View All', style: theme.textTheme.labelLarge?.copyWith(color: theme.colorScheme.primary)),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -142,13 +146,11 @@ class HomeDashboardScreen extends StatelessWidget {
                       name: categories[index]['name'] as String,
                       icon: categories[index]['icon'] as IconData,
                       isActive: index == 0,
-                      onTap: () {},
+                      onTap: () => context.push('/search?category=${categories[index]['name']}'),
                     ),
                   ),
                 ),
                 const SizedBox(height: AppConstants.sectionGap),
-
-                // Hero Banner
                 Container(
                   height: 240,
                   decoration: BoxDecoration(
@@ -190,15 +192,13 @@ class HomeDashboardScreen extends StatelessWidget {
                           'Next Gen\nMacBook Pro',
                           style: theme.textTheme.displayLarge?.copyWith(fontSize: 24, height: 1.2, color: Colors.white),
                         ),
-                        const SizedBox(height: 8),
-                        Text('Starting at $1,999', style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant)),
                         const SizedBox(height: 16),
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             backgroundColor: theme.colorScheme.primary,
                             foregroundColor: theme.colorScheme.onPrimary,
-                            shape: StadiumBorder(),
+                            shape: const StadiumBorder(),
                           ),
                           child: const Text('Buy Now'),
                         ),
@@ -207,8 +207,6 @@ class HomeDashboardScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: AppConstants.sectionGap),
-
-                // Best Deals
                 Row(
                   mainAxisAlignment: MainAxisAlignment.between,
                   children: [
@@ -227,11 +225,27 @@ class HomeDashboardScreen extends StatelessWidget {
                     mainAxisSpacing: 16,
                   ),
                   itemCount: products.length,
-                  itemBuilder: (context, index) => ProductCard(
-                    product: products[index],
-                    onTap: () {},
-                    onAddToCart: () {},
-                  ),
+                  itemBuilder: (context, index) {
+                    final product = products[index];
+                    return BlocBuilder<WishlistBloc, WishlistState>(
+                      builder: (context, wishlistState) {
+                        final isFavorite = wishlistState.items.any((i) => i.id == product.id);
+                        return ProductCard(
+                          product: product.copyWith(isFavorite: isFavorite),
+                          onTap: () {},
+                          onFavoriteToggle: () {
+                            context.read<WishlistBloc>().add(ToggleWishlist(product));
+                          },
+                          onAddToCart: () {
+                            context.read<CartBloc>().add(AddToCart(product));
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('${product.name} added to cart')),
+                            );
+                          },
+                        );
+                      },
+                    );
+                  },
                 ),
                 const SizedBox(height: AppConstants.sectionGap),
               ]),
@@ -277,7 +291,7 @@ class NavigationDrawerWidget extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text('Home'),
-            onTap: () => context.go('/home'),
+            onTap: () => Navigator.pop(context),
           ),
           ListTile(
             leading: const Icon(Icons.category_outlined),
@@ -287,24 +301,9 @@ class NavigationDrawerWidget extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.shopping_bag_outlined),
             title: const Text('My Orders'),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.favorite_outline),
-            title: const Text('Wishlist'),
-            onTap: () {},
+            onTap: () => context.push('/orders'),
           ),
           const Divider(),
-          ListTile(
-            leading: const Icon(Icons.settings_outlined),
-            title: const Text('Settings'),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.help_outline),
-            title: const Text('Help & Support'),
-            onTap: () {},
-          ),
           const Spacer(),
           ListTile(
             leading: const Icon(Icons.logout, color: Colors.red),

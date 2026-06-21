@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'core/theme/app_theme.dart';
+import 'core/services/local_storage_service.dart';
 import 'features/authentication/splash_screen.dart';
 import 'features/authentication/onboarding_screen.dart';
 import 'features/authentication/login_signup_gateway_screen.dart';
@@ -8,10 +10,20 @@ import 'features/authentication/login_screen.dart';
 import 'features/authentication/signup_screen.dart';
 import 'features/authentication/mobile_number_entry_screen.dart';
 import 'features/authentication/otp_verification_screen.dart';
+import 'features/authentication/auth_bloc.dart';
 import 'features/home/home_dashboard_screen.dart';
 import 'features/home/main_navigation_shell.dart';
 import 'features/cart/shopping_cart_screen.dart';
+import 'features/cart/cart_bloc.dart';
 import 'features/wishlist/wishlist_screen.dart';
+import 'features/wishlist/wishlist_bloc.dart';
+import 'features/products/category_hub_screen.dart';
+import 'features/products/brand_directory_screen.dart';
+import 'features/products/search_results_screen.dart';
+import 'features/products/product_comparison_screen.dart';
+import 'features/products/product_reviews_screen.dart';
+import 'features/products/razer_brand_store_screen.dart';
+import 'features/products/laptop_collection_screen.dart';
 import 'features/checkout/select_delivery_address_screen.dart';
 import 'features/checkout/choose_payment_method_screen.dart';
 import 'features/orders/order_confirmed_screen.dart';
@@ -22,15 +34,10 @@ import 'features/profile/account_settings_screen.dart';
 import 'features/profile/notifications_center_screen.dart';
 import 'features/profile/help_support_screen.dart';
 import 'features/profile/live_chat_support_screen.dart';
-import 'features/products/category_hub_screen.dart';
-import 'features/products/brand_directory_screen.dart';
-import 'features/products/search_results_screen.dart';
-import 'features/products/product_comparison_screen.dart';
-import 'features/products/product_reviews_screen.dart';
-import 'features/products/razer_brand_store_screen.dart';
-import 'features/products/laptop_collection_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalStorageService.init();
   runApp(const MyApp());
 }
 
@@ -39,11 +46,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'ElectroStream',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.darkTheme,
-      routerConfig: _router,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => AuthBloc()..add(AuthCheckRequested())),
+        BlocProvider(create: (context) => CartBloc()..add(LoadCart())),
+        BlocProvider(create: (context) => WishlistBloc()..add(LoadWishlist())),
+      ],
+      child: MaterialApp.router(
+        title: 'ElectroStream',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.darkTheme,
+        routerConfig: _router,
+      ),
     );
   }
 }

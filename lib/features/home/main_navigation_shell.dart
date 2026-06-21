@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../home/home_dashboard_screen.dart';
+import '../cart/cart_bloc.dart';
 
 class MainNavigationShell extends StatefulWidget {
   final Widget child;
@@ -52,45 +53,51 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
         ),
         child: ClipRRect(
           borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-          child: BottomNavigationBar(
-            currentIndex: _currentIndex,
-            onTap: _onTap,
-            type: BottomNavigationBarType.fixed,
-            backgroundColor: theme.colorScheme.surface,
-            selectedItemColor: theme.colorScheme.primary,
-            unselectedItemColor: theme.colorScheme.onSurfaceVariant,
-            showSelectedLabels: true,
-            showUnselectedLabels: true,
-            selectedLabelStyle: theme.textTheme.labelSmall?.copyWith(fontWeight: FontWeight.bold),
-            unselectedLabelStyle: theme.textTheme.labelSmall,
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
-                activeIcon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Badge(
-                  label: Text('2'),
-                  child: Icon(Icons.shopping_cart_outlined),
-                ),
-                activeIcon: Badge(
-                  label: Text('2'),
-                  child: Icon(Icons.shopping_cart),
-                ),
-                label: 'Cart',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_outline),
-                activeIcon: Icon(Icons.favorite),
-                label: 'Wishlist',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline),
-                activeIcon: Icon(Icons.person),
-                label: 'Profile',
-              ),
-            ],
+          child: BlocBuilder<CartBloc, CartState>(
+            builder: (context, state) {
+              return BottomNavigationBar(
+                currentIndex: _currentIndex,
+                onTap: _onTap,
+                type: BottomNavigationBarType.fixed,
+                backgroundColor: theme.colorScheme.surface,
+                selectedItemColor: theme.colorScheme.primary,
+                unselectedItemColor: theme.colorScheme.onSurfaceVariant,
+                showSelectedLabels: true,
+                showUnselectedLabels: true,
+                selectedLabelStyle: theme.textTheme.labelLarge?.copyWith(fontSize: 10, fontWeight: FontWeight.bold),
+                unselectedLabelStyle: theme.textTheme.labelLarge?.copyWith(fontSize: 10),
+                items: [
+                  const BottomNavigationBarItem(
+                    icon: Icon(Icons.home_outlined),
+                    activeIcon: Icon(Icons.home),
+                    label: 'Home',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Badge(
+                      isLabelVisible: state.items.isNotEmpty,
+                      label: Text('${state.items.length}'),
+                      child: const Icon(Icons.shopping_cart_outlined),
+                    ),
+                    activeIcon: Badge(
+                      isLabelVisible: state.items.isNotEmpty,
+                      label: Text('${state.items.length}'),
+                      child: const Icon(Icons.shopping_cart),
+                    ),
+                    label: 'Cart',
+                  ),
+                  const BottomNavigationBarItem(
+                    icon: Icon(Icons.favorite_outline),
+                    activeIcon: Icon(Icons.favorite),
+                    label: 'Wishlist',
+                  ),
+                  const BottomNavigationBarItem(
+                    icon: Icon(Icons.person_outline),
+                    activeIcon: Icon(Icons.person),
+                    label: 'Profile',
+                  ),
+                ],
+              );
+            },
           ),
         ),
       ),

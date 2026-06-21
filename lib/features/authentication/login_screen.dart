@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/constants/app_constants.dart';
 import '../../shared/widgets/electro_button.dart';
 import '../../shared/widgets/electro_text_field.dart';
+import '../../shared/models/user.dart';
+import 'auth_bloc.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -62,7 +65,16 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: 32),
             ElectroButton(
               text: 'Login',
-              onPressed: () => context.go('/home'),
+              onPressed: () {
+                final user = User(
+                  id: '1',
+                  name: 'John Doe',
+                  email: 'john@example.com',
+                  phoneNumber: '+1234567890',
+                );
+                context.read<AuthBloc>().add(AuthLoggedIn(user));
+                context.go('/home');
+              },
             ),
             const SizedBox(height: 24),
             Row(

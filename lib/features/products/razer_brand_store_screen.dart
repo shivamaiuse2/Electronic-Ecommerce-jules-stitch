@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../core/constants/app_constants.dart';
 import '../../shared/widgets/product_card.dart';
 import '../../shared/models/product.dart';
+import '../cart/cart_bloc.dart';
+import '../wishlist/wishlist_bloc.dart';
 
 class RazerBrandStoreScreen extends StatelessWidget {
   const RazerBrandStoreScreen({super.key});
@@ -79,11 +82,27 @@ class RazerBrandStoreScreen extends StatelessWidget {
                     mainAxisSpacing: 16,
                   ),
                   itemCount: products.length,
-                  itemBuilder: (context, index) => ProductCard(
-                    product: products[index],
-                    onTap: () {},
-                    onAddToCart: () {},
-                  ),
+                  itemBuilder: (context, index) {
+                    final product = products[index];
+                    return BlocBuilder<WishlistBloc, WishlistState>(
+                      builder: (context, wishlistState) {
+                        final isFavorite = wishlistState.items.any((i) => i.id == product.id);
+                        return ProductCard(
+                          product: product.copyWith(isFavorite: isFavorite),
+                          onTap: () {},
+                          onFavoriteToggle: () {
+                            context.read<WishlistBloc>().add(ToggleWishlist(product));
+                          },
+                          onAddToCart: () {
+                            context.read<CartBloc>().add(AddToCart(product));
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('${product.name} added to cart')),
+                            );
+                          },
+                        );
+                      },
+                    );
+                  },
                 ),
               ]),
             ),

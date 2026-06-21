@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../core/constants/app_constants.dart';
+import '../../shared/widgets/category_item.dart';
+import '../products/search_results_screen.dart';
+import 'package:go_router/go_router.dart';
 
 class CategoryHubScreen extends StatelessWidget {
   const CategoryHubScreen({super.key});
@@ -10,14 +13,14 @@ class CategoryHubScreen extends StatelessWidget {
     final theme = Theme.of(context);
 
     final categories = [
-      {'name': 'Laptops', 'icon': Icons.laptop_mac, 'color': Colors.blue},
-      {'name': 'Gaming', 'icon': Icons.sports_esports, 'color': Colors.purple},
-      {'name': 'Audio', 'icon': Icons.headphones, 'color': Colors.orange},
-      {'name': 'Wearables', 'icon': Icons.watch, 'color': Colors.pink},
-      {'name': 'Smart Home', 'icon': Icons.home_max, 'color': Colors.teal},
-      {'name': 'Cameras', 'icon': Icons.camera_alt, 'color': Colors.red},
-      {'name': 'Accessories', 'icon': Icons.mouse, 'color': Colors.amber},
-      {'name': 'TV & Video', 'icon': Icons.tv, 'color': Colors.indigo},
+      {'name': 'Laptops', 'icon': Icons.laptop_mac},
+      {'name': 'Gaming', 'icon': Icons.sports_esports},
+      {'name': 'Audio', 'icon': Icons.headphones},
+      {'name': 'Wearables', 'icon': Icons.watch},
+      {'name': 'Smart Home', 'icon': Icons.home_max},
+      {'name': 'Cameras', 'icon': Icons.camera_alt},
+      {'name': 'Accessories', 'icon': Icons.mouse},
+      {'name': 'TV & Video', 'icon': Icons.tv},
     ];
 
     return Scaffold(
@@ -30,7 +33,7 @@ class CategoryHubScreen extends StatelessWidget {
         padding: const EdgeInsets.all(AppConstants.containerMargin),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1.5,
+          childAspectRatio: 1.2,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
         ),
@@ -48,8 +51,15 @@ class CategoryHubScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(category['icon'] as IconData, size: 32, color: theme.colorScheme.primary),
-                  const SizedBox(height: 8),
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: theme.colorScheme.primary.withOpacity(0.1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(category['icon'] as IconData, size: 32, color: theme.colorScheme.primary),
+                  ),
+                  const SizedBox(height: 12),
                   Text(
                     category['name'] as String,
                     style: theme.textTheme.labelLarge?.copyWith(fontWeight: FontWeight.bold),
