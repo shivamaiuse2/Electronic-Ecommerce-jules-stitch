@@ -127,7 +127,11 @@ The layout philosophy is based on a **Fluid Grid** for mobile, utilizing a 4-col
 
 ## Elevation & Depth
 
+<<<<<<< HEAD
+Hierarchy is established through **Tonal Layering** rather than heavy shadows.
+=======
 Hierarchy is established through **Tonal Layering** rather than heavy shadows. 
+>>>>>>> main
 
 1.  **Base Layer:** Solid backgrounds (Deep Purple or White).
 2.  **Card Layer:** Surfaces that sit on the base layer use a very subtle 1px border or a faint, diffused shadow (0px 4px 20px, 5% opacity) to create a "lifted" effect.

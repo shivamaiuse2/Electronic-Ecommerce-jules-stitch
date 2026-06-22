@@ -213,23 +213,39 @@
         // Simple ambient particle animation
         const container = document.getElementById('particles-container');
         const particleCount = 15;
+<<<<<<< HEAD
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'absolute bg-primary rounded-full opacity-40';
+
+=======
         
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.className = 'absolute bg-primary rounded-full opacity-40';
             
+>>>>>>> main
             const size = Math.random() * 4 + 2;
             const startX = Math.random() * 100;
             const startY = Math.random() * 100;
             const duration = Math.random() * 20 + 10;
             const delay = Math.random() * 5;
+<<<<<<< HEAD
+
+=======
             
+>>>>>>> main
             particle.style.width = `${size}px`;
             particle.style.height = `${size}px`;
             particle.style.left = `${startX}%`;
             particle.style.top = `${startY}%`;
             particle.style.filter = 'blur(1px)';
+<<<<<<< HEAD
+
+=======
             
+>>>>>>> main
             particle.animate([
                 { transform: 'translate(0, 0)', opacity: 0.2 },
                 { transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`, opacity: 0.5 },
@@ -240,7 +256,11 @@
                 delay: delay * 1000,
                 easing: 'ease-in-out'
             });
+<<<<<<< HEAD
+
+=======
             
+>>>>>>> main
             container.appendChild(particle);
         }
 
